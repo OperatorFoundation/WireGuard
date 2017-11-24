@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA5FC75B1FC397C500A8765E /* WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5FC7511FC397C400A8765E /* WireGuard.framework */; };
+		16C6419FB8134E235F6A50DE /* Pods_WireGuardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79C15D93A35A3723FFE177E /* Pods_WireGuardTests.framework */; };
+		5F308886B8AAFF136957C860 /* Pods_WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E490C3398C5BA15C8862C66C /* Pods_WireGuard.framework */; };
 		CA5FC7601FC397C500A8765E /* WireGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FC75F1FC397C500A8765E /* WireGuardTests.swift */; };
 		CA5FC7621FC397C500A8765E /* WireGuard.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5FC7541FC397C400A8765E /* WireGuard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA5FC76C1FC397FA00A8765E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FC76B1FC397FA00A8765E /* Configuration.swift */; };
+		CA5FC76E1FC39AD400A8765E /* CryptoShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FC76D1FC39AD400A8765E /* CryptoShim.swift */; };
+		CA5FC7701FC3CE7E00A8765E /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FC76F1FC3CE7E00A8765E /* Protocol.swift */; };
+		CA5FC7721FC3CF1900A8765E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FC7711FC3CF1900A8765E /* State.swift */; };
+		CA5FC7811FC7C9C900A8765E /* WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5FC7511FC397C400A8765E /* WireGuard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +29,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		347FC2F6EDAA5B362DAC3F57 /* Pods-WireGuardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireGuardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52C62F8C7AD06AE13A4991C5 /* Pods-WireGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WireGuard/Pods-WireGuard.debug.xcconfig"; sourceTree = "<group>"; };
+		8787FC23B3E81DB0A924C2F2 /* Pods-WireGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-WireGuard/Pods-WireGuard.release.xcconfig"; sourceTree = "<group>"; };
+		A79C15D93A35A3723FFE177E /* Pods_WireGuardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WireGuardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5FC7511FC397C400A8765E /* WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5FC7541FC397C400A8765E /* WireGuard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WireGuard.h; sourceTree = "<group>"; };
 		CA5FC7551FC397C400A8765E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA5FC75A1FC397C500A8765E /* WireGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5FC75F1FC397C500A8765E /* WireGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireGuardTests.swift; sourceTree = "<group>"; };
 		CA5FC7611FC397C500A8765E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA5FC76B1FC397FA00A8765E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CA5FC76D1FC39AD400A8765E /* CryptoShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoShim.swift; sourceTree = "<group>"; };
+		CA5FC76F1FC3CE7E00A8765E /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		CA5FC7711FC3CF1900A8765E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		E490C3398C5BA15C8862C66C /* Pods_WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC199D385240FAF89F2813AC /* Pods-WireGuardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireGuardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F308886B8AAFF136957C860 /* Pods_WireGuard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,19 +60,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5FC75B1FC397C500A8765E /* WireGuard.framework in Frameworks */,
+				CA5FC7811FC7C9C900A8765E /* WireGuard.framework in Frameworks */,
+				16C6419FB8134E235F6A50DE /* Pods_WireGuardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB4ECB96E753E82993EBEB3C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52C62F8C7AD06AE13A4991C5 /* Pods-WireGuard.debug.xcconfig */,
+				8787FC23B3E81DB0A924C2F2 /* Pods-WireGuard.release.xcconfig */,
+				347FC2F6EDAA5B362DAC3F57 /* Pods-WireGuardTests.debug.xcconfig */,
+				EC199D385240FAF89F2813AC /* Pods-WireGuardTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CA5FC7471FC397C400A8765E = {
 			isa = PBXGroup;
 			children = (
 				CA5FC7531FC397C400A8765E /* WireGuard */,
 				CA5FC75E1FC397C500A8765E /* WireGuardTests */,
 				CA5FC7521FC397C400A8765E /* Products */,
+				CA5FC7731FC7499800A8765E /* Frameworks */,
+				AB4ECB96E753E82993EBEB3C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +104,10 @@
 			children = (
 				CA5FC7541FC397C400A8765E /* WireGuard.h */,
 				CA5FC7551FC397C400A8765E /* Info.plist */,
+				CA5FC76B1FC397FA00A8765E /* Configuration.swift */,
+				CA5FC76D1FC39AD400A8765E /* CryptoShim.swift */,
+				CA5FC76F1FC3CE7E00A8765E /* Protocol.swift */,
+				CA5FC7711FC3CF1900A8765E /* State.swift */,
 			);
 			path = WireGuard;
 			sourceTree = "<group>";
@@ -84,6 +119,15 @@
 				CA5FC7611FC397C500A8765E /* Info.plist */,
 			);
 			path = WireGuardTests;
+			sourceTree = "<group>";
+		};
+		CA5FC7731FC7499800A8765E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E490C3398C5BA15C8862C66C /* Pods_WireGuard.framework */,
+				A79C15D93A35A3723FFE177E /* Pods_WireGuardTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA5FC7651FC397C500A8765E /* Build configuration list for PBXNativeTarget "WireGuard" */;
 			buildPhases = (
+				FE544C525BA4741742A4C50F /* [CP] Check Pods Manifest.lock */,
 				CA5FC74C1FC397C400A8765E /* Sources */,
 				CA5FC74D1FC397C400A8765E /* Frameworks */,
 				CA5FC74E1FC397C400A8765E /* Headers */,
 				CA5FC74F1FC397C400A8765E /* Resources */,
+				F86A13A73E2D9975FEF2BFDB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA5FC7681FC397C500A8765E /* Build configuration list for PBXNativeTarget "WireGuardTests" */;
 			buildPhases = (
+				3BE44973297BA73FB5EAC549 /* [CP] Check Pods Manifest.lock */,
 				CA5FC7561FC397C500A8765E /* Sources */,
 				CA5FC7571FC397C500A8765E /* Frameworks */,
 				CA5FC7581FC397C500A8765E /* Resources */,
+				5AC463CA493E7DA11C981250 /* [CP] Embed Pods Frameworks */,
+				847EFCC25F1F532E3714F6E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +197,7 @@
 				TargetAttributes = {
 					CA5FC7501FC397C400A8765E = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					CA5FC7591FC397C500A8765E = {
@@ -191,11 +241,102 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BE44973297BA73FB5EAC549 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WireGuardTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AC463CA493E7DA11C981250 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		847EFCC25F1F532E3714F6E0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F86A13A73E2D9975FEF2BFDB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WireGuard/Pods-WireGuard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE544C525BA4741742A4C50F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WireGuard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA5FC74C1FC397C400A8765E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5FC76C1FC397FA00A8765E /* Configuration.swift in Sources */,
+				CA5FC76E1FC39AD400A8765E /* CryptoShim.swift in Sources */,
+				CA5FC7701FC3CE7E00A8765E /* Protocol.swift in Sources */,
+				CA5FC7721FC3CF1900A8765E /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,43 +473,58 @@
 		};
 		CA5FC7661FC397C500A8765E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52C62F8C7AD06AE13A4991C5 /* Pods-WireGuard.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 67Y4NSLDQ3;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = WireGuard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.operatorfoundation.WireGuard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		CA5FC7671FC397C500A8765E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8787FC23B3E81DB0A924C2F2 /* Pods-WireGuard.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 67Y4NSLDQ3;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = WireGuard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.operatorfoundation.WireGuard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 			};
@@ -376,10 +532,16 @@
 		};
 		CA5FC7691FC397C500A8765E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 347FC2F6EDAA5B362DAC3F57 /* Pods-WireGuardTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 67Y4NSLDQ3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WireGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.operatorfoundation.WireGuardTests;
@@ -390,10 +552,16 @@
 		};
 		CA5FC76A1FC397C500A8765E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC199D385240FAF89F2813AC /* Pods-WireGuardTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 67Y4NSLDQ3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WireGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.operatorfoundation.WireGuardTests;

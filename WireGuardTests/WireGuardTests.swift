@@ -7,30 +7,36 @@
 //
 
 import XCTest
+
 @testable import WireGuard
 
 class WireGuardTests: XCTestCase {
-    
+    var spubr: Data?
+    var sprivr: Data?
+    var spubi: Data?
+    var sprivi: Data?
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        var pub: Data
+        var priv: Data
+        
+        (pub, priv) = DHgenerate()
+        spubr=pub
+        sprivr=priv
+        
+        (pub, priv) = DHgenerate()
+        spubi=pub
+        sprivi=priv
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitiation() {
+        let initiation=HandshakeInitiation(spubr: spubr!, sprivi: sprivi!, maybeStaticKey: nil)
+        let initData=initiation.encode()
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

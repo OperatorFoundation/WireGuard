@@ -1,0 +1,6 @@
+framework module Pods_WireGuardTests {
+  umbrella header "Pods-WireGuardTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

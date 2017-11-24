@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct State {
+public struct State {
     var ii: Int32?
     var ir: Int32?
     var sprivi: Data?
@@ -35,7 +35,7 @@ struct State {
     var cookie: Data?
     var cookieTimestamp: Date?
 
-    init() {
+    public init() {
         
     }
     

@@ -21,7 +21,7 @@ public struct HandshakeInitiation {
     let mac2: Data
     var state: State=State()
 
-    init(spubr: Data, sprivi: Data, maybeStaticKey: Data?) {
+    public init(spubr: Data, sprivi: Data, maybeStaticKey: Data?) {
         state.spubr=spubr
         state.sprivi=sprivi
         if let staticKey=maybeStaticKey {
@@ -99,7 +99,7 @@ public struct HandshakeInitiation {
         assert(newmac2 == self.mac2)
     }
     
-    init(data: Data, sprivr: Data, spubr: Data) {
+    public init(data: Data, sprivr: Data, spubr: Data) {
         let newtype = data[0 ..< 1]
         
         assert(newtype == Data(bytes: [0b10000000]))
@@ -155,7 +155,7 @@ public struct HandshakeResponse {
     let mac2: Data
     var state: State=State()
     
-    init(epubi: Data, spubi: Data, initiation: HandshakeInitiation) {
+    public init(epubi: Data, spubi: Data, initiation: HandshakeInitiation) {
         var state=State()
 
         sender=randomBytes(number: 4)
@@ -223,7 +223,7 @@ public struct HandshakeResponse {
         state.makeTransportKeys()
     }
 
-    init(data: Data, initiation: HandshakeInitiation) {
+    public init(data: Data, initiation: HandshakeInitiation) {
         let newtype = data[0 ..< 1]
         
         assert(newtype == Data(bytes: [0b01000000]))
@@ -255,7 +255,7 @@ public struct TransportDataMessage {
     let packet: Data
     var state: State
     
-    init(initiator: Bool, sharedState: State, plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse) {
+    public init(initiator: Bool, sharedState: State, plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse) {
         state=sharedState
         receiver=initiation.sender
         
@@ -282,7 +282,7 @@ public struct TransportDataMessage {
         self.state=oldState
     }
     
-    init(data: Data, initiator: Bool, sharedState: State, plainPacket: Data) {
+    public init(data: Data, initiator: Bool, sharedState: State, plainPacket: Data) {
         let newtype = data[0 ..< 1]
         
         assert(newtype == Data(bytes: [0b00100000]))
@@ -311,7 +311,7 @@ public struct CookieReply {
     let cookie: Data
     var state: State
     
-    init(sharedState: State, receiver: Data, nonce: Data, cookie: Data) {
+    public init(sharedState: State, receiver: Data, nonce: Data, cookie: Data) {
         self.state=sharedState
         self.receiver=receiver
         self.nonce=nonce
@@ -321,7 +321,7 @@ public struct CookieReply {
         self.state.cookieTimestamp=Date()
     }
     
-    init(data: Data, sharedState: State) {
+    public init(data: Data, sharedState: State) {
         let newtype = data[0 ..< 1]
         
         assert(newtype == Data(bytes: [0b11000000]))

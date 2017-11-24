@@ -7,101 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23C1DC9A189701475C6E1B7BFD7420F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
-		3D341519864578E8EAABE442A9F0177F /* SwiftSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EF3006C7C4B084D70916C2736D38C1 /* SwiftSocket-dummy.m */; };
-		5AA7EBF9855D4EC48BBA5134A31E2D7D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
-		65872B79D51C204F73217328EF1E9310 /* Pods-WireGuard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B3890F226E179BECF23D1EDE236424E /* Pods-WireGuard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83138B837CCC9A8B0DF24C6EBEB45256 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FF9585981F7B619C85C2C6E4DCF91 /* Socket.swift */; };
-		832DCB27E497FDBD98398C70495C512B /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 5752BCCE211EF17F51DD509637DDD333 /* yudpsocket.c */; };
-		840880B75ACD1871A19C653511F47EEE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED4EEBEF28F2D922BF256FED95DA86C /* Result.swift */; };
-		8CD4CBD413295C75E3D1310DE69467FE /* SwiftSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 566633F20D21C285C3F09F065316813F /* SwiftSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96436B242C80EEB4F3B62C3E20DBC44A /* Pods-WireGuardTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6A31A124959576274713CD437D018B6 /* Pods-WireGuardTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C66921B83B2BF23E1531862543BAB059 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 21E505997513D83AFD4626EECDFF20D1 /* ytcpsocket.c */; };
-		CA5637880C1C594AB2346FD1838E4358 /* Pods-WireGuardTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCC52E780F5992BA564C3ACB23F9CA2 /* Pods-WireGuardTests-dummy.m */; };
-		CF7049C8EA7FED378263126C9924E826 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
-		CF837994475C0C0F3C99633D03D92BA4 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886AD7CDE1F5CC782474EF3443C2BA56 /* UDPClient.swift */; };
-		E2BADE1598B5AB859C4A68A2366ACEAD /* Pods-WireGuard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E06FD48F101BD599726120FA9895B /* Pods-WireGuard-dummy.m */; };
-		F26D1DBCA405DFE939568CE15F79DAFD /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C073B5E44A489A40FEBFC1148C40D1B5 /* TCPClient.swift */; };
+		45982DC2634C655257D7A2AD2C7F01C5 /* Pods-WireGuard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E06FD48F101BD599726120FA9895B /* Pods-WireGuard-dummy.m */; };
+		772DFFA73BCDC6EBBD93FB50030584C3 /* Pods-WireGuardTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6A31A124959576274713CD437D018B6 /* Pods-WireGuardTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		853C93B7D701061F25C6649A9E64A6F3 /* Pods-WireGuard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B3890F226E179BECF23D1EDE236424E /* Pods-WireGuard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		879E328B7E2DD889B8A576A14603365A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+		8CD45DD39443DC5B88EB1AAEA22024D8 /* Pods-WireGuardTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCC52E780F5992BA564C3ACB23F9CA2 /* Pods-WireGuardTests-dummy.m */; };
+		DD7EF30D46A383EFFFE0EFD007FFED1D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		8CC30FAEC56253264BECB67653C85721 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46BAE2D2366BC975AE8641B0681A7A35;
-			remoteInfo = SwiftSocket;
-		};
-		FB446449A5F4FD7ED8DD1CD3C7DF8CFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46BAE2D2366BC975AE8641B0681A7A35;
-			remoteInfo = SwiftSocket;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B3890F226E179BECF23D1EDE236424E /* Pods-WireGuard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WireGuard-umbrella.h"; sourceTree = "<group>"; };
 		15F98933D336A86BB73517DA1FD3A2B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21E505997513D83AFD4626EECDFF20D1 /* ytcpsocket.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ytcpsocket.c; path = Sources/ytcpsocket.c; sourceTree = "<group>"; };
 		270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2912E99E03E52968D932C9104BE78A72 /* Pods-WireGuard-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WireGuard-acknowledgements.plist"; sourceTree = "<group>"; };
 		2F5D632E86AB9785F4D785D5543399F2 /* Pods-WireGuard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WireGuard.modulemap"; sourceTree = "<group>"; };
 		300FA5AF4452DAB142F97AC9292404C8 /* Pods-WireGuardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WireGuardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		30B9E6C3F4CF8B74B018464618BBFAA1 /* Pods-WireGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WireGuard.debug.xcconfig"; sourceTree = "<group>"; };
-		31F93E7113EED69B088AB532C45E5FC0 /* SwiftSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSocket-prefix.pch"; sourceTree = "<group>"; };
 		42CBB72BCD1BCD8BF04032AD30DF1719 /* Pods-WireGuard-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WireGuard-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5011EFCF271665010BC1568EA9F0E86E /* Pods-WireGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WireGuard.release.xcconfig"; sourceTree = "<group>"; };
 		5527B14A79F07122F6F9D65454309656 /* Pods-WireGuardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WireGuardTests.release.xcconfig"; sourceTree = "<group>"; };
-		566633F20D21C285C3F09F065316813F /* SwiftSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSocket-umbrella.h"; sourceTree = "<group>"; };
-		5752BCCE211EF17F51DD509637DDD333 /* yudpsocket.c */ = {isa = PBXFileReference; includeInIndex = 1; name = yudpsocket.c; path = Sources/yudpsocket.c; sourceTree = "<group>"; };
-		747F213F3B2B11B747FE12D04ED00135 /* SwiftSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSocket.framework; path = SwiftSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		777B780574BE2141C0C5A02EA2518BF7 /* SwiftSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSocket.modulemap; sourceTree = "<group>"; };
-		886AD7CDE1F5CC782474EF3443C2BA56 /* UDPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UDPClient.swift; path = Sources/UDPClient.swift; sourceTree = "<group>"; };
 		8C7703620E931FE553C28C8D3EB53FE4 /* Pods-WireGuard-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WireGuard-resources.sh"; sourceTree = "<group>"; };
 		8ECDD9D67B205BBFC479E79A617E8F59 /* Pods-WireGuardTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WireGuardTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		960E06FD48F101BD599726120FA9895B /* Pods-WireGuard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WireGuard-dummy.m"; sourceTree = "<group>"; };
-		97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSocket.xcconfig; sourceTree = "<group>"; };
-		9CF22CB071D3465975A47DF95BAEFB51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9ED4EEBEF28F2D922BF256FED95DA86C /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Result.swift; sourceTree = "<group>"; };
 		A9A82E65C9960B5A054A299B93855788 /* Pods-WireGuardTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WireGuardTests.modulemap"; sourceTree = "<group>"; };
 		A9B77323A9865CC8C05BF6C42ADC60EA /* Pods-WireGuardTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WireGuardTests-resources.sh"; sourceTree = "<group>"; };
 		ACCC52E780F5992BA564C3ACB23F9CA2 /* Pods-WireGuardTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WireGuardTests-dummy.m"; sourceTree = "<group>"; };
-		B5809ED027F45F1F38F08ED656F91091 /* Pods_WireGuardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WireGuardTests.framework; path = "Pods-WireGuardTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9EF3006C7C4B084D70916C2736D38C1 /* SwiftSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSocket-dummy.m"; sourceTree = "<group>"; };
-		C073B5E44A489A40FEBFC1148C40D1B5 /* TCPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TCPClient.swift; path = Sources/TCPClient.swift; sourceTree = "<group>"; };
+		BA3E444C0744424564F11C5F7D3A4114 /* Pods_WireGuardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WireGuardTests.framework; path = "Pods-WireGuardTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3546DF752F7C4A08249BC9DC2613CED /* Pods-WireGuardTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WireGuardTests-frameworks.sh"; sourceTree = "<group>"; };
-		CB2689BE9EFE0F142CD20E11A6C68695 /* Pods_WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WireGuard.framework; path = "Pods-WireGuard.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5639EC07B0AA599C662F333ED3B2D6 /* Pods_WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WireGuard.framework; path = "Pods-WireGuard.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D4F3F7FED8ECE9A9986471DFC0421F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD7FF9585981F7B619C85C2C6E4DCF91 /* Socket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = Sources/Socket.swift; sourceTree = "<group>"; };
 		EB7890E5F0F2AA9C89A6600C518B224A /* Pods-WireGuardTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WireGuardTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F6A31A124959576274713CD437D018B6 /* Pods-WireGuardTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WireGuardTests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		52DF14F9C545F0CFBF70E14A6BABE1CD /* Frameworks */ = {
+		76A520E7497CC3448700551081F20ABB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA7EBF9855D4EC48BBA5134A31E2D7D /* Cocoa.framework in Frameworks */,
+				879E328B7E2DD889B8A576A14603365A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C26FF8F7A54430EF7B1F1CD9280FF811 /* Frameworks */ = {
+		80FCF66A7F6A249FF007A5FCC5ACE17A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23C1DC9A189701475C6E1B7BFD7420F4 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F099D8C77430BC101FA6A6D1EFF7E3C1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF7049C8EA7FED378263126C9924E826 /* Cocoa.framework in Frameworks */,
+				DD7EF30D46A383EFFFE0EFD007FFED1D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,30 +69,12 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		04F81F21E9B2EFE1074777E2D2759FF9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A44A66ADA1344DA9E7A74277DE6C0CE1 /* SwiftSocket */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				04C068A18C5413F804A2959126093416 /* OS X */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		597C277BE5FED9A1CA2CADA19BEDACEF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CB2689BE9EFE0F142CD20E11A6C68695 /* Pods_WireGuard.framework */,
-				B5809ED027F45F1F38F08ED656F91091 /* Pods_WireGuardTests.framework */,
-				747F213F3B2B11B747FE12D04ED00135 /* SwiftSocket.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6A4245D229F5EC64E89AFD885BB44098 /* Pods-WireGuard */ = {
@@ -173,39 +108,18 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
-				04F81F21E9B2EFE1074777E2D2759FF9 /* Pods */,
-				597C277BE5FED9A1CA2CADA19BEDACEF /* Products */,
+				BBC1D39299E7CDFB37D8265E58AD05B9 /* Products */,
 				6F7DCCE82451C66A554813E5497C4838 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A44A66ADA1344DA9E7A74277DE6C0CE1 /* SwiftSocket */ = {
+		BBC1D39299E7CDFB37D8265E58AD05B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9ED4EEBEF28F2D922BF256FED95DA86C /* Result.swift */,
-				DD7FF9585981F7B619C85C2C6E4DCF91 /* Socket.swift */,
-				C073B5E44A489A40FEBFC1148C40D1B5 /* TCPClient.swift */,
-				886AD7CDE1F5CC782474EF3443C2BA56 /* UDPClient.swift */,
-				21E505997513D83AFD4626EECDFF20D1 /* ytcpsocket.c */,
-				5752BCCE211EF17F51DD509637DDD333 /* yudpsocket.c */,
-				AE1F57FCCE0C2C4E7D884CED9E6BE226 /* Support Files */,
+				CE5639EC07B0AA599C662F333ED3B2D6 /* Pods_WireGuard.framework */,
+				BA3E444C0744424564F11C5F7D3A4114 /* Pods_WireGuardTests.framework */,
 			);
-			name = SwiftSocket;
-			path = SwiftSocket;
-			sourceTree = "<group>";
-		};
-		AE1F57FCCE0C2C4E7D884CED9E6BE226 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9CF22CB071D3465975A47DF95BAEFB51 /* Info.plist */,
-				777B780574BE2141C0C5A02EA2518BF7 /* SwiftSocket.modulemap */,
-				97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */,
-				B9EF3006C7C4B084D70916C2736D38C1 /* SwiftSocket-dummy.m */,
-				31F93E7113EED69B088AB532C45E5FC0 /* SwiftSocket-prefix.pch */,
-				566633F20D21C285C3F09F065316813F /* SwiftSocket-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftSocket";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D7497594CE8E6BD10CFF19E6EF995743 /* Pods-WireGuardTests */ = {
@@ -229,84 +143,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4D7EE3F4EC0F8662FDC8B1A04B0974CF /* Headers */ = {
+		4E18EEAE3B4F6037868D63A1675D91E5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96436B242C80EEB4F3B62C3E20DBC44A /* Pods-WireGuardTests-umbrella.h in Headers */,
+				853C93B7D701061F25C6649A9E64A6F3 /* Pods-WireGuard-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		796182440A48DDF686848BEE4BBE3A39 /* Headers */ = {
+		9ECA21BB37FD866179ACD42E4371CBC5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CD4CBD413295C75E3D1310DE69467FE /* SwiftSocket-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89F4DB41363621B68ABE5521D9E50A77 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65872B79D51C204F73217328EF1E9310 /* Pods-WireGuard-umbrella.h in Headers */,
+				772DFFA73BCDC6EBBD93FB50030584C3 /* Pods-WireGuardTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0B620D7BA6E9B9AE0B14E05A478914D1 /* Pods-WireGuard */ = {
+		2159AB4CC91FD4D6D85D0EE5890BAA14 /* Pods-WireGuard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DEA6524078C89E124593C2EE8CA74AA /* Build configuration list for PBXNativeTarget "Pods-WireGuard" */;
+			buildConfigurationList = DE6F8FEB64D1676CA28E5EABD7DA1FC4 /* Build configuration list for PBXNativeTarget "Pods-WireGuard" */;
 			buildPhases = (
-				8A84E6C0E385449B6EF94DF374A334A7 /* Sources */,
-				F099D8C77430BC101FA6A6D1EFF7E3C1 /* Frameworks */,
-				89F4DB41363621B68ABE5521D9E50A77 /* Headers */,
+				657B247D6DE908DEC2014CEB043F576A /* Sources */,
+				76A520E7497CC3448700551081F20ABB /* Frameworks */,
+				4E18EEAE3B4F6037868D63A1675D91E5 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				321252C842846B68F78264D6589CEBB2 /* PBXTargetDependency */,
 			);
 			name = "Pods-WireGuard";
 			productName = "Pods-WireGuard";
-			productReference = CB2689BE9EFE0F142CD20E11A6C68695 /* Pods_WireGuard.framework */;
+			productReference = CE5639EC07B0AA599C662F333ED3B2D6 /* Pods_WireGuard.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		46BAE2D2366BC975AE8641B0681A7A35 /* SwiftSocket */ = {
+		66AE407C0BEF695EE0871B79AEFAB3B8 /* Pods-WireGuardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 727AB41CA560B22DF75878489AD371CD /* Build configuration list for PBXNativeTarget "SwiftSocket" */;
+			buildConfigurationList = C460450880AF55F4E1D7B09C5DDB1BB1 /* Build configuration list for PBXNativeTarget "Pods-WireGuardTests" */;
 			buildPhases = (
-				75720DC62932BBFFB0DB6357FDE0DAA0 /* Sources */,
-				C26FF8F7A54430EF7B1F1CD9280FF811 /* Frameworks */,
-				796182440A48DDF686848BEE4BBE3A39 /* Headers */,
+				169D19CE52C179BBA7CD1584A166C2F5 /* Sources */,
+				80FCF66A7F6A249FF007A5FCC5ACE17A /* Frameworks */,
+				9ECA21BB37FD866179ACD42E4371CBC5 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = SwiftSocket;
-			productName = SwiftSocket;
-			productReference = 747F213F3B2B11B747FE12D04ED00135 /* SwiftSocket.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		616E30942C11F93531FB2673FF561A04 /* Pods-WireGuardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B306127DC5C513410A46272DD87320D7 /* Build configuration list for PBXNativeTarget "Pods-WireGuardTests" */;
-			buildPhases = (
-				12885B09D8C5B08917CEC047D6D5B000 /* Sources */,
-				52DF14F9C545F0CFBF70E14A6BABE1CD /* Frameworks */,
-				4D7EE3F4EC0F8662FDC8B1A04B0974CF /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				041541486C68BD728D91FFAD0F167105 /* PBXTargetDependency */,
 			);
 			name = "Pods-WireGuardTests";
 			productName = "Pods-WireGuardTests";
-			productReference = B5809ED027F45F1F38F08ED656F91091 /* Pods_WireGuardTests.framework */;
+			productReference = BA3E444C0744424564F11C5F7D3A4114 /* Pods_WireGuardTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -326,69 +213,39 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 597C277BE5FED9A1CA2CADA19BEDACEF /* Products */;
+			productRefGroup = BBC1D39299E7CDFB37D8265E58AD05B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B620D7BA6E9B9AE0B14E05A478914D1 /* Pods-WireGuard */,
-				616E30942C11F93531FB2673FF561A04 /* Pods-WireGuardTests */,
-				46BAE2D2366BC975AE8641B0681A7A35 /* SwiftSocket */,
+				2159AB4CC91FD4D6D85D0EE5890BAA14 /* Pods-WireGuard */,
+				66AE407C0BEF695EE0871B79AEFAB3B8 /* Pods-WireGuardTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12885B09D8C5B08917CEC047D6D5B000 /* Sources */ = {
+		169D19CE52C179BBA7CD1584A166C2F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5637880C1C594AB2346FD1838E4358 /* Pods-WireGuardTests-dummy.m in Sources */,
+				8CD45DD39443DC5B88EB1AAEA22024D8 /* Pods-WireGuardTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75720DC62932BBFFB0DB6357FDE0DAA0 /* Sources */ = {
+		657B247D6DE908DEC2014CEB043F576A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840880B75ACD1871A19C653511F47EEE /* Result.swift in Sources */,
-				83138B837CCC9A8B0DF24C6EBEB45256 /* Socket.swift in Sources */,
-				3D341519864578E8EAABE442A9F0177F /* SwiftSocket-dummy.m in Sources */,
-				F26D1DBCA405DFE939568CE15F79DAFD /* TCPClient.swift in Sources */,
-				CF837994475C0C0F3C99633D03D92BA4 /* UDPClient.swift in Sources */,
-				C66921B83B2BF23E1531862543BAB059 /* ytcpsocket.c in Sources */,
-				832DCB27E497FDBD98398C70495C512B /* yudpsocket.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A84E6C0E385449B6EF94DF374A334A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2BADE1598B5AB859C4A68A2366ACEAD /* Pods-WireGuard-dummy.m in Sources */,
+				45982DC2634C655257D7A2AD2C7F01C5 /* Pods-WireGuard-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		041541486C68BD728D91FFAD0F167105 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftSocket;
-			target = 46BAE2D2366BC975AE8641B0681A7A35 /* SwiftSocket */;
-			targetProxy = 8CC30FAEC56253264BECB67653C85721 /* PBXContainerItemProxy */;
-		};
-		321252C842846B68F78264D6589CEBB2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftSocket;
-			target = 46BAE2D2366BC975AE8641B0681A7A35 /* SwiftSocket */;
-			targetProxy = FB446449A5F4FD7ED8DD1CD3C7DF8CFE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		0E8169B962597621ED345055875F71E7 /* Release */ = {
+		11195C1276C77B20D4A395F8E43AA22A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5011EFCF271665010BC1568EA9F0E86E /* Pods-WireGuard.release.xcconfig */;
+			baseConfigurationReference = 5527B14A79F07122F6F9D65454309656 /* Pods-WireGuardTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -401,125 +258,25 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-WireGuard/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-WireGuardTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-WireGuard/Pods-WireGuard.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WireGuard;
+				PRODUCT_NAME = Pods_WireGuardTests;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		640D714FA9FCA236D2B65FDA837A9A0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30B9E6C3F4CF8B74B018464618BBFAA1 /* Pods-WireGuard.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-WireGuard/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-WireGuard/Pods-WireGuard.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WireGuard;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7E559DFECD5B1DA1A624261052453461 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSocket/SwiftSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSocket/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/SwiftSocket/SwiftSocket.modulemap";
-				PRODUCT_NAME = SwiftSocket;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		89915688BAF5E176A2EDB2725AF73090 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97127948B567B5DF799BECE808D6BFBF /* SwiftSocket.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSocket/SwiftSocket-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSocket/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/SwiftSocket/SwiftSocket.modulemap";
-				PRODUCT_NAME = SwiftSocket;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AD114F8BEC409B9B572B800DAFF34D99 /* Debug */ = {
+		2BFFEF9ACF129C9A72B17737A58B8366 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 300FA5AF4452DAB142F97AC9292404C8 /* Pods-WireGuardTests.debug.xcconfig */;
 			buildSettings = {
@@ -547,12 +304,76 @@
 				PRODUCT_NAME = Pods_WireGuardTests;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		45ECFF9ABD026799E83EA226EDCFA656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30B9E6C3F4CF8B74B018464618BBFAA1 /* Pods-WireGuard.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-WireGuard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-WireGuard/Pods-WireGuard.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WireGuard;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		94B907BD354E2E7CEDFEB66D731A2F04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5011EFCF271665010BC1568EA9F0E86E /* Pods-WireGuard.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-WireGuard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-WireGuard/Pods-WireGuard.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WireGuard;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		C4D8B0A6AD4EF0183B7B90C84630289B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -606,40 +427,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		C57D7AFF22604A44D7A0C5BB40DE1BDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5527B14A79F07122F6F9D65454309656 /* Pods-WireGuardTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-WireGuardTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MODULEMAP_FILE = "Target Support Files/Pods-WireGuardTests/Pods-WireGuardTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WireGuardTests;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -715,29 +502,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		727AB41CA560B22DF75878489AD371CD /* Build configuration list for PBXNativeTarget "SwiftSocket" */ = {
+		C460450880AF55F4E1D7B09C5DDB1BB1 /* Build configuration list for PBXNativeTarget "Pods-WireGuardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E559DFECD5B1DA1A624261052453461 /* Debug */,
-				89915688BAF5E176A2EDB2725AF73090 /* Release */,
+				2BFFEF9ACF129C9A72B17737A58B8366 /* Debug */,
+				11195C1276C77B20D4A395F8E43AA22A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DEA6524078C89E124593C2EE8CA74AA /* Build configuration list for PBXNativeTarget "Pods-WireGuard" */ = {
+		DE6F8FEB64D1676CA28E5EABD7DA1FC4 /* Build configuration list for PBXNativeTarget "Pods-WireGuard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				640D714FA9FCA236D2B65FDA837A9A0A /* Debug */,
-				0E8169B962597621ED345055875F71E7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B306127DC5C513410A46272DD87320D7 /* Build configuration list for PBXNativeTarget "Pods-WireGuardTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AD114F8BEC409B9B572B800DAFF34D99 /* Debug */,
-				C57D7AFF22604A44D7A0C5BB40DE1BDB /* Release */,
+				45ECFF9ABD026799E83EA226EDCFA656 /* Debug */,
+				94B907BD354E2E7CEDFEB66D731A2F04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

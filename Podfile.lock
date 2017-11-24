@@ -1,11 +1,11 @@
 PODS:
-  - SwiftSocket (2.0.1)
+  - SwiftSocket (2.0.2)
 
 DEPENDENCIES:
   - SwiftSocket
 
 SPEC CHECKSUMS:
-  SwiftSocket: 2d814afdc97c89217982f86fd036c1874134a63f
+  SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
 
 PODFILE CHECKSUM: d4dd28db0dc20728eb9bccf8e18c3a9ab34ed6fd
 

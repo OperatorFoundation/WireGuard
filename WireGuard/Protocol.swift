@@ -118,7 +118,7 @@ public struct HandshakeInitiation {
         self.init(sender: newsender, ephemeralKey: newephemeralKey, staticKey: newstaticKey, timestamp: newtimestamp, mac1: newmac1, mac2: newmac2, sprivr: sprivr, spubr: spubr)
     }
     
-    func encode() -> Data {
+    public func encode() -> Data {
         return concat([type, reserved, sender, ephemeralKey, staticKey, timestamp, mac1, mac2])
     }
 }
@@ -242,7 +242,7 @@ public struct HandshakeResponse {
         self.init(sender: newsender, receiver: newreceiver, ephemeralKey: newephemeralKey, empty: newempty, mac1: newmac1, mac2: newmac2, oldState: initiation.state)
     }
     
-    func encode() -> Data {
+    public func encode() -> Data {
         return concat([type, reserved, sender, receiver, ephemeralKey, empty, mac1, mac2])
     }
 }
@@ -298,7 +298,7 @@ public struct TransportDataMessage {
         self.init(receiver: newreceiver, counter: newcounter, packet: newpacket, oldState: sharedState)
     }
     
-    func encode() -> Data {
+    public func encode() -> Data {
         return concat([type, reserved, receiver, counter, packet])
     }
 }

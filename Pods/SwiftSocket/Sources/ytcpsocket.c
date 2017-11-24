@@ -37,6 +37,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <dirent.h>
 #include <netdb.h>
 #include <unistd.h>
@@ -93,7 +94,6 @@ int ytcpsocket_connect(const char *host, int port, int timeout) {
             return -4;//connect fail
         }
       
-        ytcpsocket_set_block(sockfd, 1);
         int set = 1;
         setsockopt(sockfd, SOL_SOCKET, SO_NOSIGPIPE, (void *)&set, sizeof(int));
         return sockfd;
@@ -105,6 +105,8 @@ int ytcpsocket_close(int socketfd){
 }
 
 int ytcpsocket_pull(int socketfd, char *data, int len, int timeout_sec) {
+    int readlen = 0;
+    int datalen = 0;
     if (timeout_sec > 0) {
         fd_set fdset;
         struct timeval timeout;
@@ -117,8 +119,16 @@ int ytcpsocket_pull(int socketfd, char *data, int len, int timeout_sec) {
             return ret; // select-call failed or timeout occurred (before anything was sent)
         }
     }
-    int readlen = (int)read(socketfd, data, len);
-    return readlen;
+    // use loop to make sure receive all data
+    do {
+        readlen = (int)read(socketfd, data + datalen, len - datalen);
+        printf("%d\n",readlen);
+        if (readlen > 0) {
+            datalen += readlen;
+        }
+    } while (readlen > 0);
+    
+    return datalen;
 }
 
 int ytcpsocket_send(int socketfd, const char *data, int len){
@@ -159,17 +169,44 @@ int ytcpsocket_listen(const char *address, int port) {
 }
 
 //return client socket fd
-int ytcpsocket_accept(int onsocketfd, char *remoteip, int *remoteport) {
+int ytcpsocket_accept(int onsocketfd, char *remoteip, int *remoteport, int timeouts) {
     socklen_t clilen;
     struct sockaddr_in  cli_addr;
     clilen = sizeof(cli_addr);
+    fd_set fdset;
+    FD_ZERO(&fdset);
+    FD_SET(onsocketfd, &fdset);
+    struct timeval *timeptr = NULL;
+    struct timeval timeout;
+    if (timeouts > 0) {
+      timeout.tv_sec = timeouts;
+      timeout.tv_usec = 0;
+      timeptr = &timeout;
+    }
+    int status = select(FD_SETSIZE, &fdset, NULL, NULL, timeptr);
+    if (status != 1) {
+      return -1;
+    }
     int newsockfd = accept(onsocketfd, (struct sockaddr *) &cli_addr, &clilen);
     char *clientip=inet_ntoa(cli_addr.sin_addr);
     memcpy(remoteip, clientip, strlen(clientip));
     *remoteport = cli_addr.sin_port;
     if (newsockfd > 0) {
+        int set = 1;
+        setsockopt(newsockfd, SOL_SOCKET, SO_NOSIGPIPE, (void*) &set, sizeof(int));
         return newsockfd;
     } else {
         return -1;
+    }
+}
+
+//return socket port
+int ytcpsocket_port(int socketfd) {
+    struct sockaddr_in sin;
+    socklen_t len = sizeof(sin);
+    if (getsockname(socketfd, (struct sockaddr *)&sin, &len) == -1) {
+        return -1;
+    } else {
+        return ntohs(sin.sin_port);
     }
 }

@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		"WireGuard::WireGuardPackageTests::ProductTarget" /* WireGuardPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_43 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */;
+			buildConfigurationList = OBJ_42 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_46 /* PBXTargetDependency */,
+				OBJ_45 /* PBXTargetDependency */,
 			);
 			name = WireGuardPackageTests;
 			productName = WireGuardPackageTests;
@@ -21,26 +21,26 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_30 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configuration.swift */; };
-		OBJ_31 /* CryptoShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CryptoShim.swift */; };
-		OBJ_32 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Protocol.swift */; };
-		OBJ_33 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* State.swift */; };
-		OBJ_34 /* WireGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* WireGuard.swift */; };
-		OBJ_41 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_52 /* WireGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* WireGuardTests.swift */; };
-		OBJ_53 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* XCTestManifests.swift */; };
-		OBJ_55 /* WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WireGuard::WireGuard::Product" /* WireGuard.framework */; };
+		OBJ_29 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configuration.swift */; };
+		OBJ_30 /* CryptoShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CryptoShim.swift */; };
+		OBJ_31 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Protocol.swift */; };
+		OBJ_32 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* State.swift */; };
+		OBJ_33 /* WireGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* WireGuard.swift */; };
+		OBJ_40 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_51 /* WireGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* WireGuardTests.swift */; };
+		OBJ_52 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* XCTestManifests.swift */; };
+		OBJ_54 /* WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WireGuard::WireGuard::Product" /* WireGuard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4686E5AA2151604E0068826B /* PBXContainerItemProxy */ = {
+		CA3417C92163DE4600442E2C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WireGuard::WireGuard";
 			remoteInfo = WireGuard;
 		};
-		4686E5AB2151604F0068826B /* PBXContainerItemProxy */ = {
+		CA3417CA2163DE4600442E2C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -59,26 +59,25 @@
 		OBJ_18 /* WireGuardTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WireGuardTests; sourceTree = SOURCE_ROOT; };
 		OBJ_19 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = SOURCE_ROOT; };
 		OBJ_20 /* WireGuard.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = WireGuard.xcworkspace; sourceTree = SOURCE_ROOT; };
-		OBJ_21 /* WireGuard */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WireGuard; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		"WireGuard::WireGuard::Product" /* WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_35 /* Frameworks */ = {
+		OBJ_34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_54 /* Frameworks */ = {
+		OBJ_53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_55 /* WireGuard.framework in Frameworks */,
+				OBJ_54 /* WireGuard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +102,7 @@
 			path = Tests/WireGuardTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_22 /* Products */ = {
+		OBJ_21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */,
@@ -112,7 +111,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -121,10 +120,8 @@
 				OBJ_18 /* WireGuardTests */,
 				OBJ_19 /* Pods */,
 				OBJ_20 /* WireGuard.xcworkspace */,
-				OBJ_21 /* WireGuard */,
-				OBJ_22 /* Products */,
+				OBJ_21 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -153,9 +150,9 @@
 /* Begin PBXNativeTarget section */
 		"WireGuard::SwiftPMPackageDescription" /* WireGuardPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_37 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */;
+			buildConfigurationList = OBJ_36 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */;
 			buildPhases = (
-				OBJ_40 /* Sources */,
+				OBJ_39 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -167,10 +164,10 @@
 		};
 		"WireGuard::WireGuard" /* WireGuard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "WireGuard" */;
+			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "WireGuard" */;
 			buildPhases = (
-				OBJ_29 /* Sources */,
-				OBJ_35 /* Frameworks */,
+				OBJ_28 /* Sources */,
+				OBJ_34 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,15 +180,15 @@
 		};
 		"WireGuard::WireGuardTests" /* WireGuardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_48 /* Build configuration list for PBXNativeTarget "WireGuardTests" */;
+			buildConfigurationList = OBJ_47 /* Build configuration list for PBXNativeTarget "WireGuardTests" */;
 			buildPhases = (
-				OBJ_51 /* Sources */,
-				OBJ_54 /* Frameworks */,
+				OBJ_50 /* Sources */,
+				OBJ_53 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_56 /* PBXTargetDependency */,
+				OBJ_55 /* PBXTargetDependency */,
 			);
 			name = WireGuardTests;
 			productName = WireGuardTests;
@@ -205,6 +202,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"WireGuard::WireGuard" = {
+						LastSwiftMigration = 1000;
+					};
+					"WireGuard::WireGuardTests" = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "WireGuard" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -213,8 +218,8 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_22 /* Products */;
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -227,52 +232,52 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_29 /* Sources */ = {
+		OBJ_28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_30 /* Configuration.swift in Sources */,
-				OBJ_31 /* CryptoShim.swift in Sources */,
-				OBJ_32 /* Protocol.swift in Sources */,
-				OBJ_33 /* State.swift in Sources */,
-				OBJ_34 /* WireGuard.swift in Sources */,
+				OBJ_29 /* Configuration.swift in Sources */,
+				OBJ_30 /* CryptoShim.swift in Sources */,
+				OBJ_31 /* Protocol.swift in Sources */,
+				OBJ_32 /* State.swift in Sources */,
+				OBJ_33 /* WireGuard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_40 /* Sources */ = {
+		OBJ_39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_41 /* Package.swift in Sources */,
+				OBJ_40 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_51 /* Sources */ = {
+		OBJ_50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_52 /* WireGuardTests.swift in Sources */,
-				OBJ_53 /* XCTestManifests.swift in Sources */,
+				OBJ_51 /* WireGuardTests.swift in Sources */,
+				OBJ_52 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_46 /* PBXTargetDependency */ = {
+		OBJ_45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WireGuard::WireGuardTests" /* WireGuardTests */;
-			targetProxy = 4686E5AB2151604F0068826B /* PBXContainerItemProxy */;
+			targetProxy = CA3417CA2163DE4600442E2C /* PBXContainerItemProxy */;
 		};
-		OBJ_56 /* PBXTargetDependency */ = {
+		OBJ_55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WireGuard::WireGuard" /* WireGuard */;
-			targetProxy = 4686E5AA2151604E0068826B /* PBXContainerItemProxy */;
+			targetProxy = CA3417C92163DE4600442E2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_27 /* Debug */ = {
+		OBJ_26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -290,12 +295,13 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuard;
 			};
 			name = Debug;
 		};
-		OBJ_28 /* Release */ = {
+		OBJ_27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -313,7 +319,8 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuard;
 			};
 			name = Release;
@@ -328,32 +335,36 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		OBJ_38 /* Debug */ = {
+		OBJ_37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		OBJ_39 /* Release */ = {
+		OBJ_38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -367,7 +378,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = s;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -378,21 +389,22 @@
 			};
 			name = Release;
 		};
-		OBJ_44 /* Debug */ = {
+		OBJ_43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Debug;
 		};
-		OBJ_45 /* Release */ = {
+		OBJ_44 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Release;
 		};
-		OBJ_49 /* Debug */ = {
+		OBJ_48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,14 +416,16 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Debug;
 		};
-		OBJ_50 /* Release */ = {
+		OBJ_49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,7 +437,8 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Release;
@@ -440,38 +455,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_26 /* Build configuration list for PBXNativeTarget "WireGuard" */ = {
+		OBJ_25 /* Build configuration list for PBXNativeTarget "WireGuard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_27 /* Debug */,
-				OBJ_28 /* Release */,
+				OBJ_26 /* Debug */,
+				OBJ_27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_37 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */ = {
+		OBJ_36 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_38 /* Debug */,
-				OBJ_39 /* Release */,
+				OBJ_37 /* Debug */,
+				OBJ_38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_43 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */ = {
+		OBJ_42 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_44 /* Debug */,
-				OBJ_45 /* Release */,
+				OBJ_43 /* Debug */,
+				OBJ_44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_48 /* Build configuration list for PBXNativeTarget "WireGuardTests" */ = {
+		OBJ_47 /* Build configuration list for PBXNativeTarget "WireGuardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_49 /* Debug */,
-				OBJ_50 /* Release */,
+				OBJ_48 /* Debug */,
+				OBJ_49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

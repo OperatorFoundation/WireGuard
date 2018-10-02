@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sodium
 
 public struct State {
     var ii: Int32?
@@ -60,11 +61,12 @@ public struct State {
         nrecvi=Data(repeating: 0, count: 8)
         nrecvr=Data(repeating: 0, count: 8)
         
-        eprivi=e
-        epubi=e
-        eprivr=e
-        epubr=e
-        ci=e
-        cr=e
+        let sodium=Sodium()
+        eprivi=nil
+        epubi=nil
+        eprivr=nil
+        epubr=nil
+        ci=nil
+        cr=nil
     }
 }

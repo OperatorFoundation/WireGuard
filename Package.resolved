@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/OperatorFoundation/Datable.git",
         "state": {
           "branch": null,
-          "revision": "02f1f9294b7df265b059ce9efa48e3f354b6967e",
-          "version": "1.0.0"
+          "revision": "b8d528a7ab46c5e56ab324ab602ac12237bdedb6",
+          "version": "1.0.1"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/OperatorFoundation/HKDFKit.git",
         "state": {
           "branch": null,
-          "revision": "8f7886b1dd2a3d7084412d7481bd00bf03c6dbc7",
-          "version": "1.0.0"
+          "revision": "06fd94975c430db02657a80494ef233395a0ef98",
+          "version": "1.0.1"
         }
       },
       {

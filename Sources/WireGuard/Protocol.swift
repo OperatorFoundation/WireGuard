@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Sodium
+import Datable
 
 let e = Data()
 
@@ -31,7 +33,7 @@ public struct HandshakeInitiation {
             self.staticKey=state.q
         }
 
-        sender=randomBytes(number: 4)
+        sender=randomBytes(number: 4)!
         
         // 5.4.2
         state.ci=hash(data: construction)
@@ -46,9 +48,9 @@ public struct HandshakeInitiation {
         NSLog("ci: \(String(describing: state.ci ?? nil)) sprivi: \(String(describing: state.sprivi ?? nil)) spubr: \(String(describing: state.spubr))")
         
         state.hi=hash(state.hi!, self.staticKey)
-        let (tempci, k) = KDF2(key: state.ci!, data: DH(privateKey: state.sprivi!, publicKey: state.spubr!))
+        let (tempci, k) = KDF2(key: state.ci!, data: DH(privateKey: state.sprivi!, publicKey: state.spubi!, peerPublicKey: state.spubr!))
         state.ci = tempci
-        timestamp=AEAD(key: k, counter: Data(repeating: 0, count: 8), plainText: makeTimestamp(), authText: state.hi!)
+        timestamp=AEAD(key: k, counter: Data(repeating: 0, count: 8), plainText: TAI64N(), authText: state.hi!)
         state.hi = hash(state.hi!, timestamp)
         
         let payload1 = concat([type, reserved, sender, ephemeralKey, staticKey, timestamp])
@@ -83,9 +85,9 @@ public struct HandshakeInitiation {
         state.ci = KDF1(state.ci!, state.epubi!)
         
         state.hi=hash(state.hi!, staticKey)
-        let (tempci, k) = KDF2(key: state.ci!, data: DH(privateKey: state.sprivr!, publicKey: state.spubi!))
+        let (tempci, k) = KDF2(key: state.ci!, data: DH(privateKey: state.sprivr!, publicKey: state.spubr!, peerPublicKey: state.spubi!))
         state.ci = tempci
-        assert(timestamp == AEAD(key: k, counter: Data(repeating: 0, count: 8), plainText: makeTimestamp(), authText: state.hi!))
+        assert(timestamp == AEAD(key: k, counter: Data(repeating: 0, count: 8), plainText: TAI64N(), authText: state.hi!))
         state.hi = hash(state.hi!, timestamp)
         
         let payload1 = concat([type, reserved, sender, ephemeralKey, staticKey, timestamp])
@@ -155,38 +157,6 @@ public struct HandshakeResponse {
     let mac2: Data
     var state: State=State()
     
-    public init(epubi: Data, spubi: Data, initiation: HandshakeInitiation) {
-        var state=State()
-
-        sender=randomBytes(number: 4)
-        receiver=initiation.sender
-        
-        let (eprivr, epubr) = DHgenerate()
-        state.eprivr = eprivr
-        state.epubr = epubr
-        
-        state.cr=KDF1(state.cr!, state.epubr!)
-        ephemeralKey=state.epubr!
-        state.hr=hash(state.hr!, ephemeralKey)
-        state.cr = KDF1(state.cr!, DH(privateKey: state.eprivr!, publicKey: state.epubi!))
-        state.cr = KDF1(state.cr!, DH(privateKey: state.eprivr!, publicKey: state.spubi!))
-        var t: Data
-        var k: Data
-        var tempcr: Data
-        (tempcr, t, k) = KDF3(key: state.cr!, data: state.q)
-        state.cr=tempcr
-        state.hr = hash(state.hr!, t)
-        empty = AEAD(key: k, counter: Data(repeating: 0, count: 8), plainText: e, authText: state.hr!)
-        state.hr=hash(state.hr!, empty)
-        
-        let payload = concat([type, reserved, sender, receiver, ephemeralKey, empty])
-        
-        mac1=MAC(key: hash(labelMac1, state.spubi!), data: payload)
-        mac2 = Data(repeating: 0, count: 16) // FIXME - different mac2 if cookies are present
-        
-        state.makeTransportKeys()
-    }
-
     init(sender: Data, receiver: Data, ephemeralKey: Data, empty: Data, mac1: Data, mac2: Data, oldState: State) {
         self.sender=sender
         self.receiver=receiver
@@ -199,8 +169,8 @@ public struct HandshakeResponse {
         self.state.epubr=ephemeralKey
         self.state.cr=KDF1(self.state.cr!, self.state.epubr!)
         self.state.hr=hash(self.state.hr!, ephemeralKey)
-        self.state.cr = KDF1(self.state.cr!, DH(privateKey: self.state.eprivr!, publicKey: self.state.epubi!))
-        self.state.cr = KDF1(self.state.cr!, DH(privateKey: self.state.eprivr!, publicKey: self.state.spubi!))
+        self.state.cr = KDF1(self.state.cr!, DH(privateKey: self.state.eprivr!, publicKey: self.state.epubr!, peerPublicKey: self.state.epubi!))
+        self.state.cr = KDF1(self.state.cr!, DH(privateKey: self.state.eprivr!, publicKey: self.state.spubr!, peerPublicKey: self.state.spubi!))
         var t: Data
         var k: Data
         var tempcr: Data
@@ -255,24 +225,17 @@ public struct TransportDataMessage {
     let packet: Data
     var state: State
     
-    public init(initiator: Bool, sharedState: State, plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse) {
-        state=sharedState
-        receiver=initiation.sender
+    public init(plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse) {
+        state=response.state
+        receiver=response.receiver
         
-        var temppacket = Data()
-        temppacket.append(plainPacket)
-        let padding = Data(repeating: 0, count: (16-(plainPacket.count/16))-plainPacket.count)
-        temppacket.append(padding)
+        let sodium=Sodium()
+        var paddedPacket=plainPacket.array
+        sodium.utils.pad(bytes: &paddedPacket, blockSize: 16)
         
-        if initiator {
-            counter = state.nsendi
-            packet = AEAD(key: state.tsendi!, counter: state.nsendi, plainText: temppacket, authText: e)
-            state.incrNsendi()
-        } else {
-            counter = state.nsendr
-            packet = AEAD(key: state.tsendr!, counter: state.nsendr, plainText: temppacket, authText: e)
-            state.incrNsendr()
-        }
+        counter = state.nsendi
+        packet = AEAD(key: state.tsendi!, counter: state.nsendi, plainText: Data(array: paddedPacket), authText: e)
+        state.incrNsendi()
     }
     
     init(receiver: Data, counter: Data, packet: Data, oldState: State) {

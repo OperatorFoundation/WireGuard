@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		"WireGuard::WireGuardPackageTests::ProductTarget" /* WireGuardPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_42 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */;
+			buildConfigurationList = OBJ_434 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_45 /* PBXTargetDependency */,
+				OBJ_437 /* PBXTargetDependency */,
 			);
 			name = WireGuardPackageTests;
 			productName = WireGuardPackageTests;
@@ -21,26 +21,297 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_29 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configuration.swift */; };
-		OBJ_30 /* CryptoShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CryptoShim.swift */; };
-		OBJ_31 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Protocol.swift */; };
-		OBJ_32 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* State.swift */; };
-		OBJ_33 /* WireGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* WireGuard.swift */; };
-		OBJ_40 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_51 /* WireGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* WireGuardTests.swift */; };
-		OBJ_52 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* XCTestManifests.swift */; };
-		OBJ_54 /* WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WireGuard::WireGuard::Product" /* WireGuard.framework */; };
+		CAB2D7432164041100DE311E /* libsodium-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB2D7422164041100DE311E /* libsodium-ios.a */; };
+		CAB2D745216404AE00DE311E /* libsodium-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB2D7422164041100DE311E /* libsodium-ios.a */; };
+		OBJ_226 /* Blake2.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Blake2.swift */; };
+		OBJ_228 /* Blake2_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */; };
+		OBJ_229 /* CBlake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::CBlake2::Product" /* CBlake2.framework */; };
+		OBJ_238 /* Blake2s.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Blake2s.m */; };
+		OBJ_240 /* CBlake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::CBlake2::Product" /* CBlake2.framework */; };
+		OBJ_247 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Package.swift */; };
+		OBJ_252 /* cblake2s.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* cblake2s.c */; };
+		OBJ_259 /* whyme.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_121 /* whyme.c */; };
+		OBJ_266 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* AEAD.swift */; };
+		OBJ_267 /* AEADChaCha20Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* AEADChaCha20Poly1305.swift */; };
+		OBJ_268 /* AES.Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* AES.Cryptors.swift */; };
+		OBJ_269 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* AES.swift */; };
+		OBJ_270 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Array+Extension.swift */; };
+		OBJ_271 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Authenticator.swift */; };
+		OBJ_272 /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* BatchedCollection.swift */; };
+		OBJ_273 /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* Bit.swift */; };
+		OBJ_274 /* BlockCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* BlockCipher.swift */; };
+		OBJ_275 /* BlockDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* BlockDecryptor.swift */; };
+		OBJ_276 /* BlockEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* BlockEncryptor.swift */; };
+		OBJ_277 /* BlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* BlockMode.swift */; };
+		OBJ_278 /* BlockModeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* BlockModeOptions.swift */; };
+		OBJ_279 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* CBC.swift */; };
+		OBJ_280 /* CFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* CFB.swift */; };
+		OBJ_281 /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* CTR.swift */; };
+		OBJ_282 /* CipherModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* CipherModeWorker.swift */; };
+		OBJ_283 /* ECB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* ECB.swift */; };
+		OBJ_284 /* GCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* GCM.swift */; };
+		OBJ_285 /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* OFB.swift */; };
+		OBJ_286 /* PCBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* PCBC.swift */; };
+		OBJ_287 /* Blowfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* Blowfish.swift */; };
+		OBJ_288 /* CMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* CMAC.swift */; };
+		OBJ_289 /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* ChaCha20.swift */; };
+		OBJ_290 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* Checksum.swift */; };
+		OBJ_291 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* Cipher.swift */; };
+		OBJ_292 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* Collection+Extension.swift */; };
+		OBJ_293 /* CompactMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* CompactMap.swift */; };
+		OBJ_294 /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* Cryptor.swift */; };
+		OBJ_295 /* Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* Cryptors.swift */; };
+		OBJ_296 /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* Digest.swift */; };
+		OBJ_297 /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* DigestType.swift */; };
+		OBJ_298 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* AES+Foundation.swift */; };
+		OBJ_299 /* Array+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* Array+Foundation.swift */; };
+		OBJ_300 /* Blowfish+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* Blowfish+Foundation.swift */; };
+		OBJ_301 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* ChaCha20+Foundation.swift */; };
+		OBJ_302 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* Data+Extension.swift */; };
+		OBJ_303 /* HMAC+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* HMAC+Foundation.swift */; };
+		OBJ_304 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* Rabbit+Foundation.swift */; };
+		OBJ_305 /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* String+FoundationExtension.swift */; };
+		OBJ_306 /* Utils+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* Utils+Foundation.swift */; };
+		OBJ_307 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* Generics.swift */; };
+		OBJ_308 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* HKDF.swift */; };
+		OBJ_309 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* HMAC.swift */; };
+		OBJ_310 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* Int+Extension.swift */; };
+		OBJ_311 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* MD5.swift */; };
+		OBJ_312 /* NoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* NoPadding.swift */; };
+		OBJ_313 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* Operators.swift */; };
+		OBJ_314 /* PBKDF1.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* PBKDF1.swift */; };
+		OBJ_315 /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* PBKDF2.swift */; };
+		OBJ_316 /* PKCS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* PKCS5.swift */; };
+		OBJ_317 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* PKCS7.swift */; };
+		OBJ_318 /* PKCS7Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* PKCS7Padding.swift */; };
+		OBJ_319 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* Padding.swift */; };
+		OBJ_320 /* Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* Poly1305.swift */; };
+		OBJ_321 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* Rabbit.swift */; };
+		OBJ_322 /* RandomBytesSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* RandomBytesSequence.swift */; };
+		OBJ_323 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* SHA1.swift */; };
+		OBJ_324 /* SHA2.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* SHA2.swift */; };
+		OBJ_325 /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* SHA3.swift */; };
+		OBJ_326 /* SecureBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* SecureBytes.swift */; };
+		OBJ_327 /* StreamEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_108 /* StreamEncryptor.swift */; };
+		OBJ_328 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_109 /* String+Extension.swift */; };
+		OBJ_329 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* UInt128.swift */; };
+		OBJ_330 /* UInt16+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_111 /* UInt16+Extension.swift */; };
+		OBJ_331 /* UInt32+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* UInt32+Extension.swift */; };
+		OBJ_332 /* UInt64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* UInt64+Extension.swift */; };
+		OBJ_333 /* UInt8+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_114 /* UInt8+Extension.swift */; };
+		OBJ_334 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* Updatable.swift */; };
+		OBJ_335 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* Utils.swift */; };
+		OBJ_336 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_117 /* ZeroPadding.swift */; };
+		OBJ_343 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* Package.swift */; };
+		OBJ_349 /* HKDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* HKDFKit.swift */; };
+		OBJ_351 /* HKDFKit_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */; };
+		OBJ_358 /* HKDFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* HKDFKit.m */; };
+		OBJ_365 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Package.swift */; };
+		OBJ_371 /* Aead.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_187 /* Aead.swift */; };
+		OBJ_372 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_188 /* Auth.swift */; };
+		OBJ_373 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_189 /* Box.swift */; };
+		OBJ_374 /* Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_190 /* Bytes.swift */; };
+		OBJ_375 /* ExitCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_191 /* ExitCode.swift */; };
+		OBJ_376 /* KeyPairGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_193 /* KeyPairGenerator.swift */; };
+		OBJ_377 /* KeyPairProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_194 /* KeyPairProtocol.swift */; };
+		OBJ_378 /* NonceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_195 /* NonceGenerator.swift */; };
+		OBJ_379 /* SecretKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_196 /* SecretKeyGenerator.swift */; };
+		OBJ_380 /* GenericHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_197 /* GenericHash.swift */; };
+		OBJ_381 /* KeyDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_198 /* KeyDerivation.swift */; };
+		OBJ_382 /* KeyExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_199 /* KeyExchange.swift */; };
+		OBJ_383 /* PWHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_200 /* PWHash.swift */; };
+		OBJ_384 /* RandomBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_201 /* RandomBytes.swift */; };
+		OBJ_385 /* SecretBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_202 /* SecretBox.swift */; };
+		OBJ_386 /* SecretStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_203 /* SecretStream.swift */; };
+		OBJ_387 /* ShortHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_204 /* ShortHash.swift */; };
+		OBJ_388 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_205 /* Sign.swift */; };
+		OBJ_389 /* Sodium.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_206 /* Sodium.swift */; };
+		OBJ_390 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_207 /* Stream.swift */; };
+		OBJ_391 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_208 /* Utils.swift */; };
+		OBJ_393 /* Clibsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Sodium::Clibsodium::Product" /* Clibsodium.framework */; };
+		OBJ_400 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_209 /* Package.swift */; };
+		OBJ_406 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Configuration.swift */; };
+		OBJ_407 /* CryptoShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CryptoShim.swift */; };
+		OBJ_408 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Protocol.swift */; };
+		OBJ_409 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* State.swift */; };
+		OBJ_411 /* Blake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::Blake2::Product" /* Blake2.framework */; };
+		OBJ_412 /* Blake2_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */; };
+		OBJ_413 /* CBlake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::CBlake2::Product" /* CBlake2.framework */; };
+		OBJ_414 /* HKDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HKDFKit::HKDFKit::Product" /* HKDFKit.framework */; };
+		OBJ_415 /* HKDFKit_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */; };
+		OBJ_416 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */; };
+		OBJ_417 /* Sodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Sodium::Sodium::Product" /* Sodium.framework */; };
+		OBJ_418 /* Clibsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Sodium::Clibsodium::Product" /* Clibsodium.framework */; };
+		OBJ_432 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_443 /* WireGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* WireGuardTests.swift */; };
+		OBJ_444 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* XCTestManifests.swift */; };
+		OBJ_446 /* WireGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WireGuard::WireGuard::Product" /* WireGuard.framework */; };
+		OBJ_447 /* Blake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::Blake2::Product" /* Blake2.framework */; };
+		OBJ_448 /* Blake2_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */; };
+		OBJ_449 /* CBlake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::CBlake2::Product" /* CBlake2.framework */; };
+		OBJ_450 /* HKDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HKDFKit::HKDFKit::Product" /* HKDFKit.framework */; };
+		OBJ_451 /* HKDFKit_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */; };
+		OBJ_452 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */; };
+		OBJ_453 /* Sodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Sodium::Sodium::Product" /* Sodium.framework */; };
+		OBJ_454 /* Clibsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Sodium::Clibsodium::Product" /* Clibsodium.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CA3417C92163DE4600442E2C /* PBXContainerItemProxy */ = {
+		CAB2D72B2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::Blake2";
+			remoteInfo = Blake2;
+		};
+		CAB2D72C2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::Blake2-ObjC";
+			remoteInfo = "Blake2-ObjC";
+		};
+		CAB2D72D2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::CBlake2";
+			remoteInfo = CBlake2;
+		};
+		CAB2D72E2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::CBlake2";
+			remoteInfo = CBlake2;
+		};
+		CAB2D72F2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::Blake2-ObjC";
+			remoteInfo = "Blake2-ObjC";
+		};
+		CAB2D7302164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::CBlake2";
+			remoteInfo = CBlake2;
+		};
+		CAB2D7312164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "HKDFKit::HKDFKit";
+			remoteInfo = HKDFKit;
+		};
+		CAB2D7322164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "HKDFKit::HKDFKit-ObjC";
+			remoteInfo = "HKDFKit-ObjC";
+		};
+		CAB2D7332164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "HKDFKit::HKDFKit-ObjC";
+			remoteInfo = "HKDFKit-ObjC";
+		};
+		CAB2D7342164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "CryptoSwift::CryptoSwift";
+			remoteInfo = CryptoSwift;
+		};
+		CAB2D7352164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Sodium::Sodium";
+			remoteInfo = Sodium;
+		};
+		CAB2D7362164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Sodium::Clibsodium";
+			remoteInfo = Clibsodium;
+		};
+		CAB2D7372164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Sodium::Clibsodium";
+			remoteInfo = Clibsodium;
+		};
+		CAB2D7382164034400DE311E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WireGuard::WireGuard";
 			remoteInfo = WireGuard;
 		};
-		CA3417CA2163DE4600442E2C /* PBXContainerItemProxy */ = {
+		CAB2D7392164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::Blake2";
+			remoteInfo = Blake2;
+		};
+		CAB2D73A2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::Blake2-ObjC";
+			remoteInfo = "Blake2-ObjC";
+		};
+		CAB2D73B2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Blake2::CBlake2";
+			remoteInfo = CBlake2;
+		};
+		CAB2D73C2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "HKDFKit::HKDFKit";
+			remoteInfo = HKDFKit;
+		};
+		CAB2D73D2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "HKDFKit::HKDFKit-ObjC";
+			remoteInfo = "HKDFKit-ObjC";
+		};
+		CAB2D73E2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "CryptoSwift::CryptoSwift";
+			remoteInfo = CryptoSwift;
+		};
+		CAB2D73F2164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Sodium::Sodium";
+			remoteInfo = Sodium;
+		};
+		CAB2D7402164034400DE311E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Sodium::Clibsodium";
+			remoteInfo = Clibsodium;
+		};
+		CAB2D7412164034500DE311E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -50,87 +321,700 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		"Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Blake2_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Blake2::Blake2::Product" /* Blake2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Blake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Blake2::CBlake2::Product" /* CBlake2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBlake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB2D7422164041100DE311E /* libsodium-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsodium-ios.a"; path = "Sources/libsodium-ios.a"; sourceTree = "<group>"; };
+		"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HKDFKit_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"HKDFKit::HKDFKit::Product" /* HKDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HKDFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* CryptoShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoShim.swift; sourceTree = "<group>"; };
+		OBJ_100 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		OBJ_101 /* Poly1305.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poly1305.swift; sourceTree = "<group>"; };
+		OBJ_102 /* Rabbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rabbit.swift; sourceTree = "<group>"; };
+		OBJ_103 /* RandomBytesSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomBytesSequence.swift; sourceTree = "<group>"; };
+		OBJ_104 /* SHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		OBJ_105 /* SHA2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA2.swift; sourceTree = "<group>"; };
+		OBJ_106 /* SHA3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA3.swift; sourceTree = "<group>"; };
+		OBJ_107 /* SecureBytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureBytes.swift; sourceTree = "<group>"; };
+		OBJ_108 /* StreamEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamEncryptor.swift; sourceTree = "<group>"; };
+		OBJ_109 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		OBJ_110 /* UInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128.swift; sourceTree = "<group>"; };
+		OBJ_111 /* UInt16+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_112 /* UInt32+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_113 /* UInt64+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt64+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_114 /* UInt8+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt8+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_115 /* Updatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
+		OBJ_116 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		OBJ_117 /* ZeroPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroPadding.swift; sourceTree = "<group>"; };
+		OBJ_118 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/CryptoSwift.git-5837969956441132720/Package.swift"; sourceTree = "<group>"; };
 		OBJ_12 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		OBJ_13 /* WireGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireGuard.swift; sourceTree = "<group>"; };
-		OBJ_16 /* WireGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireGuardTests.swift; sourceTree = "<group>"; };
-		OBJ_17 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_18 /* WireGuardTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WireGuardTests; sourceTree = SOURCE_ROOT; };
-		OBJ_19 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = SOURCE_ROOT; };
-		OBJ_20 /* WireGuard.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = WireGuard.xcworkspace; sourceTree = SOURCE_ROOT; };
+		OBJ_121 /* whyme.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = whyme.c; sourceTree = "<group>"; };
+		OBJ_123 /* crypto_stream_salsa2012.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream_salsa2012.h; sourceTree = "<group>"; };
+		OBJ_124 /* sodium_lib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sodium_lib.h; sourceTree = "<group>"; };
+		OBJ_125 /* crypto_auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_auth.h; sourceTree = "<group>"; };
+		OBJ_126 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		OBJ_127 /* crypto_core_hchacha20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_hchacha20.h; sourceTree = "<group>"; };
+		OBJ_128 /* crypto_hash_sha512.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_hash_sha512.h; sourceTree = "<group>"; };
+		OBJ_129 /* crypto_core_curve25519.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_curve25519.h; sourceTree = "<group>"; };
+		OBJ_130 /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		OBJ_131 /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		OBJ_132 /* export.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = export.h; sourceTree = "<group>"; };
+		OBJ_133 /* randombytes_salsa20_random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = randombytes_salsa20_random.h; sourceTree = "<group>"; };
+		OBJ_134 /* crypto_core_salsa20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_salsa20.h; sourceTree = "<group>"; };
+		OBJ_135 /* crypto_shorthash_siphash24.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_shorthash_siphash24.h; sourceTree = "<group>"; };
+		OBJ_136 /* randombytes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = randombytes.h; sourceTree = "<group>"; };
+		OBJ_137 /* crypto_hash_sha256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_hash_sha256.h; sourceTree = "<group>"; };
+		OBJ_138 /* crypto_stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream.h; sourceTree = "<group>"; };
+		OBJ_139 /* crypto_auth_hmacsha512.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_auth_hmacsha512.h; sourceTree = "<group>"; };
+		OBJ_140 /* crypto_aead_xchacha20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_aead_xchacha20poly1305.h; sourceTree = "<group>"; };
+		OBJ_141 /* crypto_stream_salsa20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream_salsa20.h; sourceTree = "<group>"; };
+		OBJ_142 /* crypto_onetimeauth_poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_onetimeauth_poly1305.h; sourceTree = "<group>"; };
+		OBJ_143 /* crypto_kx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_kx.h; sourceTree = "<group>"; };
+		OBJ_144 /* crypto_hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_hash.h; sourceTree = "<group>"; };
+		OBJ_145 /* crypto_sign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_sign.h; sourceTree = "<group>"; };
+		OBJ_146 /* crypto_kdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_kdf.h; sourceTree = "<group>"; };
+		OBJ_147 /* crypto_auth_hmacsha256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_auth_hmacsha256.h; sourceTree = "<group>"; };
+		OBJ_148 /* crypto_box.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_box.h; sourceTree = "<group>"; };
+		OBJ_149 /* crypto_verify_32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_verify_32.h; sourceTree = "<group>"; };
+		OBJ_15 /* WireGuardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireGuardTests.swift; sourceTree = "<group>"; };
+		OBJ_150 /* crypto_stream_xchacha20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream_xchacha20.h; sourceTree = "<group>"; };
+		OBJ_151 /* crypto_core_salsa208.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_salsa208.h; sourceTree = "<group>"; };
+		OBJ_152 /* crypto_auth_hmacsha512256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_auth_hmacsha512256.h; sourceTree = "<group>"; };
+		OBJ_153 /* crypto_aead_chacha20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_aead_chacha20poly1305.h; sourceTree = "<group>"; };
+		OBJ_154 /* randombytes_sysrandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = randombytes_sysrandom.h; sourceTree = "<group>"; };
+		OBJ_155 /* runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = runtime.h; sourceTree = "<group>"; };
+		OBJ_156 /* crypto_stream_salsa208.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream_salsa208.h; sourceTree = "<group>"; };
+		OBJ_157 /* crypto_aead_aes256gcm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_aead_aes256gcm.h; sourceTree = "<group>"; };
+		OBJ_158 /* crypto_core_salsa2012.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_salsa2012.h; sourceTree = "<group>"; };
+		OBJ_159 /* crypto_secretbox_xchacha20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_secretbox_xchacha20poly1305.h; sourceTree = "<group>"; };
+		OBJ_16 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_160 /* crypto_scalarmult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_scalarmult.h; sourceTree = "<group>"; };
+		OBJ_161 /* crypto_pwhash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_pwhash.h; sourceTree = "<group>"; };
+		OBJ_162 /* crypto_verify_16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_verify_16.h; sourceTree = "<group>"; };
+		OBJ_163 /* crypto_stream_chacha20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream_chacha20.h; sourceTree = "<group>"; };
+		OBJ_164 /* crypto_stream_xsalsa20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_stream_xsalsa20.h; sourceTree = "<group>"; };
+		OBJ_165 /* crypto_core_hsalsa20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_hsalsa20.h; sourceTree = "<group>"; };
+		OBJ_166 /* crypto_kdf_blake2b.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_kdf_blake2b.h; sourceTree = "<group>"; };
+		OBJ_167 /* crypto_scalarmult_curve25519.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_scalarmult_curve25519.h; sourceTree = "<group>"; };
+		OBJ_168 /* crypto_shorthash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_shorthash.h; sourceTree = "<group>"; };
+		OBJ_169 /* crypto_pwhash_argon2id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_pwhash_argon2id.h; sourceTree = "<group>"; };
+		OBJ_170 /* crypto_secretstream_xchacha20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_secretstream_xchacha20poly1305.h; sourceTree = "<group>"; };
+		OBJ_171 /* crypto_pwhash_scryptsalsa208sha256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_pwhash_scryptsalsa208sha256.h; sourceTree = "<group>"; };
+		OBJ_172 /* crypto_sign_ed25519.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_sign_ed25519.h; sourceTree = "<group>"; };
+		OBJ_173 /* crypto_onetimeauth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_onetimeauth.h; sourceTree = "<group>"; };
+		OBJ_174 /* crypto_verify_64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_verify_64.h; sourceTree = "<group>"; };
+		OBJ_175 /* crypto_box_curve25519xchacha20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_box_curve25519xchacha20poly1305.h; sourceTree = "<group>"; };
+		OBJ_176 /* crypto_core_ed25519.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_core_ed25519.h; sourceTree = "<group>"; };
+		OBJ_177 /* crypto_pwhash_argon2i.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_pwhash_argon2i.h; sourceTree = "<group>"; };
+		OBJ_178 /* crypto_generichash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_generichash.h; sourceTree = "<group>"; };
+		OBJ_179 /* crypto_secretbox_xsalsa20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_secretbox_xsalsa20poly1305.h; sourceTree = "<group>"; };
+		OBJ_180 /* crypto_secretbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_secretbox.h; sourceTree = "<group>"; };
+		OBJ_181 /* crypto_scalarmult_ed25519.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_scalarmult_ed25519.h; sourceTree = "<group>"; };
+		OBJ_182 /* crypto_box_curve25519xsalsa20poly1305.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_box_curve25519xsalsa20poly1305.h; sourceTree = "<group>"; };
+		OBJ_183 /* crypto_generichash_blake2b.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_generichash_blake2b.h; sourceTree = "<group>"; };
+		OBJ_184 /* crypto_sign_edwards25519sha512batch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypto_sign_edwards25519sha512batch.h; sourceTree = "<group>"; };
+		OBJ_185 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/brandon/WireGuard/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap"; sourceTree = "<group>"; };
+		OBJ_187 /* Aead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aead.swift; sourceTree = "<group>"; };
+		OBJ_188 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		OBJ_189 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		OBJ_190 /* Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bytes.swift; sourceTree = "<group>"; };
+		OBJ_191 /* ExitCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCode.swift; sourceTree = "<group>"; };
+		OBJ_193 /* KeyPairGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairGenerator.swift; sourceTree = "<group>"; };
+		OBJ_194 /* KeyPairProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairProtocol.swift; sourceTree = "<group>"; };
+		OBJ_195 /* NonceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonceGenerator.swift; sourceTree = "<group>"; };
+		OBJ_196 /* SecretKeyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeyGenerator.swift; sourceTree = "<group>"; };
+		OBJ_197 /* GenericHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericHash.swift; sourceTree = "<group>"; };
+		OBJ_198 /* KeyDerivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDerivation.swift; sourceTree = "<group>"; };
+		OBJ_199 /* KeyExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyExchange.swift; sourceTree = "<group>"; };
+		OBJ_20 /* cblake2s.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cblake2s.c; sourceTree = "<group>"; };
+		OBJ_200 /* PWHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWHash.swift; sourceTree = "<group>"; };
+		OBJ_201 /* RandomBytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomBytes.swift; sourceTree = "<group>"; };
+		OBJ_202 /* SecretBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretBox.swift; sourceTree = "<group>"; };
+		OBJ_203 /* SecretStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretStream.swift; sourceTree = "<group>"; };
+		OBJ_204 /* ShortHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortHash.swift; sourceTree = "<group>"; };
+		OBJ_205 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		OBJ_206 /* Sodium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sodium.swift; sourceTree = "<group>"; };
+		OBJ_207 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		OBJ_208 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		OBJ_209 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/swift-sodium.git--591782221006376685/Package.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* cblake2s.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cblake2s.h; sourceTree = "<group>"; };
+		OBJ_23 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap; sourceTree = "<group>"; };
+		OBJ_25 /* Blake2s.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blake2s.m; sourceTree = "<group>"; };
+		OBJ_27 /* Blake2s.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blake2s.h; sourceTree = "<group>"; };
+		OBJ_28 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap; sourceTree = "<group>"; };
+		OBJ_30 /* Blake2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2.swift; sourceTree = "<group>"; };
+		OBJ_31 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/Blake2.git-3773077570198505488/Package.swift"; sourceTree = "<group>"; };
+		OBJ_34 /* HKDFKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDFKit.swift; sourceTree = "<group>"; };
+		OBJ_36 /* HKDFKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKDFKit.m; sourceTree = "<group>"; };
+		OBJ_38 /* HKDFKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKDFKit.h; sourceTree = "<group>"; };
+		OBJ_39 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap; sourceTree = "<group>"; };
+		OBJ_40 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/HKDFKit.git-7895014055952232526/Package.swift"; sourceTree = "<group>"; };
+		OBJ_44 /* AEAD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEAD.swift; sourceTree = "<group>"; };
+		OBJ_45 /* AEADChaCha20Poly1305.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AEADChaCha20Poly1305.swift; sourceTree = "<group>"; };
+		OBJ_46 /* AES.Cryptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES.Cryptors.swift; sourceTree = "<group>"; };
+		OBJ_47 /* AES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
+		OBJ_48 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_49 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		OBJ_50 /* BatchedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchedCollection.swift; sourceTree = "<group>"; };
+		OBJ_51 /* Bit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bit.swift; sourceTree = "<group>"; };
+		OBJ_52 /* BlockCipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCipher.swift; sourceTree = "<group>"; };
+		OBJ_53 /* BlockDecryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDecryptor.swift; sourceTree = "<group>"; };
+		OBJ_54 /* BlockEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockEncryptor.swift; sourceTree = "<group>"; };
+		OBJ_56 /* BlockMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMode.swift; sourceTree = "<group>"; };
+		OBJ_57 /* BlockModeOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockModeOptions.swift; sourceTree = "<group>"; };
+		OBJ_58 /* CBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBC.swift; sourceTree = "<group>"; };
+		OBJ_59 /* CFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFB.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_60 /* CTR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTR.swift; sourceTree = "<group>"; };
+		OBJ_61 /* CipherModeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherModeWorker.swift; sourceTree = "<group>"; };
+		OBJ_62 /* ECB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECB.swift; sourceTree = "<group>"; };
+		OBJ_63 /* GCM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCM.swift; sourceTree = "<group>"; };
+		OBJ_64 /* OFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFB.swift; sourceTree = "<group>"; };
+		OBJ_65 /* PCBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCBC.swift; sourceTree = "<group>"; };
+		OBJ_66 /* Blowfish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blowfish.swift; sourceTree = "<group>"; };
+		OBJ_67 /* CMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMAC.swift; sourceTree = "<group>"; };
+		OBJ_68 /* ChaCha20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaCha20.swift; sourceTree = "<group>"; };
+		OBJ_69 /* Checksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
+		OBJ_70 /* Cipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cipher.swift; sourceTree = "<group>"; };
+		OBJ_71 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_72 /* CompactMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactMap.swift; sourceTree = "<group>"; };
+		OBJ_73 /* Cryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptor.swift; sourceTree = "<group>"; };
+		OBJ_74 /* Cryptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptors.swift; sourceTree = "<group>"; };
+		OBJ_75 /* Digest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
+		OBJ_76 /* DigestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigestType.swift; sourceTree = "<group>"; };
+		OBJ_78 /* AES+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AES+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_79 /* Array+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_80 /* Blowfish+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blowfish+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_81 /* ChaCha20+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChaCha20+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_82 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_83 /* HMAC+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HMAC+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_84 /* Rabbit+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rabbit+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_85 /* String+FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FoundationExtension.swift"; sourceTree = "<group>"; };
+		OBJ_86 /* Utils+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Foundation.swift"; sourceTree = "<group>"; };
+		OBJ_87 /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		OBJ_88 /* HKDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDF.swift; sourceTree = "<group>"; };
+		OBJ_89 /* HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
 		OBJ_9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		OBJ_90 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		OBJ_91 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
+		OBJ_92 /* NoPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPadding.swift; sourceTree = "<group>"; };
+		OBJ_93 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		OBJ_95 /* PBKDF1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBKDF1.swift; sourceTree = "<group>"; };
+		OBJ_96 /* PBKDF2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBKDF2.swift; sourceTree = "<group>"; };
+		OBJ_97 /* PKCS5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCS5.swift; sourceTree = "<group>"; };
+		OBJ_98 /* PKCS7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCS7.swift; sourceTree = "<group>"; };
+		OBJ_99 /* PKCS7Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCS7Padding.swift; sourceTree = "<group>"; };
+		"Sodium::Clibsodium::Product" /* Clibsodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Clibsodium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Sodium::Sodium::Product" /* Sodium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sodium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WireGuard::WireGuard::Product" /* WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_34 /* Frameworks */ = {
+		OBJ_227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_228 /* Blake2_ObjC.framework in Frameworks */,
+				OBJ_229 /* CBlake2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_239 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_240 /* CBlake2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_253 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_53 /* Frameworks */ = {
+		OBJ_260 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_54 /* WireGuard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_337 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_351 /* HKDFKit_ObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_392 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_393 /* Clibsodium.framework in Frameworks */,
+				CAB2D745216404AE00DE311E /* libsodium-ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				CAB2D7432164041100DE311E /* libsodium-ios.a in Frameworks */,
+				OBJ_411 /* Blake2.framework in Frameworks */,
+				OBJ_412 /* Blake2_ObjC.framework in Frameworks */,
+				OBJ_413 /* CBlake2.framework in Frameworks */,
+				OBJ_414 /* HKDFKit.framework in Frameworks */,
+				OBJ_415 /* HKDFKit_ObjC.framework in Frameworks */,
+				OBJ_416 /* CryptoSwift.framework in Frameworks */,
+				OBJ_417 /* Sodium.framework in Frameworks */,
+				OBJ_418 /* Clibsodium.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_446 /* WireGuard.framework in Frameworks */,
+				OBJ_447 /* Blake2.framework in Frameworks */,
+				OBJ_448 /* Blake2_ObjC.framework in Frameworks */,
+				OBJ_449 /* CBlake2.framework in Frameworks */,
+				OBJ_450 /* HKDFKit.framework in Frameworks */,
+				OBJ_451 /* HKDFKit_ObjC.framework in Frameworks */,
+				OBJ_452 /* CryptoSwift.framework in Frameworks */,
+				OBJ_453 /* Sodium.framework in Frameworks */,
+				OBJ_454 /* Clibsodium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_14 /* Tests */ = {
+		CAB2D744216404AE00DE311E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* WireGuardTests */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		OBJ_119 /* Sodium 0.6.8 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_120 /* Clibsodium */,
+				OBJ_186 /* Sodium */,
+				OBJ_209 /* Package.swift */,
+			);
+			name = "Sodium 0.6.8";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_120 /* Clibsodium */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_121 /* whyme.c */,
+				OBJ_122 /* include */,
+			);
+			name = Clibsodium;
+			path = ".build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_122 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_123 /* crypto_stream_salsa2012.h */,
+				OBJ_124 /* sodium_lib.h */,
+				OBJ_125 /* crypto_auth.h */,
+				OBJ_126 /* utils.h */,
+				OBJ_127 /* crypto_core_hchacha20.h */,
+				OBJ_128 /* crypto_hash_sha512.h */,
+				OBJ_129 /* crypto_core_curve25519.h */,
+				OBJ_130 /* core.h */,
+				OBJ_131 /* version.h */,
+				OBJ_132 /* export.h */,
+				OBJ_133 /* randombytes_salsa20_random.h */,
+				OBJ_134 /* crypto_core_salsa20.h */,
+				OBJ_135 /* crypto_shorthash_siphash24.h */,
+				OBJ_136 /* randombytes.h */,
+				OBJ_137 /* crypto_hash_sha256.h */,
+				OBJ_138 /* crypto_stream.h */,
+				OBJ_139 /* crypto_auth_hmacsha512.h */,
+				OBJ_140 /* crypto_aead_xchacha20poly1305.h */,
+				OBJ_141 /* crypto_stream_salsa20.h */,
+				OBJ_142 /* crypto_onetimeauth_poly1305.h */,
+				OBJ_143 /* crypto_kx.h */,
+				OBJ_144 /* crypto_hash.h */,
+				OBJ_145 /* crypto_sign.h */,
+				OBJ_146 /* crypto_kdf.h */,
+				OBJ_147 /* crypto_auth_hmacsha256.h */,
+				OBJ_148 /* crypto_box.h */,
+				OBJ_149 /* crypto_verify_32.h */,
+				OBJ_150 /* crypto_stream_xchacha20.h */,
+				OBJ_151 /* crypto_core_salsa208.h */,
+				OBJ_152 /* crypto_auth_hmacsha512256.h */,
+				OBJ_153 /* crypto_aead_chacha20poly1305.h */,
+				OBJ_154 /* randombytes_sysrandom.h */,
+				OBJ_155 /* runtime.h */,
+				OBJ_156 /* crypto_stream_salsa208.h */,
+				OBJ_157 /* crypto_aead_aes256gcm.h */,
+				OBJ_158 /* crypto_core_salsa2012.h */,
+				OBJ_159 /* crypto_secretbox_xchacha20poly1305.h */,
+				OBJ_160 /* crypto_scalarmult.h */,
+				OBJ_161 /* crypto_pwhash.h */,
+				OBJ_162 /* crypto_verify_16.h */,
+				OBJ_163 /* crypto_stream_chacha20.h */,
+				OBJ_164 /* crypto_stream_xsalsa20.h */,
+				OBJ_165 /* crypto_core_hsalsa20.h */,
+				OBJ_166 /* crypto_kdf_blake2b.h */,
+				OBJ_167 /* crypto_scalarmult_curve25519.h */,
+				OBJ_168 /* crypto_shorthash.h */,
+				OBJ_169 /* crypto_pwhash_argon2id.h */,
+				OBJ_170 /* crypto_secretstream_xchacha20poly1305.h */,
+				OBJ_171 /* crypto_pwhash_scryptsalsa208sha256.h */,
+				OBJ_172 /* crypto_sign_ed25519.h */,
+				OBJ_173 /* crypto_onetimeauth.h */,
+				OBJ_174 /* crypto_verify_64.h */,
+				OBJ_175 /* crypto_box_curve25519xchacha20poly1305.h */,
+				OBJ_176 /* crypto_core_ed25519.h */,
+				OBJ_177 /* crypto_pwhash_argon2i.h */,
+				OBJ_178 /* crypto_generichash.h */,
+				OBJ_179 /* crypto_secretbox_xsalsa20poly1305.h */,
+				OBJ_180 /* crypto_secretbox.h */,
+				OBJ_181 /* crypto_scalarmult_ed25519.h */,
+				OBJ_182 /* crypto_box_curve25519xsalsa20poly1305.h */,
+				OBJ_183 /* crypto_generichash_blake2b.h */,
+				OBJ_184 /* crypto_sign_edwards25519sha512batch.h */,
+				OBJ_185 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_13 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* WireGuardTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_15 /* WireGuardTests */ = {
+		OBJ_14 /* WireGuardTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_16 /* WireGuardTests.swift */,
-				OBJ_17 /* XCTestManifests.swift */,
+				OBJ_15 /* WireGuardTests.swift */,
+				OBJ_16 /* XCTestManifests.swift */,
 			);
 			name = WireGuardTests;
 			path = Tests/WireGuardTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_21 /* Products */ = {
+		OBJ_17 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */,
+				OBJ_18 /* Blake2 1.0.1 */,
+				OBJ_32 /* HKDFKit 1.0.0 */,
+				OBJ_41 /* CryptoSwift 0.12.0 */,
+				OBJ_119 /* Sodium 0.6.8 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_18 /* Blake2 1.0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_19 /* CBlake2 */,
+				OBJ_24 /* Blake2-ObjC */,
+				OBJ_29 /* Blake2 */,
+				OBJ_31 /* Package.swift */,
+			);
+			name = "Blake2 1.0.1";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_186 /* Sodium */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_187 /* Aead.swift */,
+				OBJ_188 /* Auth.swift */,
+				OBJ_189 /* Box.swift */,
+				OBJ_190 /* Bytes.swift */,
+				OBJ_191 /* ExitCode.swift */,
+				OBJ_192 /* Generators */,
+				OBJ_197 /* GenericHash.swift */,
+				OBJ_198 /* KeyDerivation.swift */,
+				OBJ_199 /* KeyExchange.swift */,
+				OBJ_200 /* PWHash.swift */,
+				OBJ_201 /* RandomBytes.swift */,
+				OBJ_202 /* SecretBox.swift */,
+				OBJ_203 /* SecretStream.swift */,
+				OBJ_204 /* ShortHash.swift */,
+				OBJ_205 /* Sign.swift */,
+				OBJ_206 /* Sodium.swift */,
+				OBJ_207 /* Stream.swift */,
+				OBJ_208 /* Utils.swift */,
+			);
+			name = Sodium;
+			path = ".build/checkouts/swift-sodium.git--591782221006376685/Sources/Sodium";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_19 /* CBlake2 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_20 /* cblake2s.c */,
+				OBJ_21 /* include */,
+			);
+			name = CBlake2;
+			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_192 /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_193 /* KeyPairGenerator.swift */,
+				OBJ_194 /* KeyPairProtocol.swift */,
+				OBJ_195 /* NonceGenerator.swift */,
+				OBJ_196 /* SecretKeyGenerator.swift */,
+			);
+			path = Generators;
+			sourceTree = "<group>";
+		};
+		OBJ_21 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_22 /* cblake2s.h */,
+				OBJ_23 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_210 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */,
+				"Sodium::Clibsodium::Product" /* Clibsodium.framework */,
 				"WireGuard::WireGuard::Product" /* WireGuard.framework */,
+				"Blake2::Blake2::Product" /* Blake2.framework */,
+				"HKDFKit::HKDFKit::Product" /* HKDFKit.framework */,
+				"Sodium::Sodium::Product" /* Sodium.framework */,
+				"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */,
+				"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */,
+				"HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */,
+				"Blake2::CBlake2::Product" /* CBlake2.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_24 /* Blake2-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_25 /* Blake2s.m */,
+				OBJ_26 /* include */,
+			);
+			name = "Blake2-ObjC";
+			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_26 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_27 /* Blake2s.h */,
+				OBJ_28 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_29 /* Blake2 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* Blake2.swift */,
+			);
+			name = Blake2;
+			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_32 /* HKDFKit 1.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_33 /* HKDFKit */,
+				OBJ_35 /* HKDFKit-ObjC */,
+				OBJ_40 /* Package.swift */,
+			);
+			name = "HKDFKit 1.0.0";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_33 /* HKDFKit */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_34 /* HKDFKit.swift */,
+			);
+			name = HKDFKit;
+			path = ".build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_35 /* HKDFKit-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_36 /* HKDFKit.m */,
+				OBJ_37 /* include */,
+			);
+			name = "HKDFKit-ObjC";
+			path = ".build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_37 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_38 /* HKDFKit.h */,
+				OBJ_39 /* module.modulemap */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_41 /* CryptoSwift 0.12.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_42 /* CryptoSwift */,
+				OBJ_118 /* Package.swift */,
+			);
+			name = "CryptoSwift 0.12.0";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_42 /* CryptoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_43 /* AEAD */,
+				OBJ_46 /* AES.Cryptors.swift */,
+				OBJ_47 /* AES.swift */,
+				OBJ_48 /* Array+Extension.swift */,
+				OBJ_49 /* Authenticator.swift */,
+				OBJ_50 /* BatchedCollection.swift */,
+				OBJ_51 /* Bit.swift */,
+				OBJ_52 /* BlockCipher.swift */,
+				OBJ_53 /* BlockDecryptor.swift */,
+				OBJ_54 /* BlockEncryptor.swift */,
+				OBJ_55 /* BlockMode */,
+				OBJ_66 /* Blowfish.swift */,
+				OBJ_67 /* CMAC.swift */,
+				OBJ_68 /* ChaCha20.swift */,
+				OBJ_69 /* Checksum.swift */,
+				OBJ_70 /* Cipher.swift */,
+				OBJ_71 /* Collection+Extension.swift */,
+				OBJ_72 /* CompactMap.swift */,
+				OBJ_73 /* Cryptor.swift */,
+				OBJ_74 /* Cryptors.swift */,
+				OBJ_75 /* Digest.swift */,
+				OBJ_76 /* DigestType.swift */,
+				OBJ_77 /* Foundation */,
+				OBJ_87 /* Generics.swift */,
+				OBJ_88 /* HKDF.swift */,
+				OBJ_89 /* HMAC.swift */,
+				OBJ_90 /* Int+Extension.swift */,
+				OBJ_91 /* MD5.swift */,
+				OBJ_92 /* NoPadding.swift */,
+				OBJ_93 /* Operators.swift */,
+				OBJ_94 /* PKCS */,
+				OBJ_100 /* Padding.swift */,
+				OBJ_101 /* Poly1305.swift */,
+				OBJ_102 /* Rabbit.swift */,
+				OBJ_103 /* RandomBytesSequence.swift */,
+				OBJ_104 /* SHA1.swift */,
+				OBJ_105 /* SHA2.swift */,
+				OBJ_106 /* SHA3.swift */,
+				OBJ_107 /* SecureBytes.swift */,
+				OBJ_108 /* StreamEncryptor.swift */,
+				OBJ_109 /* String+Extension.swift */,
+				OBJ_110 /* UInt128.swift */,
+				OBJ_111 /* UInt16+Extension.swift */,
+				OBJ_112 /* UInt32+Extension.swift */,
+				OBJ_113 /* UInt64+Extension.swift */,
+				OBJ_114 /* UInt8+Extension.swift */,
+				OBJ_115 /* Updatable.swift */,
+				OBJ_116 /* Utils.swift */,
+				OBJ_117 /* ZeroPadding.swift */,
+			);
+			name = CryptoSwift;
+			path = ".build/checkouts/CryptoSwift.git-5837969956441132720/Sources/CryptoSwift";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_43 /* AEAD */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_44 /* AEAD.swift */,
+				OBJ_45 /* AEADChaCha20Poly1305.swift */,
+			);
+			path = AEAD;
+			sourceTree = "<group>";
+		};
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_14 /* Tests */,
-				OBJ_18 /* WireGuardTests */,
-				OBJ_19 /* Pods */,
-				OBJ_20 /* WireGuard.xcworkspace */,
-				OBJ_21 /* Products */,
+				OBJ_13 /* Tests */,
+				OBJ_17 /* Dependencies */,
+				OBJ_210 /* Products */,
+				CAB2D744216404AE00DE311E /* Frameworks */,
 			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_55 /* BlockMode */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_56 /* BlockMode.swift */,
+				OBJ_57 /* BlockModeOptions.swift */,
+				OBJ_58 /* CBC.swift */,
+				OBJ_59 /* CFB.swift */,
+				OBJ_60 /* CTR.swift */,
+				OBJ_61 /* CipherModeWorker.swift */,
+				OBJ_62 /* ECB.swift */,
+				OBJ_63 /* GCM.swift */,
+				OBJ_64 /* OFB.swift */,
+				OBJ_65 /* PCBC.swift */,
+			);
+			path = BlockMode;
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CAB2D7422164041100DE311E /* libsodium-ios.a */,
 				OBJ_8 /* WireGuard */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_77 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_78 /* AES+Foundation.swift */,
+				OBJ_79 /* Array+Foundation.swift */,
+				OBJ_80 /* Blowfish+Foundation.swift */,
+				OBJ_81 /* ChaCha20+Foundation.swift */,
+				OBJ_82 /* Data+Extension.swift */,
+				OBJ_83 /* HMAC+Foundation.swift */,
+				OBJ_84 /* Rabbit+Foundation.swift */,
+				OBJ_85 /* String+FoundationExtension.swift */,
+				OBJ_86 /* Utils+Foundation.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
 		};
 		OBJ_8 /* WireGuard */ = {
 			isa = PBXGroup;
@@ -139,20 +1023,220 @@
 				OBJ_10 /* CryptoShim.swift */,
 				OBJ_11 /* Protocol.swift */,
 				OBJ_12 /* State.swift */,
-				OBJ_13 /* WireGuard.swift */,
 			);
 			name = WireGuard;
 			path = Sources/WireGuard;
 			sourceTree = SOURCE_ROOT;
 		};
+		OBJ_94 /* PKCS */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_95 /* PBKDF1.swift */,
+				OBJ_96 /* PBKDF2.swift */,
+				OBJ_97 /* PKCS5.swift */,
+				OBJ_98 /* PKCS7.swift */,
+				OBJ_99 /* PKCS7Padding.swift */,
+			);
+			path = PKCS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		"Blake2::Blake2" /* Blake2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_222 /* Build configuration list for PBXNativeTarget "Blake2" */;
+			buildPhases = (
+				OBJ_225 /* Sources */,
+				OBJ_227 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_230 /* PBXTargetDependency */,
+				OBJ_232 /* PBXTargetDependency */,
+			);
+			name = Blake2;
+			productName = Blake2;
+			productReference = "Blake2::Blake2::Product" /* Blake2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Blake2::Blake2-ObjC" /* Blake2-ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_234 /* Build configuration list for PBXNativeTarget "Blake2-ObjC" */;
+			buildPhases = (
+				OBJ_237 /* Sources */,
+				OBJ_239 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_241 /* PBXTargetDependency */,
+			);
+			name = "Blake2-ObjC";
+			productName = Blake2_ObjC;
+			productReference = "Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Blake2::CBlake2" /* CBlake2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_248 /* Build configuration list for PBXNativeTarget "CBlake2" */;
+			buildPhases = (
+				OBJ_251 /* Sources */,
+				OBJ_253 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CBlake2;
+			productName = CBlake2;
+			productReference = "Blake2::CBlake2::Product" /* CBlake2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Blake2::SwiftPMPackageDescription" /* Blake2PackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_243 /* Build configuration list for PBXNativeTarget "Blake2PackageDescription" */;
+			buildPhases = (
+				OBJ_246 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blake2PackageDescription;
+			productName = Blake2PackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"CryptoSwift::CryptoSwift" /* CryptoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_262 /* Build configuration list for PBXNativeTarget "CryptoSwift" */;
+			buildPhases = (
+				OBJ_265 /* Sources */,
+				OBJ_337 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoSwift;
+			productName = CryptoSwift;
+			productReference = "CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"CryptoSwift::SwiftPMPackageDescription" /* CryptoSwiftPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_339 /* Build configuration list for PBXNativeTarget "CryptoSwiftPackageDescription" */;
+			buildPhases = (
+				OBJ_342 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoSwiftPackageDescription;
+			productName = CryptoSwiftPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"HKDFKit::HKDFKit" /* HKDFKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_345 /* Build configuration list for PBXNativeTarget "HKDFKit" */;
+			buildPhases = (
+				OBJ_348 /* Sources */,
+				OBJ_350 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_352 /* PBXTargetDependency */,
+			);
+			name = HKDFKit;
+			productName = HKDFKit;
+			productReference = "HKDFKit::HKDFKit::Product" /* HKDFKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_354 /* Build configuration list for PBXNativeTarget "HKDFKit-ObjC" */;
+			buildPhases = (
+				OBJ_357 /* Sources */,
+				OBJ_359 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HKDFKit-ObjC";
+			productName = HKDFKit_ObjC;
+			productReference = "HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"HKDFKit::SwiftPMPackageDescription" /* HKDFKitPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_361 /* Build configuration list for PBXNativeTarget "HKDFKitPackageDescription" */;
+			buildPhases = (
+				OBJ_364 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HKDFKitPackageDescription;
+			productName = HKDFKitPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"Sodium::Clibsodium" /* Clibsodium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_255 /* Build configuration list for PBXNativeTarget "Clibsodium" */;
+			buildPhases = (
+				OBJ_258 /* Sources */,
+				OBJ_260 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clibsodium;
+			productName = Clibsodium;
+			productReference = "Sodium::Clibsodium::Product" /* Clibsodium.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Sodium::Sodium" /* Sodium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_367 /* Build configuration list for PBXNativeTarget "Sodium" */;
+			buildPhases = (
+				OBJ_370 /* Sources */,
+				OBJ_392 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_394 /* PBXTargetDependency */,
+			);
+			name = Sodium;
+			productName = Sodium;
+			productReference = "Sodium::Sodium::Product" /* Sodium.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Sodium::SwiftPMPackageDescription" /* SodiumPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_396 /* Build configuration list for PBXNativeTarget "SodiumPackageDescription" */;
+			buildPhases = (
+				OBJ_399 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SodiumPackageDescription;
+			productName = SodiumPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
 		"WireGuard::SwiftPMPackageDescription" /* WireGuardPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_36 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */;
+			buildConfigurationList = OBJ_428 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */;
 			buildPhases = (
-				OBJ_39 /* Sources */,
+				OBJ_431 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -164,14 +1248,22 @@
 		};
 		"WireGuard::WireGuard" /* WireGuard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "WireGuard" */;
+			buildConfigurationList = OBJ_402 /* Build configuration list for PBXNativeTarget "WireGuard" */;
 			buildPhases = (
-				OBJ_28 /* Sources */,
-				OBJ_34 /* Frameworks */,
+				OBJ_405 /* Sources */,
+				OBJ_410 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				OBJ_419 /* PBXTargetDependency */,
+				OBJ_420 /* PBXTargetDependency */,
+				OBJ_421 /* PBXTargetDependency */,
+				OBJ_422 /* PBXTargetDependency */,
+				OBJ_423 /* PBXTargetDependency */,
+				OBJ_424 /* PBXTargetDependency */,
+				OBJ_425 /* PBXTargetDependency */,
+				OBJ_426 /* PBXTargetDependency */,
 			);
 			name = WireGuard;
 			productName = WireGuard;
@@ -180,15 +1272,23 @@
 		};
 		"WireGuard::WireGuardTests" /* WireGuardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_47 /* Build configuration list for PBXNativeTarget "WireGuardTests" */;
+			buildConfigurationList = OBJ_439 /* Build configuration list for PBXNativeTarget "WireGuardTests" */;
 			buildPhases = (
-				OBJ_50 /* Sources */,
-				OBJ_53 /* Frameworks */,
+				OBJ_442 /* Sources */,
+				OBJ_445 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_55 /* PBXTargetDependency */,
+				OBJ_455 /* PBXTargetDependency */,
+				OBJ_456 /* PBXTargetDependency */,
+				OBJ_457 /* PBXTargetDependency */,
+				OBJ_458 /* PBXTargetDependency */,
+				OBJ_459 /* PBXTargetDependency */,
+				OBJ_460 /* PBXTargetDependency */,
+				OBJ_461 /* PBXTargetDependency */,
+				OBJ_462 /* PBXTargetDependency */,
+				OBJ_463 /* PBXTargetDependency */,
 			);
 			name = WireGuardTests;
 			productName = WireGuardTests;
@@ -202,14 +1302,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
-				TargetAttributes = {
-					"WireGuard::WireGuard" = {
-						LastSwiftMigration = 1000;
-					};
-					"WireGuard::WireGuardTests" = {
-						LastSwiftMigration = 1000;
-					};
-				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "WireGuard" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -218,11 +1310,23 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_21 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_210 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				"Blake2::Blake2" /* Blake2 */,
+				"Blake2::Blake2-ObjC" /* Blake2-ObjC */,
+				"Blake2::SwiftPMPackageDescription" /* Blake2PackageDescription */,
+				"Blake2::CBlake2" /* CBlake2 */,
+				"Sodium::Clibsodium" /* Clibsodium */,
+				"CryptoSwift::CryptoSwift" /* CryptoSwift */,
+				"CryptoSwift::SwiftPMPackageDescription" /* CryptoSwiftPackageDescription */,
+				"HKDFKit::HKDFKit" /* HKDFKit */,
+				"HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */,
+				"HKDFKit::SwiftPMPackageDescription" /* HKDFKitPackageDescription */,
+				"Sodium::Sodium" /* Sodium */,
+				"Sodium::SwiftPMPackageDescription" /* SodiumPackageDescription */,
 				"WireGuard::WireGuard" /* WireGuard */,
 				"WireGuard::SwiftPMPackageDescription" /* WireGuardPackageDescription */,
 				"WireGuard::WireGuardPackageTests::ProductTarget" /* WireGuardPackageTests */,
@@ -232,52 +1336,342 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_28 /* Sources */ = {
+		OBJ_225 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_29 /* Configuration.swift in Sources */,
-				OBJ_30 /* CryptoShim.swift in Sources */,
-				OBJ_31 /* Protocol.swift in Sources */,
-				OBJ_32 /* State.swift in Sources */,
-				OBJ_33 /* WireGuard.swift in Sources */,
+				OBJ_226 /* Blake2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_39 /* Sources */ = {
+		OBJ_237 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_40 /* Package.swift in Sources */,
+				OBJ_238 /* Blake2s.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_50 /* Sources */ = {
+		OBJ_246 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_51 /* WireGuardTests.swift in Sources */,
-				OBJ_52 /* XCTestManifests.swift in Sources */,
+				OBJ_247 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_252 /* cblake2s.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_259 /* whyme.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_266 /* AEAD.swift in Sources */,
+				OBJ_267 /* AEADChaCha20Poly1305.swift in Sources */,
+				OBJ_268 /* AES.Cryptors.swift in Sources */,
+				OBJ_269 /* AES.swift in Sources */,
+				OBJ_270 /* Array+Extension.swift in Sources */,
+				OBJ_271 /* Authenticator.swift in Sources */,
+				OBJ_272 /* BatchedCollection.swift in Sources */,
+				OBJ_273 /* Bit.swift in Sources */,
+				OBJ_274 /* BlockCipher.swift in Sources */,
+				OBJ_275 /* BlockDecryptor.swift in Sources */,
+				OBJ_276 /* BlockEncryptor.swift in Sources */,
+				OBJ_277 /* BlockMode.swift in Sources */,
+				OBJ_278 /* BlockModeOptions.swift in Sources */,
+				OBJ_279 /* CBC.swift in Sources */,
+				OBJ_280 /* CFB.swift in Sources */,
+				OBJ_281 /* CTR.swift in Sources */,
+				OBJ_282 /* CipherModeWorker.swift in Sources */,
+				OBJ_283 /* ECB.swift in Sources */,
+				OBJ_284 /* GCM.swift in Sources */,
+				OBJ_285 /* OFB.swift in Sources */,
+				OBJ_286 /* PCBC.swift in Sources */,
+				OBJ_287 /* Blowfish.swift in Sources */,
+				OBJ_288 /* CMAC.swift in Sources */,
+				OBJ_289 /* ChaCha20.swift in Sources */,
+				OBJ_290 /* Checksum.swift in Sources */,
+				OBJ_291 /* Cipher.swift in Sources */,
+				OBJ_292 /* Collection+Extension.swift in Sources */,
+				OBJ_293 /* CompactMap.swift in Sources */,
+				OBJ_294 /* Cryptor.swift in Sources */,
+				OBJ_295 /* Cryptors.swift in Sources */,
+				OBJ_296 /* Digest.swift in Sources */,
+				OBJ_297 /* DigestType.swift in Sources */,
+				OBJ_298 /* AES+Foundation.swift in Sources */,
+				OBJ_299 /* Array+Foundation.swift in Sources */,
+				OBJ_300 /* Blowfish+Foundation.swift in Sources */,
+				OBJ_301 /* ChaCha20+Foundation.swift in Sources */,
+				OBJ_302 /* Data+Extension.swift in Sources */,
+				OBJ_303 /* HMAC+Foundation.swift in Sources */,
+				OBJ_304 /* Rabbit+Foundation.swift in Sources */,
+				OBJ_305 /* String+FoundationExtension.swift in Sources */,
+				OBJ_306 /* Utils+Foundation.swift in Sources */,
+				OBJ_307 /* Generics.swift in Sources */,
+				OBJ_308 /* HKDF.swift in Sources */,
+				OBJ_309 /* HMAC.swift in Sources */,
+				OBJ_310 /* Int+Extension.swift in Sources */,
+				OBJ_311 /* MD5.swift in Sources */,
+				OBJ_312 /* NoPadding.swift in Sources */,
+				OBJ_313 /* Operators.swift in Sources */,
+				OBJ_314 /* PBKDF1.swift in Sources */,
+				OBJ_315 /* PBKDF2.swift in Sources */,
+				OBJ_316 /* PKCS5.swift in Sources */,
+				OBJ_317 /* PKCS7.swift in Sources */,
+				OBJ_318 /* PKCS7Padding.swift in Sources */,
+				OBJ_319 /* Padding.swift in Sources */,
+				OBJ_320 /* Poly1305.swift in Sources */,
+				OBJ_321 /* Rabbit.swift in Sources */,
+				OBJ_322 /* RandomBytesSequence.swift in Sources */,
+				OBJ_323 /* SHA1.swift in Sources */,
+				OBJ_324 /* SHA2.swift in Sources */,
+				OBJ_325 /* SHA3.swift in Sources */,
+				OBJ_326 /* SecureBytes.swift in Sources */,
+				OBJ_327 /* StreamEncryptor.swift in Sources */,
+				OBJ_328 /* String+Extension.swift in Sources */,
+				OBJ_329 /* UInt128.swift in Sources */,
+				OBJ_330 /* UInt16+Extension.swift in Sources */,
+				OBJ_331 /* UInt32+Extension.swift in Sources */,
+				OBJ_332 /* UInt64+Extension.swift in Sources */,
+				OBJ_333 /* UInt8+Extension.swift in Sources */,
+				OBJ_334 /* Updatable.swift in Sources */,
+				OBJ_335 /* Utils.swift in Sources */,
+				OBJ_336 /* ZeroPadding.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_343 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_349 /* HKDFKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_358 /* HKDFKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_364 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_365 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_371 /* Aead.swift in Sources */,
+				OBJ_372 /* Auth.swift in Sources */,
+				OBJ_373 /* Box.swift in Sources */,
+				OBJ_374 /* Bytes.swift in Sources */,
+				OBJ_375 /* ExitCode.swift in Sources */,
+				OBJ_376 /* KeyPairGenerator.swift in Sources */,
+				OBJ_377 /* KeyPairProtocol.swift in Sources */,
+				OBJ_378 /* NonceGenerator.swift in Sources */,
+				OBJ_379 /* SecretKeyGenerator.swift in Sources */,
+				OBJ_380 /* GenericHash.swift in Sources */,
+				OBJ_381 /* KeyDerivation.swift in Sources */,
+				OBJ_382 /* KeyExchange.swift in Sources */,
+				OBJ_383 /* PWHash.swift in Sources */,
+				OBJ_384 /* RandomBytes.swift in Sources */,
+				OBJ_385 /* SecretBox.swift in Sources */,
+				OBJ_386 /* SecretStream.swift in Sources */,
+				OBJ_387 /* ShortHash.swift in Sources */,
+				OBJ_388 /* Sign.swift in Sources */,
+				OBJ_389 /* Sodium.swift in Sources */,
+				OBJ_390 /* Stream.swift in Sources */,
+				OBJ_391 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_400 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_405 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_406 /* Configuration.swift in Sources */,
+				OBJ_407 /* CryptoShim.swift in Sources */,
+				OBJ_408 /* Protocol.swift in Sources */,
+				OBJ_409 /* State.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_432 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_443 /* WireGuardTests.swift in Sources */,
+				OBJ_444 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_45 /* PBXTargetDependency */ = {
+		OBJ_230 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::Blake2-ObjC" /* Blake2-ObjC */;
+			targetProxy = CAB2D72C2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_232 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::CBlake2" /* CBlake2 */;
+			targetProxy = CAB2D72E2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_241 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::CBlake2" /* CBlake2 */;
+			targetProxy = CAB2D72D2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_352 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */;
+			targetProxy = CAB2D7322164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Sodium::Clibsodium" /* Clibsodium */;
+			targetProxy = CAB2D7362164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_419 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::Blake2" /* Blake2 */;
+			targetProxy = CAB2D72B2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_420 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::Blake2-ObjC" /* Blake2-ObjC */;
+			targetProxy = CAB2D72F2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_421 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::CBlake2" /* CBlake2 */;
+			targetProxy = CAB2D7302164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_422 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "HKDFKit::HKDFKit" /* HKDFKit */;
+			targetProxy = CAB2D7312164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_423 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */;
+			targetProxy = CAB2D7332164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_424 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "CryptoSwift::CryptoSwift" /* CryptoSwift */;
+			targetProxy = CAB2D7342164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_425 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Sodium::Sodium" /* Sodium */;
+			targetProxy = CAB2D7352164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_426 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Sodium::Clibsodium" /* Clibsodium */;
+			targetProxy = CAB2D7372164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WireGuard::WireGuardTests" /* WireGuardTests */;
-			targetProxy = CA3417CA2163DE4600442E2C /* PBXContainerItemProxy */;
+			targetProxy = CAB2D7412164034500DE311E /* PBXContainerItemProxy */;
 		};
-		OBJ_55 /* PBXTargetDependency */ = {
+		OBJ_455 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WireGuard::WireGuard" /* WireGuard */;
-			targetProxy = CA3417C92163DE4600442E2C /* PBXContainerItemProxy */;
+			targetProxy = CAB2D7382164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_456 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::Blake2" /* Blake2 */;
+			targetProxy = CAB2D7392164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::Blake2-ObjC" /* Blake2-ObjC */;
+			targetProxy = CAB2D73A2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Blake2::CBlake2" /* CBlake2 */;
+			targetProxy = CAB2D73B2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "HKDFKit::HKDFKit" /* HKDFKit */;
+			targetProxy = CAB2D73C2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_460 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */;
+			targetProxy = CAB2D73D2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_461 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "CryptoSwift::CryptoSwift" /* CryptoSwift */;
+			targetProxy = CAB2D73E2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_462 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Sodium::Sodium" /* Sodium */;
+			targetProxy = CAB2D73F2164034400DE311E /* PBXContainerItemProxy */;
+		};
+		OBJ_463 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Sodium::Clibsodium" /* Clibsodium */;
+			targetProxy = CAB2D7402164034400DE311E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_26 /* Debug */ = {
+		OBJ_223 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -285,23 +1679,241 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = WireGuard.xcodeproj/WireGuard_Info.plist;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Blake2_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = WireGuard;
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = Blake2;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 4.2;
-				TARGET_NAME = WireGuard;
+				TARGET_NAME = Blake2;
 			};
 			name = Debug;
 		};
-		OBJ_27 /* Release */ = {
+		OBJ_224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Blake2_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = Blake2;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = Blake2;
+			};
+			name = Release;
+		};
+		OBJ_235 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Blake2_ObjC_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Blake2-ObjC";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = "Blake2-ObjC";
+			};
+			name = Debug;
+		};
+		OBJ_236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Blake2_ObjC_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Blake2-ObjC";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = "Blake2-ObjC";
+			};
+			name = Release;
+		};
+		OBJ_244 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		OBJ_245 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		OBJ_249 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/CBlake2_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CBlake2;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = CBlake2;
+			};
+			name = Debug;
+		};
+		OBJ_250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/CBlake2_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CBlake2;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = CBlake2;
+			};
+			name = Release;
+		};
+		OBJ_256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Clibsodium_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Clibsodium;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = Clibsodium;
+			};
+			name = Debug;
+		};
+		OBJ_257 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Clibsodium_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Clibsodium;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = Clibsodium;
+			};
+			name = Release;
+		};
+		OBJ_263 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -310,18 +1922,42 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = WireGuard.xcodeproj/WireGuard_Info.plist;
+				INFOPLIST_FILE = WireGuard.xcodeproj/CryptoSwift_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = WireGuard;
+				PRODUCT_BUNDLE_IDENTIFIER = CryptoSwift;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
-				TARGET_NAME = WireGuard;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CryptoSwift;
+			};
+			name = Debug;
+		};
+		OBJ_264 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WireGuard.xcodeproj/CryptoSwift_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CryptoSwift;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CryptoSwift;
 			};
 			name = Release;
 		};
@@ -351,7 +1987,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_37 /* Debug */ = {
+		OBJ_340 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -360,7 +1996,215 @@
 			};
 			name = Debug;
 		};
-		OBJ_38 /* Release */ = {
+		OBJ_341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/HKDFKit_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = HKDFKit;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = HKDFKit;
+			};
+			name = Debug;
+		};
+		OBJ_347 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/HKDFKit_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = HKDFKit;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = HKDFKit;
+			};
+			name = Release;
+		};
+		OBJ_355 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/HKDFKit_ObjC_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "HKDFKit-ObjC";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = "HKDFKit-ObjC";
+			};
+			name = Debug;
+		};
+		OBJ_356 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/HKDFKit_ObjC_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "HKDFKit-ObjC";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				TARGET_NAME = "HKDFKit-ObjC";
+			};
+			name = Release;
+		};
+		OBJ_362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		OBJ_363 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		OBJ_368 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Sodium_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sources",
+				);
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = Sodium;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Sodium;
+			};
+			name = Debug;
+		};
+		OBJ_369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/Sodium_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sources",
+				);
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = Sodium;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Sodium;
+			};
+			name = Release;
+		};
+		OBJ_397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_398 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -389,19 +2233,111 @@
 			};
 			name = Release;
 		};
-		OBJ_43 /* Debug */ = {
+		OBJ_403 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/WireGuard_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sources",
+				);
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = WireGuard;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = WireGuard;
+			};
+			name = Debug;
+		};
+		OBJ_404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC",
+				);
+				INFOPLIST_FILE = WireGuard.xcodeproj/WireGuard_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sources",
+				);
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = WireGuard;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = WireGuard;
+			};
+			name = Release;
+		};
+		OBJ_429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_435 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Debug;
 		};
-		OBJ_44 /* Release */ = {
+		OBJ_436 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Release;
 		};
-		OBJ_48 /* Debug */ = {
+		OBJ_440 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -410,19 +2346,28 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC",
+				);
 				INFOPLIST_FILE = WireGuard.xcodeproj/WireGuardTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Debug;
 		};
-		OBJ_49 /* Release */ = {
+		OBJ_441 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -431,14 +2376,23 @@
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2/include",
+					"$(SRCROOT)/.build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC/include",
+					"$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2",
+					"$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC",
+				);
 				INFOPLIST_FILE = WireGuard.xcodeproj/WireGuardTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Release;
@@ -455,38 +2409,146 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_25 /* Build configuration list for PBXNativeTarget "WireGuard" */ = {
+		OBJ_222 /* Build configuration list for PBXNativeTarget "Blake2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_26 /* Debug */,
-				OBJ_27 /* Release */,
+				OBJ_223 /* Debug */,
+				OBJ_224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_36 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */ = {
+		OBJ_234 /* Build configuration list for PBXNativeTarget "Blake2-ObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_37 /* Debug */,
-				OBJ_38 /* Release */,
+				OBJ_235 /* Debug */,
+				OBJ_236 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_42 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */ = {
+		OBJ_243 /* Build configuration list for PBXNativeTarget "Blake2PackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_43 /* Debug */,
-				OBJ_44 /* Release */,
+				OBJ_244 /* Debug */,
+				OBJ_245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_47 /* Build configuration list for PBXNativeTarget "WireGuardTests" */ = {
+		OBJ_248 /* Build configuration list for PBXNativeTarget "CBlake2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_48 /* Debug */,
-				OBJ_49 /* Release */,
+				OBJ_249 /* Debug */,
+				OBJ_250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_255 /* Build configuration list for PBXNativeTarget "Clibsodium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_256 /* Debug */,
+				OBJ_257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_262 /* Build configuration list for PBXNativeTarget "CryptoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_263 /* Debug */,
+				OBJ_264 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_339 /* Build configuration list for PBXNativeTarget "CryptoSwiftPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_340 /* Debug */,
+				OBJ_341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_345 /* Build configuration list for PBXNativeTarget "HKDFKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_346 /* Debug */,
+				OBJ_347 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_354 /* Build configuration list for PBXNativeTarget "HKDFKit-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_355 /* Debug */,
+				OBJ_356 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_361 /* Build configuration list for PBXNativeTarget "HKDFKitPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_362 /* Debug */,
+				OBJ_363 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_367 /* Build configuration list for PBXNativeTarget "Sodium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_368 /* Debug */,
+				OBJ_369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_396 /* Build configuration list for PBXNativeTarget "SodiumPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_397 /* Debug */,
+				OBJ_398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_402 /* Build configuration list for PBXNativeTarget "WireGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_403 /* Debug */,
+				OBJ_404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_428 /* Build configuration list for PBXNativeTarget "WireGuardPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_429 /* Debug */,
+				OBJ_430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_434 /* Build configuration list for PBXAggregateTarget "WireGuardPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_435 /* Debug */,
+				OBJ_436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_439 /* Build configuration list for PBXNativeTarget "WireGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_440 /* Debug */,
+				OBJ_441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

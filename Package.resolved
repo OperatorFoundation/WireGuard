@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Blake2",
+        "repositoryURL": "https://github.com/OperatorFoundation/Blake2.git",
+        "state": {
+          "branch": null,
+          "revision": "3da646eeb5b0c55472b9951a2f7b33f23c17e8c1",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "2bcb008fe23d286e5da79311051e19b3345f1cd5",
+          "version": "0.12.0"
+        }
+      },
+      {
+        "package": "Datable",
+        "repositoryURL": "https://github.com/OperatorFoundation/Datable.git",
+        "state": {
+          "branch": null,
+          "revision": "02f1f9294b7df265b059ce9efa48e3f354b6967e",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "HKDFKit",
+        "repositoryURL": "https://github.com/OperatorFoundation/HKDFKit.git",
+        "state": {
+          "branch": null,
+          "revision": "8f7886b1dd2a3d7084412d7481bd00bf03c6dbc7",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Sodium",
+        "repositoryURL": "https://github.com/OperatorFoundation/swift-sodium.git",
+        "state": {
+          "branch": null,
+          "revision": "445b2269730cb3c2605ac038a6d5cb801791e3e6",
+          "version": "0.6.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

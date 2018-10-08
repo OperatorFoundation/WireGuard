@@ -22,11 +22,11 @@ class WireGuardTests: XCTestCase {
         var pub: Data
         var priv: Data
         
-        (pub, priv) = DHgenerate()
+        (pub, priv) = DH_GENERATE()
         spubr=pub
         sprivr=priv
         
-        (pub, priv) = DHgenerate()
+        (pub, priv) = DH_GENERATE()
         spubi=pub
         sprivi=priv
     }

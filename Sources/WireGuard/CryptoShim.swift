@@ -22,7 +22,7 @@ struct ChaCha20Poly1305 {
     }
 }
 
-func AEAD(key: Data, counter: Data, plainText: Data, authText: Data) -> Data {
+func AEAD(_ key: Data, _ counter: Data, _ plainText: Data, _ authText: Data) -> Data {
     return Data()
 }
 

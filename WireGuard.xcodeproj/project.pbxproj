@@ -360,8 +360,8 @@
 		"Blake2::Blake2::Product" /* Blake2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Blake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Blake2::CBlake2::Product" /* CBlake2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBlake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5C34FE2164128F004F06AB /* libsodium-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsodium-ios.a"; path = "Sources/libsodium-ios.a"; sourceTree = SOURCE_ROOT; };
-		"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Datable::Datable::Product" /* Datable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Datable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Datable::Datable::Product" /* Datable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Datable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HKDFKit_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HKDFKit::HKDFKit::Product" /* HKDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HKDFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
@@ -564,8 +564,8 @@
 		OBJ_98 /* DigestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigestType.swift; sourceTree = "<group>"; };
 		"Sodium::Clibsodium::Product" /* Clibsodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Clibsodium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Sodium::Sodium::Product" /* Sodium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sodium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"WireGuard::WireGuard::Product" /* WireGuard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WireGuard::WireGuard::Product" /* WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -992,7 +992,7 @@
 			path = ".build/checkouts/Datable.git--4036606212684791872/Sources/Datable";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -1001,7 +1001,6 @@
 				OBJ_18 /* Dependencies */,
 				OBJ_232 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_63 /* CryptoSwift 0.12.0 */ = {
@@ -1428,6 +1427,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"CryptoSwift::CryptoSwift" = {
+						LastSwiftMigration = 1000;
+					};
+					"Datable::Datable" = {
+						LastSwiftMigration = 1000;
+					};
+					"Sodium::Sodium" = {
+						LastSwiftMigration = 1000;
+					};
+					"WireGuard::WireGuard" = {
+						LastSwiftMigration = 1000;
+					};
+					"WireGuard::WireGuardTests" = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "WireGuard" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1436,7 +1452,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_232 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2104,7 +2120,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = CryptoSwift;
 			};
 			name = Debug;
@@ -2128,7 +2144,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = CryptoSwift;
 			};
 			name = Release;
@@ -2196,7 +2212,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = Datable;
 			};
 			name = Debug;
@@ -2220,7 +2236,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = Datable;
 			};
 			name = Release;
@@ -2417,7 +2433,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = Sodium;
 			};
 			name = Debug;
@@ -2448,7 +2464,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = Sodium;
 			};
 			name = Release;
@@ -2499,7 +2515,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuard;
 			};
 			name = Debug;
@@ -2532,7 +2548,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuard;
 			};
 			name = Release;
@@ -2592,7 +2608,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Debug;
@@ -2622,7 +2638,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Release;

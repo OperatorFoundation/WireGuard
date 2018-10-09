@@ -8,36 +8,6 @@
 
 import Foundation
 
-struct ChaCha20Poly1305 {
-    let sharedKey: Data
-    let nonce: Data
-    
-    init(sharedKey: Data, nonce: Data) {
-        self.sharedKey=sharedKey
-        self.nonce=nonce
-    }
-    
-    func encrypt(data: Data) -> Data {
-        return Data()
-    }
-}
-
-func AEAD(_ key: Data, _ counter: Data, _ plainText: Data, _ authText: Data) -> Data {
-    return Data()
-}
-
 func XAEAD(key: Data, nonce: Data, plainText: Data, authText: Data) -> Data {
     return Data()
 }
-
-func hash(data: Data) -> Data {
-    return Data()
-}
-
-func hash(_ data1: Data, _ data2: Data) -> Data {
-    var temp = Data()
-    temp.append(data1)
-    temp.append(data2)
-    return hash(data: temp)
-}
-

@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/OperatorFoundation/swift-sodium.git",
         "state": {
           "branch": null,
-          "revision": "445b2269730cb3c2605ac038a6d5cb801791e3e6",
-          "version": "0.6.8"
+          "revision": "522193611c444b4073d5a6643192388a16c284a3",
+          "version": "0.6.10"
         }
       }
     ]

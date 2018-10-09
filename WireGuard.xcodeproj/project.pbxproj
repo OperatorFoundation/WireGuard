@@ -21,14 +21,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		CA5C34FF2164128F004F06AB /* libsodium-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5C34FE2164128F004F06AB /* libsodium-ios.a */; };
+		CA3274C6216D2E0E00071EDF /* libsodium-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3274C5216D2E0D00071EDF /* libsodium-ios.a */; };
 		OBJ_249 /* Blake2.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Blake2.swift */; };
 		OBJ_251 /* Blake2_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */; };
 		OBJ_252 /* CBlake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::CBlake2::Product" /* CBlake2.framework */; };
-		OBJ_261 /* Blake2s.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Blake2s.m */; };
+		OBJ_261 /* Blake2s.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Blake2s.m */; };
 		OBJ_263 /* CBlake2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Blake2::CBlake2::Product" /* CBlake2.framework */; };
 		OBJ_270 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Package.swift */; };
-		OBJ_275 /* cblake2s.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* cblake2s.c */; };
+		OBJ_275 /* cblake2s.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* cblake2s.c */; };
 		OBJ_282 /* whyme.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_143 /* whyme.c */; };
 		OBJ_289 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* AEAD.swift */; };
 		OBJ_290 /* AEADChaCha20Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* AEADChaCha20Poly1305.swift */; };
@@ -121,9 +121,9 @@
 		OBJ_388 /* UInt+Datable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* UInt+Datable.swift */; };
 		OBJ_389 /* UInt+Stringable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* UInt+Stringable.swift */; };
 		OBJ_396 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* Package.swift */; };
-		OBJ_402 /* HKDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* HKDFKit.swift */; };
+		OBJ_402 /* HKDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* HKDFKit.swift */; };
 		OBJ_404 /* HKDFKit_ObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */; };
-		OBJ_411 /* HKDFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* HKDFKit.m */; };
+		OBJ_411 /* HKDFKit.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* HKDFKit.m */; };
 		OBJ_418 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Package.swift */; };
 		OBJ_424 /* Aead.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_209 /* Aead.swift */; };
 		OBJ_425 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_210 /* Auth.swift */; };
@@ -178,175 +178,175 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CA5C34E521641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274AC216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Datable::Datable";
 			remoteInfo = Datable;
 		};
-		CA5C34E621641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274AD216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::Blake2";
 			remoteInfo = Blake2;
 		};
-		CA5C34E721641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274AE216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::Blake2-ObjC";
 			remoteInfo = "Blake2-ObjC";
 		};
-		CA5C34E821641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274AF216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::CBlake2";
 			remoteInfo = CBlake2;
 		};
-		CA5C34E921641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B0216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::CBlake2";
 			remoteInfo = CBlake2;
 		};
-		CA5C34EA21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B1216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::Blake2-ObjC";
 			remoteInfo = "Blake2-ObjC";
 		};
-		CA5C34EB21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B2216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::CBlake2";
 			remoteInfo = CBlake2;
 		};
-		CA5C34EC21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B3216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "HKDFKit::HKDFKit";
 			remoteInfo = HKDFKit;
 		};
-		CA5C34ED21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B4216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "HKDFKit::HKDFKit-ObjC";
 			remoteInfo = "HKDFKit-ObjC";
 		};
-		CA5C34EE21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B5216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "HKDFKit::HKDFKit-ObjC";
 			remoteInfo = "HKDFKit-ObjC";
 		};
-		CA5C34EF21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B6216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "CryptoSwift::CryptoSwift";
 			remoteInfo = CryptoSwift;
 		};
-		CA5C34F021641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B7216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Sodium::Sodium";
 			remoteInfo = Sodium;
 		};
-		CA5C34F121641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B8216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Sodium::Clibsodium";
 			remoteInfo = Clibsodium;
 		};
-		CA5C34F221641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274B9216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Sodium::Clibsodium";
 			remoteInfo = Clibsodium;
 		};
-		CA5C34F321641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274BA216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WireGuard::WireGuard";
 			remoteInfo = WireGuard;
 		};
-		CA5C34F421641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274BB216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Datable::Datable";
 			remoteInfo = Datable;
 		};
-		CA5C34F521641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274BC216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::Blake2";
 			remoteInfo = Blake2;
 		};
-		CA5C34F621641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274BD216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::Blake2-ObjC";
 			remoteInfo = "Blake2-ObjC";
 		};
-		CA5C34F721641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274BE216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Blake2::CBlake2";
 			remoteInfo = CBlake2;
 		};
-		CA5C34F821641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274BF216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "HKDFKit::HKDFKit";
 			remoteInfo = HKDFKit;
 		};
-		CA5C34F921641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274C0216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "HKDFKit::HKDFKit-ObjC";
 			remoteInfo = "HKDFKit-ObjC";
 		};
-		CA5C34FA21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274C1216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "CryptoSwift::CryptoSwift";
 			remoteInfo = CryptoSwift;
 		};
-		CA5C34FB21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274C2216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Sodium::Sodium";
 			remoteInfo = Sodium;
 		};
-		CA5C34FC21641277004F06AB /* PBXContainerItemProxy */ = {
+		CA3274C3216D2CED00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Sodium::Clibsodium";
 			remoteInfo = Clibsodium;
 		};
-		CA5C34FD2164127A004F06AB /* PBXContainerItemProxy */ = {
+		CA3274C4216D2CEF00071EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -359,9 +359,9 @@
 		"Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Blake2_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Blake2::Blake2::Product" /* Blake2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Blake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Blake2::CBlake2::Product" /* CBlake2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CBlake2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5C34FE2164128F004F06AB /* libsodium-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsodium-ios.a"; path = "Sources/libsodium-ios.a"; sourceTree = SOURCE_ROOT; };
-		"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Datable::Datable::Product" /* Datable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Datable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3274C5216D2E0D00071EDF /* libsodium-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsodium-ios.a"; path = "Sources/libsodium-ios.a"; sourceTree = "<group>"; };
+		"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Datable::Datable::Product" /* Datable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Datable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HKDFKit_ObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HKDFKit::HKDFKit::Product" /* HKDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HKDFKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
@@ -495,19 +495,19 @@
 		OBJ_227 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 		OBJ_228 /* Sodium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sodium.swift; sourceTree = "<group>"; };
 		OBJ_229 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
-		OBJ_23 /* Blake2s.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blake2s.m; sourceTree = "<group>"; };
+		OBJ_23 /* cblake2s.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cblake2s.c; sourceTree = "<group>"; };
 		OBJ_230 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		OBJ_231 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/swift-sodium.git--591782221006376685/Package.swift"; sourceTree = "<group>"; };
-		OBJ_25 /* Blake2s.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blake2s.h; sourceTree = "<group>"; };
-		OBJ_26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap; sourceTree = "<group>"; };
-		OBJ_28 /* cblake2s.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cblake2s.c; sourceTree = "<group>"; };
-		OBJ_30 /* cblake2s.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cblake2s.h; sourceTree = "<group>"; };
-		OBJ_31 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap; sourceTree = "<group>"; };
+		OBJ_25 /* cblake2s.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cblake2s.h; sourceTree = "<group>"; };
+		OBJ_26 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap; sourceTree = "<group>"; };
+		OBJ_28 /* Blake2s.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Blake2s.m; sourceTree = "<group>"; };
+		OBJ_30 /* Blake2s.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Blake2s.h; sourceTree = "<group>"; };
+		OBJ_31 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap; sourceTree = "<group>"; };
 		OBJ_32 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/Blake2.git-3773077570198505488/Package.swift"; sourceTree = "<group>"; };
-		OBJ_35 /* HKDFKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDFKit.swift; sourceTree = "<group>"; };
-		OBJ_37 /* HKDFKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKDFKit.m; sourceTree = "<group>"; };
-		OBJ_39 /* HKDFKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKDFKit.h; sourceTree = "<group>"; };
-		OBJ_40 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap; sourceTree = "<group>"; };
+		OBJ_35 /* HKDFKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKDFKit.m; sourceTree = "<group>"; };
+		OBJ_37 /* HKDFKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKDFKit.h; sourceTree = "<group>"; };
+		OBJ_38 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/brandon/WireGuard/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap; sourceTree = "<group>"; };
+		OBJ_40 /* HKDFKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKDFKit.swift; sourceTree = "<group>"; };
 		OBJ_41 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brandon/WireGuard/.build/checkouts/HKDFKit.git-7895014055952232526/Package.swift"; sourceTree = "<group>"; };
 		OBJ_44 /* Arrayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrayable.swift; sourceTree = "<group>"; };
 		OBJ_45 /* Data+Arrayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Arrayable.swift"; sourceTree = "<group>"; };
@@ -564,8 +564,8 @@
 		OBJ_98 /* DigestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigestType.swift; sourceTree = "<group>"; };
 		"Sodium::Clibsodium::Product" /* Clibsodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Clibsodium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Sodium::Sodium::Product" /* Sodium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sodium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"WireGuard::WireGuard::Product" /* WireGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WireGuard::WireGuard::Product" /* WireGuard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WireGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WireGuardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -633,7 +633,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				CA5C34FF2164128F004F06AB /* libsodium-ios.a in Frameworks */,
+				CA3274C6216D2E0E00071EDF /* libsodium-ios.a in Frameworks */,
 				OBJ_446 /* Clibsodium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,14 +694,14 @@
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_141 /* Sodium 0.6.8 */ = {
+		OBJ_141 /* Sodium 0.6.10 */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_142 /* Clibsodium */,
 				OBJ_208 /* Sodium */,
 				OBJ_231 /* Package.swift */,
 			);
-			name = "Sodium 0.6.8";
+			name = "Sodium 0.6.10";
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_142 /* Clibsodium */ = {
@@ -801,7 +801,7 @@
 				OBJ_33 /* HKDFKit 1.0.1 */,
 				OBJ_42 /* Datable 1.0.1 */,
 				OBJ_63 /* CryptoSwift 0.12.0 */,
-				OBJ_141 /* Sodium 0.6.8 */,
+				OBJ_141 /* Sodium 0.6.10 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -810,8 +810,8 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_20 /* Blake2 */,
-				OBJ_22 /* Blake2-ObjC */,
-				OBJ_27 /* CBlake2 */,
+				OBJ_22 /* CBlake2 */,
+				OBJ_27 /* Blake2-ObjC */,
 				OBJ_32 /* Package.swift */,
 			);
 			name = "Blake2 1.0.1";
@@ -863,30 +863,30 @@
 			path = Generators;
 			sourceTree = "<group>";
 		};
-		OBJ_22 /* Blake2-ObjC */ = {
+		OBJ_22 /* CBlake2 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* Blake2s.m */,
+				OBJ_23 /* cblake2s.c */,
 				OBJ_24 /* include */,
 			);
-			name = "Blake2-ObjC";
-			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC";
+			name = CBlake2;
+			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2";
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_232 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */,
-				"Blake2::Blake2::Product" /* Blake2.framework */,
-				"Datable::Datable::Product" /* Datable.framework */,
-				"WireGuard::WireGuard::Product" /* WireGuard.framework */,
-				"Blake2::CBlake2::Product" /* CBlake2.framework */,
-				"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */,
-				"Sodium::Clibsodium::Product" /* Clibsodium.framework */,
+				"Sodium::Sodium::Product" /* Sodium.framework */,
 				"Blake2::Blake2-ObjC::Product" /* Blake2_ObjC.framework */,
 				"CryptoSwift::CryptoSwift::Product" /* CryptoSwift.framework */,
-				"Sodium::Sodium::Product" /* Sodium.framework */,
 				"HKDFKit::HKDFKit::Product" /* HKDFKit.framework */,
+				"Blake2::Blake2::Product" /* Blake2.framework */,
+				"HKDFKit::HKDFKit-ObjC::Product" /* HKDFKit_ObjC.framework */,
+				"WireGuard::WireGuard::Product" /* WireGuard.framework */,
+				"WireGuard::WireGuardTests::Product" /* WireGuardTests.xctest */,
+				"Blake2::CBlake2::Product" /* CBlake2.framework */,
+				"Datable::Datable::Product" /* Datable.framework */,
+				"Sodium::Clibsodium::Product" /* Clibsodium.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -894,26 +894,26 @@
 		OBJ_24 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* Blake2s.h */,
+				OBJ_25 /* cblake2s.h */,
 				OBJ_26 /* module.modulemap */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		OBJ_27 /* CBlake2 */ = {
+		OBJ_27 /* Blake2-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_28 /* cblake2s.c */,
+				OBJ_28 /* Blake2s.m */,
 				OBJ_29 /* include */,
 			);
-			name = CBlake2;
-			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/CBlake2";
+			name = "Blake2-ObjC";
+			path = ".build/checkouts/Blake2.git-3773077570198505488/Sources/Blake2-ObjC";
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_29 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_30 /* cblake2s.h */,
+				OBJ_30 /* Blake2s.h */,
 				OBJ_31 /* module.modulemap */,
 			);
 			path = include;
@@ -922,40 +922,40 @@
 		OBJ_33 /* HKDFKit 1.0.1 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_34 /* HKDFKit */,
-				OBJ_36 /* HKDFKit-ObjC */,
+				OBJ_34 /* HKDFKit-ObjC */,
+				OBJ_39 /* HKDFKit */,
 				OBJ_41 /* Package.swift */,
 			);
 			name = "HKDFKit 1.0.1";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_34 /* HKDFKit */ = {
+		OBJ_34 /* HKDFKit-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_35 /* HKDFKit.swift */,
-			);
-			name = HKDFKit;
-			path = ".build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_36 /* HKDFKit-ObjC */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_37 /* HKDFKit.m */,
-				OBJ_38 /* include */,
+				OBJ_35 /* HKDFKit.m */,
+				OBJ_36 /* include */,
 			);
 			name = "HKDFKit-ObjC";
 			path = ".build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit-ObjC";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_38 /* include */ = {
+		OBJ_36 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_39 /* HKDFKit.h */,
-				OBJ_40 /* module.modulemap */,
+				OBJ_37 /* HKDFKit.h */,
+				OBJ_38 /* module.modulemap */,
 			);
 			path = include;
 			sourceTree = "<group>";
+		};
+		OBJ_39 /* HKDFKit */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_40 /* HKDFKit.swift */,
+			);
+			name = HKDFKit;
+			path = ".build/checkouts/HKDFKit.git-7895014055952232526/Sources/HKDFKit";
+			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_42 /* Datable 1.0.1 */ = {
 			isa = PBXGroup;
@@ -992,7 +992,7 @@
 			path = ".build/checkouts/Datable.git--4036606212684791872/Sources/Datable";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -1001,6 +1001,7 @@
 				OBJ_18 /* Dependencies */,
 				OBJ_232 /* Products */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_63 /* CryptoSwift 0.12.0 */ = {
@@ -1081,6 +1082,7 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CA3274C5216D2E0D00071EDF /* libsodium-ios.a */,
 				OBJ_8 /* WireGuard */,
 			);
 			name = Sources;
@@ -1106,7 +1108,6 @@
 		OBJ_8 /* WireGuard */ = {
 			isa = PBXGroup;
 			children = (
-				CA5C34FE2164128F004F06AB /* libsodium-ios.a */,
 				OBJ_9 /* Configuration.swift */,
 				OBJ_10 /* Crypto.swift */,
 				OBJ_11 /* CryptoShim.swift */,
@@ -1427,23 +1428,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
-				TargetAttributes = {
-					"CryptoSwift::CryptoSwift" = {
-						LastSwiftMigration = 1000;
-					};
-					"Datable::Datable" = {
-						LastSwiftMigration = 1000;
-					};
-					"Sodium::Sodium" = {
-						LastSwiftMigration = 1000;
-					};
-					"WireGuard::WireGuard" = {
-						LastSwiftMigration = 1000;
-					};
-					"WireGuard::WireGuardTests" = {
-						LastSwiftMigration = 1000;
-					};
-				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "WireGuard" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1452,7 +1436,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
+			mainGroup = OBJ_5 /*  */;
 			productRefGroup = OBJ_232 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1734,127 +1718,127 @@
 		OBJ_253 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::Blake2-ObjC" /* Blake2-ObjC */;
-			targetProxy = CA5C34E721641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274AE216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_255 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::CBlake2" /* CBlake2 */;
-			targetProxy = CA5C34E921641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B0216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_264 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::CBlake2" /* CBlake2 */;
-			targetProxy = CA5C34E821641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274AF216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_405 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */;
-			targetProxy = CA5C34ED21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B4216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_447 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Sodium::Clibsodium" /* Clibsodium */;
-			targetProxy = CA5C34F121641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B8216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_474 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Datable::Datable" /* Datable */;
-			targetProxy = CA5C34E521641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274AC216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_475 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::Blake2" /* Blake2 */;
-			targetProxy = CA5C34E621641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274AD216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_476 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::Blake2-ObjC" /* Blake2-ObjC */;
-			targetProxy = CA5C34EA21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B1216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_477 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::CBlake2" /* CBlake2 */;
-			targetProxy = CA5C34EB21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B2216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_478 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "HKDFKit::HKDFKit" /* HKDFKit */;
-			targetProxy = CA5C34EC21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B3216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_479 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */;
-			targetProxy = CA5C34EE21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B5216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_480 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "CryptoSwift::CryptoSwift" /* CryptoSwift */;
-			targetProxy = CA5C34EF21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B6216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_481 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Sodium::Sodium" /* Sodium */;
-			targetProxy = CA5C34F021641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B7216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_482 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Sodium::Clibsodium" /* Clibsodium */;
-			targetProxy = CA5C34F221641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274B9216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WireGuard::WireGuardTests" /* WireGuardTests */;
-			targetProxy = CA5C34FD2164127A004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274C4216D2CEF00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WireGuard::WireGuard" /* WireGuard */;
-			targetProxy = CA5C34F321641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274BA216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_513 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Datable::Datable" /* Datable */;
-			targetProxy = CA5C34F421641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274BB216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_514 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::Blake2" /* Blake2 */;
-			targetProxy = CA5C34F521641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274BC216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_515 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::Blake2-ObjC" /* Blake2-ObjC */;
-			targetProxy = CA5C34F621641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274BD216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_516 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Blake2::CBlake2" /* CBlake2 */;
-			targetProxy = CA5C34F721641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274BE216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_517 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "HKDFKit::HKDFKit" /* HKDFKit */;
-			targetProxy = CA5C34F821641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274BF216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_518 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "HKDFKit::HKDFKit-ObjC" /* HKDFKit-ObjC */;
-			targetProxy = CA5C34F921641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274C0216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_519 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "CryptoSwift::CryptoSwift" /* CryptoSwift */;
-			targetProxy = CA5C34FA21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274C1216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_520 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Sodium::Sodium" /* Sodium */;
-			targetProxy = CA5C34FB21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274C2216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 		OBJ_521 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Sodium::Clibsodium" /* Clibsodium */;
-			targetProxy = CA5C34FC21641277004F06AB /* PBXContainerItemProxy */;
+			targetProxy = CA3274C3216D2CED00071EDF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2120,7 +2104,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = CryptoSwift;
 			};
 			name = Debug;
@@ -2144,7 +2128,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = CryptoSwift;
 			};
 			name = Release;
@@ -2212,7 +2196,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Datable;
 			};
 			name = Debug;
@@ -2236,7 +2220,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Datable;
 			};
 			name = Release;
@@ -2433,7 +2417,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Sodium;
 			};
 			name = Debug;
@@ -2464,7 +2448,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Sodium;
 			};
 			name = Release;
@@ -2515,7 +2499,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = WireGuard;
 			};
 			name = Debug;
@@ -2548,7 +2532,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = WireGuard;
 			};
 			name = Release;
@@ -2608,7 +2592,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Debug;
@@ -2638,7 +2622,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/Blake2_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/CBlake2/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/WireGuard.xcodeproj/GeneratedModuleMap/HKDFKit_ObjC/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/swift-sodium.git--591782221006376685/Sources/Clibsodium/include/module.modulemap";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = WireGuardTests;
 			};
 			name = Release;

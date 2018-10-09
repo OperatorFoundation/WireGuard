@@ -99,6 +99,19 @@ func HASH(_ input: Data) -> Data
     return blake2Hash(input: input, key: Data(), outputlen: 32)
 }
 
+func AEAD(_ key: Data, _ counter: Data, _ plainText: Data, _ authText: Data) -> Data {
+    let sodium = Sodium()
+    let nonce = Data()
+    if let result = sodium.aead.chacha20poly1305ietf.encrypt(message: plainText.array, secretKey: key.array, nonce: nonce.array, additionalData: authText.array)
+    {
+        return Data(array: result)
+    }
+    else
+    {
+        return Data()
+    }
+}
+
 extension Data
 {
     static func ||(left: Data, right: Data) -> Data

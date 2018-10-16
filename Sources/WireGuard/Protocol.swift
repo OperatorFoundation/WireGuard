@@ -41,7 +41,7 @@ public struct HandshakeInitiation {
     let encrypted_timestamp: Data
     let mac1: Data
     let mac2: Data
-    var initiator: State=State()
+    var initiator: State = State()
 
     /*
      The fields are populated as follows:
@@ -205,7 +205,7 @@ public struct HandshakeInitiation {
 //    }
     
     public func encode() -> Data {
-        return concat([message_type, reserved, sender, ephemeralKey, staticKey, timestamp, mac1, mac2])
+        return concat([message_type.data, reserved_zero, sender_index , unencrypted_ephemeral, encrypted_static, encrypted_timestamp, mac1, mac2])
     }
 }
 
@@ -252,21 +252,26 @@ public struct HandshakeResponse {
 
         self.responder.epubr=ephemeralKey
         self.responder.cr=KDF1(self.responder.cr, self.responder.epubr)
-        self.responder.hr=hash(self.responder.hr, ephemeralKey)
-        self.responder.cr = KDF1(self.responder.cr, DH(privateKey: self.responder.eprivr, publicKey: self.responder.epubr, peerPublicKey: self.responder.ephemeral_public))
-        self.responder.cr = KDF1(self.responder.cr, DH(privateKey: self.responder.eprivr, publicKey: self.responder.spubr, peerPublicKey: self.responder.spubi))
+        self.responder.hr=HASH(self.responder.hr || ephemeralKey)
+        self.responder.cr = KDF1(self.responder.cr, DH(self.responder.eprivr,
+                                                       self.responder.epubr,
+                                                       self.responder.ephemeral_public))
+        self.responder.cr = KDF1(self.responder.cr, DH(self.responder.eprivr,
+                                                       self.responder.spubr,
+                                                       self.responder.static_public))
+        
         var t: Data
         var k: Data
         var tempcr: Data
         (tempcr, t, k) = KDF3(key: self.responder.cr, data: self.responder.q)
         self.responder.cr=tempcr
-        self.responder.hr = hash(self.responder.hr, t)
-        assert(self.empty == AEAD(key: k, counter: Data(repeating: 0, count: 8), plainText: e, authText: self.responder.hr))
-        self.responder.hr=hash(self.responder.hr, empty)
+        self.responder.hr = HASH(self.responder.hr || t)
+        assert(self.empty == AEAD(k, Data(repeating: 0, count: 8), e, self.responder.hr))
+        self.responder.hr=HASH(self.responder.hr || empty)
         
         let payload = concat([type, reserved, sender, receiver, ephemeralKey, empty])
         
-        let newmac1=MAC(key: hash(LABEL_MAC1, self.responder.static_public), data: payload)
+        let newmac1=MAC(key: HASH(LABEL_MAC1 || self.responder.static_public), data: payload)
         
         assert(newmac1 == mac1)
         
@@ -293,7 +298,13 @@ public struct HandshakeResponse {
         let newmac1=data[60 ..< 76]
         let newmac2=data[76 ..< 92]
 
-        self.init(sender: newsender, receiver: newreceiver, ephemeralKey: newephemeralKey, empty: newempty, mac1: newmac1, mac2: newmac2, oldresponder: initiation.responder)
+        self.init(sender: newsender,
+                  receiver: newreceiver,
+                  ephemeralKey: newephemeralKey,
+                  empty: newempty,
+                  mac1: newmac1,
+                  mac2: newmac2,
+                  oldState: initiation.initiator /* Previously: initiation.responder */)
     }
     
     public func encode() -> Data {
@@ -301,86 +312,210 @@ public struct HandshakeResponse {
     }
 }
 
-public struct TransportDataMessage {
-    let type: Data = Data(bytes: [0b00100000])
-    let reserved: Data = Data(repeating: 0x00, count: 3)
-    let receiver: Data
-    let counter: Data
-    let packet: Data
-    var state: State
+/**
+ https://www.wireguard.com/protocol/#subsequent-messages-exchange-of-data-packets
+ */
+public struct TransportDataMessage
+{
     
-    public init(plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse) {
-        state=response.state
-        receiver=response.receiver
-        
-        let sodium=Sodium()
-        var paddedPacket=plainPacket.array
-        sodium.utils.pad(bytes: &paddedPacket, blockSize: 16)
-        
-        counter = state.sender_index
-        packet = AEAD(key: state.tsendi, counter: state.sender_index, plainText: Data(array: paddedPacket), authText: e)
-        state.incrNsendi()
-    }
+//    let type: Data = Data(bytes: [0b00100000])
+//    let reserved: Data = Data(repeating: 0x00, count: 3)
+//    let receiver: Data
+//    let counter: Data
+//    let packet: Data
+//    var state: State
+//
+//    public init(plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse)
+//    {
+//        state = response.responder
+//        receiver = response.receiver
+//
+//        let sodium=Sodium()
+//        var paddedPacket=plainPacket.array
+//        sodium.utils.pad(bytes: &paddedPacket, blockSize: 16)
+//
+//        counter = state.sender_index
+//        packet = AEAD(initiation.initiator.sending_key, state.sender_index, Data(array: paddedPacket), e)
+//        state.incrNsendi()
+//    }
+//
+//    init(receiver: Data, counter: Data, packet: Data, oldState: State)
+//    {
+//        self.receiver=receiver
+//        self.counter=counter
+//        self.packet=packet
+//        self.state=oldState
+//    }
+//
+//    public init(data: Data, initiator: Bool, sharedState: State, plainPacket: Data)
+//    {
+//        let newtype = data[0 ..< 1]
+//
+//        assert(newtype == Data(bytes: [0b00100000]))
+//
+//        let newreserved = data[1 ..< 4]
+//
+//        assert(newreserved == Data(repeating: 0x00, count: 3))
+//
+//        let newreceiver = data[4 ..< 8]
+//        let newcounter=data[8 ..< 16]
+//        let newpacket=data[16 ..< data.count]
+//
+//        self.init(receiver: newreceiver, counter: newcounter, packet: newpacket, oldState: sharedState)
+//    }
+//
+//    public func encode() -> Data
+//    {
+//        return concat([type, reserved, receiver, counter, packet])
+//    }
     
-    init(receiver: Data, counter: Data, packet: Data, oldState: State) {
-        self.receiver=receiver
-        self.counter=counter
-        self.packet=packet
-        self.state=oldState
-    }
-    
-    public init(data: Data, initiator: Bool, sharedState: State, plainPacket: Data) {
-        let newtype = data[0 ..< 1]
+    /*
+     * https://www.wireguard.com/protocol/#data-keys-derivation
+     * Data Keys Derivation Section
+     */
+    /**
+     After the handshake, keys are calculated by the initiator and responder for sending and receiving data, And then all previous chaining keys, ephemeral keys, and hashes are zeroed out.
+     - parameter initiator: State, in this implementation of WireGuard this is the client
+     - parameter responder: State, in this impplementation, the server
+     - Returns: A boolean value indicating whether the keys were created successfully.
+     */
+    mutating func makeTransportKeys(initiator: inout State, responder: inout State) -> Bool
+    {
         
-        assert(newtype == Data(bytes: [0b00100000]))
+        guard var initiator_chaining_key = initiator.chaining_key
+        else
+        {
+            print("Attempted to make transport keys when initiator chaining key was nil.")
+            return false
+        }
         
-        let newreserved = data[1 ..< 4]
+        guard var responder_chaining_key = responder.chaining_key
+        else
+        {
+            print("Attempted to make transport keys when the reponder chaining key was nil.")
+            return false
+        }
         
-        assert(newreserved == Data(repeating: 0x00, count: 3))
+        // Initiator
         
-        let newreceiver = data[4 ..< 8]
-        let newcounter=data[8 ..< 16]
-        let newpacket=data[16 ..< data.count]
+        ///temp1 = HMAC(initiator.chaining_key, [empty])
+        var temp1 = HMAC(initiator_chaining_key, Data())
+            
+        ///temp2 = HMAC(temp1, 0x1)
+        //FIXME: Is this the correct binary value?
+        var temp2 = HMAC(temp1, Data(bytes: [0b00100000]))
         
-        self.init(receiver: newreceiver, counter: newcounter, packet: newpacket, oldState: sharedState)
-    }
-    
-    public func encode() -> Data {
-        return concat([type, reserved, receiver, counter, packet])
+        ///temp3 = HMAC(temp1, temp2 || 0x2)
+        var temp3 = HMAC(temp1, temp2 || Data(bytes: [0b01000000]))
+        
+        ///initiator.sending_key = temp2
+        initiator.sending_key = temp2
+        
+        ///initiator.receiving_key = temp3
+        initiator.receiving_key = temp3
+        
+        ///initiator.sending_key_counter = 0
+        initiator.sending_key_counter = 0
+        
+        ///initiator.receiving_key_counter = 0
+        initiator.receiving_key_counter = 0
+        
+        // Responder
+        
+        ///temp1 = HMAC(responder.chaining_key, [empty])
+        temp1 = HMAC(responder_chaining_key, Data())
+        
+        ///temp2 = HMAC(temp1, 0x1)
+        temp2 = HMAC(temp1, Data(bytes: [0b00100000]))
+        
+        ///temp3 = HMAC(temp1, temp2 || 0x2)
+        temp3 = HMAC(temp1, temp2 || Data(bytes: [0b01000000]))
+        
+        ///responder.receiving_key = temp2
+        responder.receiving_key = temp2
+        
+        ///responder.sending_key = temp3
+        responder.sending_key = temp3
+        
+        ///responder.receiving_key_counter = 0
+        responder.receiving_key_counter = 0
+        
+        ///responder.sending_key_counter = 0
+        responder.sending_key_counter = 0
+        
+        zero(&initiator_chaining_key)
+        zero(&initiator.ephemeral_public)
+        zero(&initiator.ephemeral_private)
+        zeroOptional(&initiator.chaining_key)
+        zeroOptional(&initiator.hash)
+        
+        zero(&responder_chaining_key)
+        zero(&responder.ephemeral_public)
+        zero(&responder.ephemeral_private)
+        zeroOptional(&responder.chaining_key)
+        zeroOptional(&responder.hash)
     }
 }
 
-public struct CookieReply {
-    let type: Data = Data(bytes: [0b11000000])
-    let reserved: Data = Data(repeating: 0x00, count: 3)
-    let receiver: Data
-    let nonce: Data
-    let cookie: Data
-    var state: State
-    
-    public init(sharedState: State, receiver: Data, nonce: Data, cookie: Data) {
-        self.state=sharedState
-        self.receiver=receiver
-        self.nonce=nonce
-        self.cookie=cookie
-        
-        self.state.cookie=cookie
-        self.state.cookieTimestamp=Date()
+// Note: This is not guaranteed to be secure. This is probably the best we can do in Swift, which does not provide secure memory management.
+func zeroOptional(_ data: inout Data?)
+{
+    guard data != nil
+    else
+    {
+        return
     }
     
-    public init(data: Data, sharedState: State) {
-        let newtype = data[0 ..< 1]
-        
-        assert(newtype == Data(bytes: [0b11000000]))
-        
-        let newreserved = data[1 ..< 4]
-        
-        assert(newreserved == Data(repeating: 0x00, count: 3))
-        
-        let newreceiver = data[4 ..< 8]
-        let newnonce=data[8 ..< 32]
-        let newcookie=data[32 ..< 64]
-        
-        self.init(sharedState: sharedState, receiver: newreceiver, nonce: newnonce, cookie: newcookie)
+    for index in 0..<data!.count
+    {
+        data![index]=0
     }
+}
+
+func zero(_ data: inout Data)
+{
+    for index in 0..<data.count
+    {
+        data[index]=0
+    }
+}
+
+/**
+ https://www.wireguard.com/protocol/#dos-mitigation
+ */
+public struct CookieReply
+{
+//    let type: Data = Data(bytes: [0b11000000])
+//    let reserved: Data = Data(repeating: 0x00, count: 3)
+//    let receiver: Data
+//    let nonce: Data
+//    let cookie: Data
+//    var state: State
+//
+//    public init(sharedState: State, receiver: Data, nonce: Data, cookie: Data) {
+//        self.state=sharedState
+//        self.receiver=receiver
+//        self.nonce=nonce
+//        self.cookie=cookie
+//
+//        self.state.last_received_cookie=cookie
+//        self.state.cookie_timestamp = Date()
+//    }
+//
+//    public init(data: Data, sharedState: State)
+//    {
+//        let newtype = data[0 ..< 1]
+//
+//        assert(newtype == Data(bytes: [0b11000000]))
+//
+//        let newreserved = data[1 ..< 4]
+//
+//        assert(newreserved == Data(repeating: 0x00, count: 3))
+//
+//        let newreceiver = data[4 ..< 8]
+//        let newnonce=data[8 ..< 32]
+//        let newcookie=data[32 ..< 64]
+//
+//        self.init(sharedState: sharedState, receiver: newreceiver, nonce: newnonce, cookie: newcookie)
+//    }
 }

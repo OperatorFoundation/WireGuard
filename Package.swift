@@ -18,6 +18,7 @@ let package = Package(
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "0.7.2"),
         .package(url: "https://github.com/OperatorFoundation/HKDFKit.git", from: "1.0.1"),
         .package(url: "https://github.com/OperatorFoundation/Blake2.git", from: "1.0.1"),
+        .package(url: "https://github.com/OperatorFoundation/Transport.git", from: "0.0.22"),
         .package(url: "https://github.com/OperatorFoundation/Datable.git", from: "1.0.1")
     ],
     targets: [
@@ -25,9 +26,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "WireGuard",
-            dependencies: ["Sodium", "CryptoSwift", "HKDFKit", "Blake2", "Datable"]),
+            dependencies: ["Sodium", "CryptoSwift", "HKDFKit", "Blake2", "Transport", "Datable"]),
         .testTarget(
             name: "WireGuardTests",
-            dependencies: ["WireGuard", "Datable"]),
+            dependencies: ["WireGuard", "Transport", "Datable"]),
     ]
 )

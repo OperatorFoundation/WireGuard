@@ -9,35 +9,49 @@
 import Foundation
 import Sodium
 
-public struct State {
-    var ii: Int32!
-    var ir: Int32!
-    var static_private: Data!
-    var sprivr: Data!
-    var static_public: Data!
-    var spubr: Data!
-    var ephemeral_private: Data!
-    var eprivr: Data!
-    var ephemeral_public: Data!
-    var epubr: Data!
-    var q: Data = Data(repeating: 0, count: 32)
-    var hash: Data!
-    var hr: Data!
-    var chaining_key: Data!
-    var cr: Data!
-    var tsendi: Data!
-    var tsendr: Data!
-    var trecvi: Data!
-    var trecvr: Data!
-    var sender_index: Data = Data(repeating: 0, count: 8)
-    var nsendr: Data = Data(repeating: 0, count: 8)
-    var nrecvi: Data!
-    var nrecvr: Data!
-    var last_received_cookie: Data!
-    var cookieTimestamp: Date!
+public struct State
+{
+    //Ephemeral Public Key
+    var ephemeral_public: Data
+    
+    //Ephemeral Private Key
+    var ephemeral_private: Data
+    
+    //Static Public Key
+    var static_public: Data
+    
+    //Static Private Key
+    var static_private: Data
+    
+    var sender_index: Int
+    var ip_address: Data
+    
+    var chaining_key: Data?
+    var hash: Data?
+    var last_received_cookie: Data?
+    var cookie_timestamp: Date?
+    var changing_secret_every_two_minutes: Data?
+    var sending_key: Data?
+    var sending_key_counter: Int?
+    var receiving_key: Data?
+    var receiving_key_counter: Int?
 
-    public init() {
-        
+    public init(ephemeral_private: Data,
+                ephemeral_public: Data,
+                static_private: Data,
+                static_public: Data,
+                ip_address: Data,
+                sender_index: Int? = 0,
+                last_received_cookie: Data?,
+                cookie_timestamp: Date?)
+    {
+        self.ephemeral_private = ephemeral_private
+        self.ephemeral_public = ephemeral_public
+        self.static_private = static_private
+        self.static_public = static_public
+        self.ip_address = ip_address
+        self.last_received_cookie = last_received_cookie
+        self.cookie_timestamp = cookie_timestamp
     }
     
     mutating func incrNsendi() {
@@ -48,37 +62,4 @@ public struct State {
         
     }
 
-    /*
-     * https://www.wireguard.com/papers/wireguard.pdf
-     * 5.4.5 Transport Key Data Derivation
-     */
-    mutating func makeTransportKeys() {
-        assert(chaining_key! == cr!, "Chaining keys for initiator and responder are not identical")
-        let (temp1, temp2) = KDF2(key: chaining_key!, data: e)
-        tsendi=temp1
-        trecvr=temp1
-        trecvi=temp2
-        tsendr=temp2
-        
-        sender_index=Data(repeating: 0, count: 8)
-        nsendr=Data(repeating: 0, count: 8)
-        nrecvi=Data(repeating: 0, count: 8)
-        nrecvr=Data(repeating: 0, count: 8)
-        
-        zero(&ephemeral_private!)
-        zero(&ephemeral_public!)
-        zero(&eprivr!)
-        zero(&epubr!)
-        zero(&chaining_key!)
-        zero(&cr!)
-    }
-}
-
-// Note: This is not guaranteed to be secure. This is probably the best we can do in Swift, which does not provide secure memory management.
-func zero(_ data: inout Data)
-{
-    for index in 0..<data.count
-    {
-        data[index]=0
-    }
 }

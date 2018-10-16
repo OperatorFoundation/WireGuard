@@ -45,6 +45,15 @@
           "revision": "522193611c444b4073d5a6643192388a16c284a3",
           "version": "0.6.10"
         }
+      },
+      {
+        "package": "Transport",
+        "repositoryURL": "https://github.com/OperatorFoundation/Transport.git",
+        "state": {
+          "branch": null,
+          "revision": "865171ac066f5d6a7f2e0004ce3df61aeedce19c",
+          "version": "0.0.22"
+        }
       }
     ]
   },

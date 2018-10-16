@@ -12,6 +12,14 @@ import Datable
 
 let e = Data()
 
+enum MessageType: UInt8
+{
+    case HandshakeInitiation = 1
+    case HandshakeResponse = 2
+    case CookieReply = 3
+    case TransportData = 4
+}
+
 /*
  * https://www.wireguard.com/protocol/
  
@@ -78,6 +86,8 @@ public struct HandshakeInitiation {
      */
     public init(spubr: Data, sprivi: Data, maybeStaticKey: Data?)
     {
+        DatableConfig.endianess=.little
+        
         // 5.4.2
         // initiator.chaining_key = HASH(CONSTRUCTION)
         initiator.chaining_key = HASH(CONSTRUCTION)
@@ -90,9 +100,9 @@ public struct HandshakeInitiation {
         initiator.ephemeral_public = epubi
 
         // msg.message_type = 1
-        message_type = 1
+        message_type = MessageType.HandshakeInitiation.rawValue
         // msg.reserved_zero = { 0, 0, 0 }
-        reserved_zero = Data(repeating: 0x00, count: 3)
+        reserved_zero = Data(repeating: 0, count: 3)
         // msg.sender_index = little_endian(initiator.sender_index)
         sender_index = initiator.sender_index
 
@@ -104,17 +114,17 @@ public struct HandshakeInitiation {
         // temp = HMAC(initiator.chaining_key, msg.unencrypted_ephemeral)
         var temp = HMAC(initiator.chaining_key, unencrypted_ephemeral)
         // initiator.chaining_key = HMAC(temp, 0x1)
-        initiator.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        initiator.chaining_key = HMAC(temp, 0x1.data)
 
         // temp = HMAC(initiator.chaining_key, DH(initiator.ephemeral_private, responder.static_public))
         temp = HMAC(initiator.chaining_key, DH(initiator.ephemeral_private, initiator.ephemeral_public, spubr))
         // initiator.chaining_key = HMAC(temp, 0x1)
-        initiator.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        initiator.chaining_key = HMAC(temp, 0x1.data)
         // key = HMAC(temp, initiator.chaining_key || 0x2)
-        var key = HMAC(temp, initiator.chaining_key || Data(bytes: [0b01000000]))
+        var key = HMAC(temp, initiator.chaining_key || 0x2.data)
         
         // msg.encrypted_static = AEAD(key, 0, initiator.static_public, initiator.hash)
-        encrypted_static = AEAD(key, Data(bytes: [0]), initiator.static_public, initiator.hash)
+        encrypted_static = AEAD(key, 0.data, initiator.static_public, initiator.hash)
         // initiator.hash = HASH(initiator.hash || msg.encrypted_static)
         initiator.hash = HASH(initiator.hash || encrypted_static)
         
@@ -122,12 +132,12 @@ public struct HandshakeInitiation {
         temp = HMAC(initiator.chaining_key, DH(initiator.static_private, initiator.static_public, spubr))
         
         // initiator.chaining_key = HMAC(temp, 0x1)
-        initiator.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        initiator.chaining_key = HMAC(temp, 0x1.data)
         // key = HMAC(temp, initiator.chaining_key || 0x2)
-        key = HMAC(temp, initiator.chaining_key || Data(bytes: [0b01000000]))
+        key = HMAC(temp, initiator.chaining_key || 0x2.data)
         
         // msg.encrypted_timestamp = AEAD(key, 0, TAI64N(), initiator.hash)
-        encrypted_timestamp = AEAD(key, Data(bytes: [0]), TAI64N(), initiator.hash)
+        encrypted_timestamp = AEAD(key, 0.data, TAI64N(), initiator.hash)
         // initiator.hash = HASH(initiator.hash || msg.encrypted_timestamp)
         initiator.hash = HASH(initiator.hash || encrypted_timestamp)
         
@@ -231,8 +241,8 @@ extension HandshakeInitiation: Equatable {
 }
 
 public struct HandshakeResponse {
-    let type: Data = Data(bytes: [0b01000000])
-    let reserved: Data = Data(repeating: 0x00, count: 3)
+    let type: Data = MessageType.HandshakeResponse.rawValue.data
+    let reserved: Data = Data(repeating: 0, count: 3)
     let sender: Data
     let receiver: Data
     let ephemeralKey: Data
@@ -318,7 +328,7 @@ public struct HandshakeResponse {
 public struct TransportDataMessage
 {
     
-//    let type: Data = Data(bytes: [0b00100000])
+//    let type: Data = MessageType.TransportData.rawValue.data
 //    let reserved: Data = Data(repeating: 0x00, count: 3)
 //    let receiver: Data
 //    let counter: Data
@@ -403,10 +413,10 @@ public struct TransportDataMessage
             
         ///temp2 = HMAC(temp1, 0x1)
         //FIXME: Is this the correct binary value?
-        var temp2 = HMAC(temp1, Data(bytes: [0b00100000]))
+        var temp2 = HMAC(temp1, 0x1.data)
         
         ///temp3 = HMAC(temp1, temp2 || 0x2)
-        var temp3 = HMAC(temp1, temp2 || Data(bytes: [0b01000000]))
+        var temp3 = HMAC(temp1, temp2 || 0x2.data)
         
         ///initiator.sending_key = temp2
         initiator.sending_key = temp2
@@ -426,10 +436,10 @@ public struct TransportDataMessage
         temp1 = HMAC(responder_chaining_key, Data())
         
         ///temp2 = HMAC(temp1, 0x1)
-        temp2 = HMAC(temp1, Data(bytes: [0b00100000]))
+        temp2 = HMAC(temp1, 0x1.data)
         
         ///temp3 = HMAC(temp1, temp2 || 0x2)
-        temp3 = HMAC(temp1, temp2 || Data(bytes: [0b01000000]))
+        temp3 = HMAC(temp1, temp2 || 0x2.data)
         
         ///responder.receiving_key = temp2
         responder.receiving_key = temp2
@@ -485,7 +495,7 @@ func zero(_ data: inout Data)
  */
 public struct CookieReply
 {
-//    let type: Data = Data(bytes: [0b11000000])
+//    let type: Data = MessageType.CookieReply.rawValue.data
 //    let reserved: Data = Data(repeating: 0x00, count: 3)
 //    let receiver: Data
 //    let nonce: Data

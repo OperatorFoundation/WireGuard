@@ -112,6 +112,19 @@ func AEAD(_ key: Data, _ counter: Data, _ plainText: Data, _ authText: Data) -> 
     }
 }
 
+func XAEAD(_ key: Data, _ counter: Data, _ plainText: Data, _ authText: Data) -> Data {
+    let sodium = Sodium()
+    let nonce = Data()
+    if let result = sodium.aead.xchacha20poly1305ietf.encrypt(message: plainText.array, secretKey: key.array, nonce: nonce.array, additionalData: authText.array)
+    {
+        return Data(array: result)
+    }
+    else
+    {
+        return Data()
+    }
+}
+
 extension Data
 {
     static func ||(left: Data, right: Data) -> Data

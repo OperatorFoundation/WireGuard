@@ -19,7 +19,8 @@ let package = Package(
         .package(url: "https://github.com/OperatorFoundation/HKDFKit.git", from: "1.0.1"),
         .package(url: "https://github.com/OperatorFoundation/Blake2.git", from: "1.0.1"),
         .package(url: "https://github.com/OperatorFoundation/Transport.git", from: "0.0.22"),
-        .package(url: "https://github.com/OperatorFoundation/Datable.git", from: "1.0.1")
+        .package(url: "https://github.com/OperatorFoundation/Datable", from: "1.0.1"),
+        .package(url: "https://github.com/Bouke/INI", from: "1.0.2")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -29,6 +30,6 @@ let package = Package(
             dependencies: ["Sodium", "CryptoSwift", "HKDFKit", "Blake2", "Transport", "Datable"]),
         .testTarget(
             name: "WireGuardTests",
-            dependencies: ["WireGuard", "Transport", "Datable"]),
+            dependencies: ["WireGuard", "Transport", "INI", "Datable"]),
     ]
 )

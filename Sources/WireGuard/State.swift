@@ -23,7 +23,7 @@ public struct State
     //Static Private Key
     var static_private: Data
     
-    var sender_index: Int
+    var sender_index: UInt32
     var ip_address: Data
     
     var chaining_key: Data?
@@ -32,7 +32,7 @@ public struct State
     var cookie_timestamp: Date?
     var changing_secret_every_two_minutes: Data?
     var sending_key: Data?
-    var sending_key_counter: Int?
+    var sending_key_counter: UInt64?
     var receiving_key: Data?
     var receiving_key_counter: Int?
 
@@ -41,7 +41,7 @@ public struct State
                 static_private: Data,
                 static_public: Data,
                 ip_address: Data,
-                sender_index: Int? = 0,
+                sender_index: UInt32? = 0,
                 last_received_cookie: Data?,
                 cookie_timestamp: Date?)
     {
@@ -52,6 +52,7 @@ public struct State
         self.ip_address = ip_address
         self.last_received_cookie = last_received_cookie
         self.cookie_timestamp = cookie_timestamp
+        self.sender_index = sender_index!
     }
     
     mutating func incrNsendi() {

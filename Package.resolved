@@ -38,12 +38,21 @@
         }
       },
       {
+        "package": "INI",
+        "repositoryURL": "https://github.com/Bouke/INI",
+        "state": {
+          "branch": null,
+          "revision": "668f9152f8ca24bd024f77ef7d81388724ef21d3",
+          "version": "1.0.2"
+        }
+      },
+      {
         "package": "Sodium",
         "repositoryURL": "https://github.com/OperatorFoundation/swift-sodium.git",
         "state": {
           "branch": null,
-          "revision": "52b5894ebc9969338b8db0d69ffa2915a284e08c",
-          "version": "0.6.11"
+          "revision": "c256ac3a11489d8f81b3915649f83f4d1a3252a3",
+          "version": "0.7.1"
         }
       },
       {

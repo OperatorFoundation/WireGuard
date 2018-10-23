@@ -73,16 +73,6 @@ func KDF1(_ key: Data, _ data: Data) -> Data {
     return t0
 }
 
-func KDF2(key: Data, data: Data) -> (Data, Data) {
-    let t0 = HMAC(key, data)
-    let t1 = HMAC(t0, Data(bytes: [0b10000000]))
-
-    // FIXME - This is clearly wrong, check the spec to fix it.
-    deriveKey(seed: key, info: data, salt: Data(), outputSize: 32)
-    
-    return (t0, t1)
-}
-
 func KDF3(key: Data, data: Data) -> (Data, Data, Data) {
     let t0 = HMAC(key, data)
     let t1 = HMAC(t0, Data(bytes: [0b10000000]))

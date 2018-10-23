@@ -27,14 +27,13 @@ enum MessageType: UInt8
  The initiator sends this message.
  
  - property message_type: UInt8
- - property reserved_zero: Data
- - property sender_index: Int
- - property unencrypted_ephemeral: Data
- - property encrypted_static: Data
- - property encrypted_timestamp: Data
- - property mac1: Data
- - property mac2: Data
- - property initiator: State
+ - property reserved_zero: Data, 3 bytes
+ - property sender_index: UInt32
+ - property unencrypted_ephemeral: Data, 32 bytes
+ - property encrypted_static: Data, 32 bytes
+ - property encrypted_timestamp: Data, 12 bytes
+ - property mac1: Data, 16 bytes
+ - property mac2: Data, 16 bytes
  */
 public struct HandshakeInitiation
 {
@@ -48,49 +47,17 @@ public struct HandshakeInitiation
     let mac2: Data
 
     /**
-     The fields are populated as follows:
-     
-     initiator.chaining_key = HASH(CONSTRUCTION)
-     initiator.hash = HASH(HASH(initiator.chaining_key || IDENTIFIER) || responder.static_public)
-     initiator.ephemeral_private = DH_GENERATE()
-     msg.message_type = 1
-     msg.reserved_zero = { 0, 0, 0 }
-     msg.sender_index = little_endian(initiator.sender_index)
-     
-     msg.unencrypted_ephemeral = DH_PUBKEY(initiator.ephemeral_private)
-     initiator.hash = HASH(initiator.hash || msg.unencrypted_ephemeral)
-     
-     temp = HMAC(initiator.chaining_key, msg.unencrypted_ephemeral)
-     initiator.chaining_key = HMAC(temp, 0x1)
-     
-     temp = HMAC(initiator.chaining_key, DH(initiator.ephemeral_private, responder.static_public))
-     initiator.chaining_key = HMAC(temp, 0x1)
-     key = HMAC(temp, initiator.chaining_key || 0x2)
-     
-     msg.encrypted_static = AEAD(key, 0, initiator.static_public, initiator.hash)
-     initiator.hash = HASH(initiator.hash || msg.encrypted_static)
-     
-     temp = HMAC(initiator.chaining_key, DH(initiator.static_private, responder.static_public))
-     initiator.chaining_key = HMAC(temp, 0x1)
-     key = HMAC(temp, initiator.chaining_key || 0x2)
-     
-     msg.encrypted_timestamp = AEAD(key, 0, TAI64N(), initiator.hash)
-     initiator.hash = HASH(initiator.hash || msg.encrypted_timestamp)
-     
-     msg.mac1 = MAC(HASH(LABEL_MAC1 || responder.static_public), msg[0:offsetof(msg.mac1)])
-     if (initiator.last_received_cookie is empty or expired)
-     msg.mac2 = [zeros]
-     else
-     msg.mac2 = MAC(initiator.last_received_cookie, msg[0:offsetof(msg.mac2)])
      */
-    public init(initiator: inout State, responder: State, maybeStaticKey: Data?)
+    public init?(initiator: inout State, responder_static_public: Data, maybeStaticKey: Data?)
     {
+        // FIXME: Parameter was previously responder: State
+        
         DatableConfig.endianess = .little
 
         // initiator.chaining_key = HASH(CONSTRUCTION)
         initiator.chaining_key = HASH(CONSTRUCTION)
         // initiator.hash = HASH(HASH(initiator.chaining_key || IDENTIFIER) || responder.static_public)
-        initiator.hash = HASH(HASH(initiator.chaining_key! || IDENTIFIER) || responder.static_public)
+        initiator.hash = HASH(HASH(initiator.chaining_key! || IDENTIFIER) || responder_static_public)
         
         //initiator.ephemeral_private = DH_GENERATE()
         let ephemeralKeys = DH_GENERATE()
@@ -115,7 +82,7 @@ public struct HandshakeInitiation
         initiator.chaining_key = HMAC(temp, 0x1.data)
 
         // temp = HMAC(initiator.chaining_key, DH(initiator.ephemeral_private, responder.static_public))
-        temp = HMAC(initiator.chaining_key!, DH(initiator.ephemeral_private, initiator.ephemeral_public, responder.static_public))
+        temp = HMAC(initiator.chaining_key!, DH(initiator.ephemeral_private, initiator.ephemeral_public, responder_static_public))
         
         // initiator.chaining_key = HMAC(temp, 0x1)
         initiator.chaining_key = HMAC(temp, 0x1.data)
@@ -130,7 +97,7 @@ public struct HandshakeInitiation
         initiator.hash = HASH(initiator.hash! || encrypted_static)
         
         // temp = HMAC(initiator.chaining_key, DH(initiator.static_private, responder.static_public))
-        temp = HMAC(initiator.chaining_key!, DH(initiator.static_private, initiator.static_public, responder.static_public))
+        temp = HMAC(initiator.chaining_key!, DH(initiator.static_private, initiator.static_public, responder_static_public))
         
         // initiator.chaining_key = HMAC(temp, 0x1)
         initiator.chaining_key = HMAC(temp, 0x1.data)
@@ -140,6 +107,13 @@ public struct HandshakeInitiation
         
         // msg.encrypted_timestamp = AEAD(key, 0, TAI64N(), initiator.hash)
         encrypted_timestamp = AEAD(key, 0.data, TAI64N(), initiator.hash!)
+        
+        guard encrypted_timestamp.count == 12
+        else
+        {
+            print("Unable to initialize HandshakeInitiation: encrypted_timestamp is \(encrypted_timestamp.count) bytes, but must be 12 bytes")
+            return nil
+        }
 
         // initiator.hash = HASH(initiator.hash || msg.encrypted_timestamp)
         initiator.hash = HASH(initiator.hash! || encrypted_timestamp)
@@ -147,7 +121,14 @@ public struct HandshakeInitiation
         // msg.mac1 = MAC(HASH(LABEL_MAC1 || responder.static_public), msg[0:offsetof(msg.mac1)])
         DatableConfig.endianess = .little
         let payload1 = concat([message_type.data, reserved_zero, sender_index.data, unencrypted_ephemeral, encrypted_static, encrypted_timestamp])
-        mac1 = MAC(key: HASH(LABEL_MAC1 || responder.static_public), data: payload1)
+        mac1 = MAC(key: HASH(LABEL_MAC1 || responder_static_public), data: payload1)
+        
+        guard mac1.count == 16
+            else
+        {
+            print("Unable to initialize HandshakeInitiation: mac1 was not 16 bytes.")
+            return nil
+        }
         
         // if (initiator.last_received_cookie is empty or expired)
         // msg.mac2 = [zeros]
@@ -158,6 +139,13 @@ public struct HandshakeInitiation
         {
             let payload2 = concat([payload1, mac1])
             mac2 = MAC(key: cookie, data: payload2)
+            
+            guard mac2.count == 16
+                else
+            {
+                print("Unable to initialize HandshakeInitiation: mac2 was not 16 bytes.")
+                return nil
+            }
         }
         else
         {
@@ -186,7 +174,6 @@ public struct HandshakeInitiation
     
     public func encode() -> Data
     {
-        //FIXME: new encode, check for correctness
         return concat([message_type.data, reserved_zero, sender_index.data , unencrypted_ephemeral, encrypted_static, encrypted_timestamp, mac1, mac2])
     }
 }
@@ -223,17 +210,14 @@ extension HandshakeInitiation: Equatable
  
  The responder sends this message, after processing the handshake request and applying the same operations to arrive at an identical state.
  
- msg = handshake_response
- {
- u8 message_type
- u8 reserved_zero[3]
- u32 sender_index
- u32 receiver_index
- u8 unencrypted_ephemeral[32]
- u8 encrypted_nothing[AEAD_LEN(0)]
- u8 mac1[16]
- u8 mac2[16]
- }
+ - property message_type: UInt8
+ - property reserved_zero: Data
+ - property sender_index: UInt32
+ - property receiver_index: UInt32
+ - property unencrypted_ephemeral: Data, should be 32 bytes
+ - property encrypted_nothing: Data
+ - property mac1: Data
+ - property mac2: Data
  */
 
 public struct HandshakeResponse
@@ -248,43 +232,9 @@ public struct HandshakeResponse
     let mac2: Data
     
     /**
-     The fields are populated as follows:
-     
-     responder.ephemeral_private = DH_GENERATE()
-     msg.message_type = 2
-     msg.reserved_zero = { 0, 0, 0 }
-     msg.sender_index = little_endian(responder.sender_index)
-     msg.receiver_index = little_endian(initiator.sender_index)
-     
-     msg.unencrypted_ephemeral = DH_PUBKEY(responder.ephemeral_private)
-     responder.hash = HASH(responder.hash || msg.unencrypted_ephemeral)
-     
-     temp = HMAC(responder.chaining_key, msg.unencrypted_ephemeral)
-     responder.chaining_key = HMAC(temp, 0x1)
-     
-     temp = HMAC(responder.chaining_key, DH(responder.ephemeral_private, initiator.ephemeral_public))
-     responder.chaining_key = HMAC(temp, 0x1)
-     
-     temp = HMAC(responder.chaining_key, DH(responder.ephemeral_private, initiator.static_public))
-     responder.chaining_key = HMAC(temp, 0x1)
-     
-     temp = HMAC(responder.chaining_key, preshared_key)
-     responder.chaining_key = HMAC(temp, 0x1)
-     temp2 = HMAC(temp, responder.chaining_key || 0x2)
-     key = HMAC(temp, temp2 || 0x3)
-     responder.hash = HASH(responder.hash || temp2)
-     
-     msg.encrypted_nothing = AEAD(key, 0, [empty], responder.hash)
-     responder.hash = HASH(responder.hash || msg.encrypted_nothing)
-     
-     msg.mac1 = MAC(HASH(LABEL_MAC1 || initiator.static_public), msg[0:offsetof(msg.mac1)])
-     if (responder.last_received_cookie is empty or expired)
-     msg.mac2 = [zeros]
-     else
-     msg.mac2 = MAC(responder.last_received_cookie, msg[0:offsetof(msg.mac2)])
-     When the initiator receives this message, he decrypts and does all the above operations in reverse, so that the state is identical.
+     When the initiator receives this message, it decrypts and does all the above operations in reverse, so that the state is identical.
      */
-    init?(initiator: State, responder: inout State, preshared_key: Data)
+    public init?(initiator: State, responder: inout State, preshared_key: Data)
     {
         // responder.ephemeral_private = DH_GENERATE()
         let ephemeralKeys = DH_GENERATE()
@@ -335,32 +285,32 @@ public struct HandshakeResponse
         var temp = HMAC(responderChainingKey, unencrypted_ephemeral)
         
         // responder.chaining_key = HMAC(temp, 0x1)
-        responder.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        responder.chaining_key = HMAC(temp, 0x1.data)
         
         // temp = HMAC(responder.chaining_key, DH(responder.ephemeral_private, initiator.ephemeral_public))
         temp = HMAC(responder.chaining_key!, DH(responder.ephemeral_private, responder.ephemeral_public, initiator.ephemeral_public))
         
         // responder.chaining_key = HMAC(temp, 0x1)
-        responder.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        responder.chaining_key = HMAC(temp, 0x1.data)
         
         // temp = HMAC(responder.chaining_key, DH(responder.ephemeral_private, initiator.static_public))
         temp = HMAC(responder.chaining_key!, DH(responder.ephemeral_private, responder.ephemeral_public, initiator.static_public))
         
         // responder.chaining_key = HMAC(temp, 0x1)
-        responder.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        responder.chaining_key = HMAC(temp, 0x1.data)
         
         // temp = HMAC(responder.chaining_key, preshared_key)
         temp = HMAC(responder.chaining_key!, preshared_key)
         
         // responder.chaining_key = HMAC(temp, 0x1)
-        responder.chaining_key = HMAC(temp, Data(bytes: [0b10000000]))
+        responder.chaining_key = HMAC(temp, 0x1.data)
         
         // temp2 = HMAC(temp, responder.chaining_key || 0x2)
-        let temp2 = HMAC(temp, responder.chaining_key! || Data(bytes: [0b01000000]))
+        let temp2 = HMAC(temp, responder.chaining_key! || 0x2.data)
         
         //FIXME: Endianness
         // key = HMAC(temp, temp2 || 0x3)
-        let key = HMAC(temp, temp2 || Data(bytes: [0b11000000]))
+        let key = HMAC(temp, temp2 || 0x3.data)
         
         // responder.hash = HASH(responder.hash || temp2)
         responder.hash = HASH(responder.hash! || temp2)
@@ -384,10 +334,10 @@ public struct HandshakeResponse
             return nil
         }
         
-//        if (responder.last_received_cookie is empty or expired)
-//        msg.mac2 = [zeros]
-//        else
-//        msg.mac2 = MAC(responder.last_received_cookie, msg[0:offsetof(msg.mac2)])
+        // if (responder.last_received_cookie is empty or expired)
+        // msg.mac2 = [zeros]
+        // else
+        // msg.mac2 = MAC(responder.last_received_cookie, msg[0:offsetof(msg.mac2)])
         
         if let cookie = responder.last_received_cookie, let timestamp = responder.cookie_timestamp, timestamp.timeIntervalSinceNow < 120
         {
@@ -403,7 +353,7 @@ public struct HandshakeResponse
         }
         else
         {
-            mac2 = Data(repeating: 0, count: 16) // FIXME - different mac2 if cookies are present
+            mac2 = Data(repeating: 0, count: 16)
         }
     }
     
@@ -447,9 +397,9 @@ public struct HandshakeResponse
  The initiator and the responder exchange this packet for sharing encapsulated packet data:
  
  - property message_type: UInt8
- - property reserved_zero: Data
- - property receiver_index: Int
- - property counter: Int
+ - property reserved_zero: Data, 3 bytes
+ - property receiver_index: UInt32
+ - property counter: UInt64
  - property encrypted_encapsulated_packet: Data
  
  */
@@ -474,13 +424,13 @@ public struct TransportDataMessage
      
      The responder uses its responder.receiving_key to read the message.
      */
-    init?(responder: State, initiator: State, packet_data: Data)
+    public init?(responder: State, initiator: State, packet_data: Data)
     {
         ///msg.message_type = 4
-        message_type = 4
+        message_type = MessageType.TransportData.rawValue
         
         ///msg.reserved_zero = { 0, 0, 0 }
-        reserved_zero = Data(repeating: 0x00, count: 3)
+        reserved_zero = Data(repeating: 0, count: 3)
         
         ///msg.receiver_index = little_endian(responder.sender_index)
         receiver_index = responder.sender_index
@@ -514,28 +464,7 @@ public struct TransportDataMessage
         
         encrypted_encapsulated_packet = AEAD(initiatorSendingKey, counter.data, encapsulated_packet, Data())
     }
-    
-//    let type: Data = MessageType.TransportData.rawValue.data
-//    let reserved: Data = Data(repeating: 0x00, count: 3)
-//    let receiver: Data
-//    let counter: Data
-//    let packet: Data
-//    var state: State
-//
-//    public init(plainPacket: Data, initiation: HandshakeInitiation, response: HandshakeResponse)
-//    {
-//        state = response.responder
-//        receiver = response.receiver
-//
-//        let sodium=Sodium()
-//        var paddedPacket=plainPacket.array
-//        sodium.utils.pad(bytes: &paddedPacket, blockSize: 16)
-//
-//        counter = state.sender_index
-//        packet = AEAD(initiation.initiator.sending_key, state.sender_index, Data(array: paddedPacket), e)
-//        state.incrNsendi()
-//    }
-//
+
 //    init(receiver: Data, counter: Data, packet: Data, oldState: State)
 //    {
 //        self.receiver=receiver
@@ -573,7 +502,7 @@ public struct TransportDataMessage
     /**
      After the handshake, keys are calculated by the initiator and responder for sending and receiving data, And then all previous chaining keys, ephemeral keys, and hashes are zeroed out.
      - parameter initiator: State, in this implementation of WireGuard this is the client
-     - parameter responder: State, in this impplementation, the server
+     - parameter responder: State, in this implementation, the server
      - Returns: A boolean value indicating whether the keys were created successfully.
      */
     mutating func makeTransportKeys(initiator: inout State, responder: inout State) -> Bool
@@ -683,26 +612,26 @@ func zero(_ data: inout Data)
  When a message with a valid msg.mac1 is received, but msg.mac2 is all zeros or invalid and the server is under load, the server may send a cookie reply packet
  
  - property message_type: UInt8
- - property reserved_zero: Data
- - property receiver_index: Int
- - property nonce: Data
- - property encrypted_cookie: Data
+ - property reserved_zero: Data, 3 bytes
+ - property receiver_index: UInt32
+ - property nonce: Data, 24 bytes
+ - property encrypted_cookie: Data, 16 bytes
  */
 public struct CookieReply
 {
     var message_type: UInt8
     var reserved_zero: Data
     var receiver_index: UInt32
-    var nonce: Data //[24]
-    var encrypted_cookie: Data //[AEAD_LEN(16)]
+    var nonce: Data
+    var encrypted_cookie: Data
     
-    init?(initiator: State, responder: State, last_received_msg: HandshakeInitiation)
+    public init?(initiator: State, responder: State, last_received_msg: HandshakeInitiation)
     {
         ///msg.message_type = 3
         message_type = MessageType.CookieReply.rawValue
         
         ///msg.reserved_zero = { 0, 0, 0 }
-        reserved_zero = Data(repeating: 0x00, count: 3)
+        reserved_zero = Data(repeating: 0, count: 3)
         
         ///msg.receiver_index = little_endian(initiator.sender_index)
         receiver_index = initiator.sender_index
@@ -729,15 +658,15 @@ public struct CookieReply
         
         ///msg.encrypted_cookie = XAEAD(HASH(LABEL_COOKIE || responder.static_public), msg.nonce, cookie, last_received_msg.mac1)
         encrypted_cookie = XAEAD(key: HASH(labelCookie || responder.static_public), nonce: nonce, plainText: cookie, authText: last_received_msg.mac1)
+        
+        guard encrypted_cookie.count == 16
+        else
+        {
+            print("Unable to initiate CookieReply: encrypted_cookie is \(encrypted_cookie.count) bytes, but must be 16.")
+            return nil
+        }
     }
-    
-//    let type: Data = Data(bytes: [0b11000000])
-//    let reserved: Data = Data(repeating: 0x00, count: 3)
-//    let receiver: Data
-//    let nonce: Data
-//    let cookie: Data
-//    var state: State
-//
+
 //    public init(sharedState: State, receiver: Data, nonce: Data, cookie: Data) {
 //        self.state=sharedState
 //        self.receiver=receiver

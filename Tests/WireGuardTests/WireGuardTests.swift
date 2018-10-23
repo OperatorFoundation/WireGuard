@@ -9,298 +9,314 @@
 import XCTest
 import Network
 import Transport
+import INI
 
 @testable import WireGuard
 
 class WireGuardTests: XCTestCase
 {
-    func testListener()
+    var privateKey: Data = Data()
+    var publicKey: Data = Data()
+    var testIPString: String = ""
+    var portUInt: UInt16 = 9002
+    var ephemeralPublic: Data = Data()
+    var ephemeralPrivate: Data = Data()
+
+    override func setUp()
     {
-        let godot = expectation(description: "Waiting for...")
+        super.setUp()
+
         do
         {
-            let listener = try NWListener(using: .udp, on: NWEndpoint.Port(rawValue: 7717)!)
-            listener.newConnectionHandler =
+            let config = try parseINI(filename: "/Users/Lita/tempWireGuard/utun9.conf")
+            
+            print(config.sections)
+            
+            guard let privKey = config["Interface"]?["PrivateKey"]
+            else
             {
-                [weak self] (newConnection) in
-                
-                
-                
-                if let strongSelf = self
-                {
-                    print("\nNew connection = \(newConnection)\n")
-                }
+                print("Unable to get private key from config file.")
+                return
             }
             
-            listener.start(queue: DispatchQueue(label: "test"))
+            guard let pubKey = config["Peer"]?["PublicKey"]
+            else
+            {
+                print("Unable to get public key from config file.")
+                return
+            }
             
+            guard let endpointString = config["Peer"]?["Endpoint"]
+            else
+            {
+                print("Unable to get endpoint from config file.")
+                return
+            }
+            
+            let endpointArray = endpointString.components(separatedBy: ":")
+            let ephemeralKeys = DH_GENERATE()
+
+            ephemeralPublic = ephemeralKeys.publiKey
+            ephemeralPrivate = ephemeralKeys.privateKey
+            portUInt = UInt16(string: endpointArray[1])
+            testIPString = endpointArray[0]
+            privateKey = privKey.data
+            publicKey = pubKey.data
         }
         catch (let error)
         {
-            print("\nListener creation error: \(error)\n")
-            XCTFail()
+            print("Error reading config file: \(error)")
         }
-        
-        wait(for: [godot], timeout: 3000)
     }
-}
-//{
-//    let fileManager = FileManager.default
-//    var configURL: URL?
-//    var privateKey: Data?
-//    var publicKey: Data?
-//    let testIPString: String?
-//    let portUInt: UInt16?
-//
-//    var spubr: Data?
-//    var sprivr: Data?
-//    var spubi: Data?
-//    var sprivi: Data?
-//
-//    override func setUp()
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testInitiation()
+    {
+        var initiator = State(ephemeral_private: ephemeralPrivate,
+                              ephemeral_public: ephemeralPublic,
+                              static_private: privateKey,
+                              static_public: publicKey,
+                              ip_address: testIPString.data,
+                              last_received_cookie: nil,
+                              cookie_timestamp: nil)
+        let initiation = HandshakeInitiation(initiator: &initiator, responder_static_public: publicKey, maybeStaticKey: nil)
+        
+        XCTAssertNotNil(initiation)
+        
+        //let initiation = HandshakeInitiation(hInitiator: <#T##State#>, responder: <#T##State#>, maybeStaticKey: <#T##Data?#>)
+            //HandshakeInitiation(spubr: spubr!, sprivi: sprivi!, maybeStaticKey: nil)
+       
+        
+        //let initData=initiation.encode()
+    }
+    
+//    func testListener()
 //    {
-//        super.setUp()
-//
-//        guard let resourcePath = Bundle.main.path(forResource: "utun9", ofType: "conf")
-//            else
-//        {
-//            print("Unable to find Default Config files.")
-//            return
-//        }
-//
-//        let resourceURL = URL(fileURLWithPath: resourcePath)
-//        configURL = resourceURL
-//
+//        let godot = expectation(description: "Waiting for...")
 //        do
 //        {
-//            let configString = try String(contentsOf: configURL, encoding: .ascii)
+//            let listener = try NWListener(using: .udp, on: NWEndpoint.Port(rawValue: 7717)!)
+//            listener.newConnectionHandler =
+//                {
+//                    [weak self] (newConnection) in
+//
+//
+//
+//                    if let strongSelf = self
+//                    {
+//                        print("\nNew connection = \(newConnection)\n")
+//                    }
+//            }
+//
+//            listener.start(queue: DispatchQueue(label: "test"))
+//
 //        }
 //        catch (let error)
 //        {
-//            print("Error reading config file: \(error)")
-//        }
-//
-//
-//        var pub: Data
-//        var priv: Data
-//
-//        (pub, priv) = DH_GENERATE()
-//        spubr=pub
-//        sprivr=priv
-//
-//        (pub, priv) = DH_GENERATE()
-//        spubi=pub
-//        sprivi=priv
-//    }
-//    
-//    override func tearDown() {
-//        super.tearDown()
-//    }
-//    
-//    func testInitiation() {
-//        //let initiation = HandshakeInitiation(hInitiator: <#T##State#>, responder: <#T##State#>, maybeStaticKey: <#T##Data?#>)
-//            //HandshakeInitiation(spubr: spubr!, sprivi: sprivi!, maybeStaticKey: nil)
-//       
-//        
-//        //let initData=initiation.encode()
-//    }
-//    
-//    func testNetworkUDPConnection()
-//    {
-//        guard let port = NWEndpoint.Port(rawValue: portUInt)
-//        else
-//        {
-//            print("Unable to resolve port for test")
+//            print("\nListener creation error: \(error)\n")
 //            XCTFail()
-//            return
 //        }
 //
-//        //        guard let ipv4Address = IPv4Address("172.217.9.174") //Google
-//        guard let ipv4Address = IPv4Address(testIPString)
-//            else
-//        {
-//            print("Unable to resolve ipv4 address for test")
-//            XCTFail()
-//            return
-//        }
-//        
-//        let connected = expectation(description: "Connected to the server.")
-//        let host = NWEndpoint.Host.ipv4(ipv4Address)
-//        let connectionFactory = NetworkConnectionFactory(host: host, port: port)
-//        let maybeConnection = connectionFactory.connect(using: .udp)
-//        
-//        XCTAssertNotNil(maybeConnection)
-//        
-//        guard var connection = maybeConnection
-//            else
-//        {
-//            return
-//        }
-//        
-//        connection.stateUpdateHandler =
-//            {
-//                (newState) in
-//                
-//                print("CURRENT STATE = \(newState))")
-//                
-//                switch newState
+//        wait(for: [godot], timeout: 3000)
+//    }
+    
+    func testNetworkUDPConnection()
+    {
+        guard let port = NWEndpoint.Port(rawValue: portUInt)
+        else
+        {
+            print("Unable to resolve port for test")
+            XCTFail()
+            return
+        }
+
+        guard let ipv4Address = IPv4Address(testIPString)
+            else
+        {
+            print("Unable to resolve ipv4 address for test")
+            XCTFail()
+            return
+        }
+        
+        let connected = expectation(description: "Connected to the server.")
+        let host = NWEndpoint.Host.ipv4(ipv4Address)
+        let connectionFactory = NetworkConnectionFactory(host: host, port: port)
+        let maybeConnection = connectionFactory.connect(using: .udp)
+        
+        XCTAssertNotNil(maybeConnection)
+        
+        guard var connection = maybeConnection
+            else
+        {
+            return
+        }
+        
+        connection.stateUpdateHandler =
+            {
+                (newState) in
+                
+                print("CURRENT STATE = \(newState))")
+                
+                switch newState
+                {
+                case .ready:
+                    print("\n🚀 open() called on tunnel connection  🚀\n")
+                    connected.fulfill()
+                    
+                case .cancelled:
+                    print("\n🙅‍♀️  Connection Canceled  🙅‍♀️\n")
+                    
+                case .failed(let error):
+                    print("\n🐒💨  Connection Failed  🐒💨\n")
+                    print("⛑  Failure Error: \(error.localizedDescription)")
+                    XCTFail()
+                    
+                default:
+                    print("\n🤷‍♀️  Unexpected State: \(newState))  🤷‍♀️\n")
+                }
+        }
+        
+        maybeConnection?.start(queue: DispatchQueue(label: "TestQueue"))
+        
+        waitForExpectations(timeout: 20)
+        { (maybeError) in
+            if let error = maybeError
+            {
+                print("Expectation completed with error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func testNetworkUDPConnectionSendReceive()
+    {
+        guard let port = NWEndpoint.Port(rawValue: portUInt)
+            else
+        {
+            print("Unable to resolve port for test")
+            XCTFail()
+            return
+        }
+        
+        guard let ipv4Address = IPv4Address(testIPString)
+            else
+        {
+            print("Unable to resolve ipv4 address for test")
+            XCTFail()
+            return
+        }
+        
+        let connected = expectation(description: "Connected to the server.")
+        let wrote = expectation(description: "Wrote data to the server.")
+        let read = expectation(description: "Read data from the server.")
+        let host = NWEndpoint.Host.ipv4(ipv4Address)
+        let connectionFactory = NetworkConnectionFactory(host: host, port: port)
+        let maybeConnection = connectionFactory.connect(using: .udp)
+        
+        XCTAssertNotNil(maybeConnection)
+        
+        guard var connection = maybeConnection
+            else
+        {
+            return
+        }
+        
+        connection.stateUpdateHandler =
+        {
+            (newState) in
+            
+            print("CURRENT STATE = \(newState))")
+            
+            switch newState
+            {
+            case .ready:
+                print("\n🚀 open() called on tunnel connection  🚀\n")
+                connected.fulfill()
+                
+//                let initiation = HandshakeInitiation(spubr: self.spubr!, sprivi: self.sprivi!, maybeStaticKey: nil)
+//                let initData = initiation.encode()
+//                connection.send(content: initData,
+//                                contentContext: .defaultMessage,
+//                                isComplete: true,
+//                                completion: NWConnection.SendCompletion.contentProcessed(
 //                {
-//                case .ready:
-//                    print("\n🚀 open() called on tunnel connection  🚀\n")
-//                    connected.fulfill()
-//                    
-//                case .cancelled:
-//                    print("\n🙅‍♀️  Connection Canceled  🙅‍♀️\n")
-//                    
-//                case .failed(let error):
-//                    print("\n🐒💨  Connection Failed  🐒💨\n")
-//                    print("⛑  Failure Error: \(error.localizedDescription)")
-//                    XCTFail()
-//                    
-//                default:
-//                    print("\n🤷‍♀️  Unexpected State: \(newState))  🤷‍♀️\n")
-//                }
-//        }
-//        
-//        maybeConnection?.start(queue: DispatchQueue(label: "TestQueue"))
-//        
-//        waitForExpectations(timeout: 20)
-//        { (maybeError) in
-//            if let error = maybeError
-//            {
-//                print("Expectation completed with error: \(error.localizedDescription)")
-//            }
-//        }
-//    }
-//    
-//    func testNetworkUDPConnectionSendReceive()
-//    {
-//        guard let port = NWEndpoint.Port(rawValue: portUInt)
-//            else
-//        {
-//            print("Unable to resolve port for test")
-//            XCTFail()
-//            return
-//        }
-//        
-//        //        guard let ipv4Address = IPv4Address("172.217.9.174") //Google
-//        guard let ipv4Address = IPv4Address(testIPString)
-//            else
-//        {
-//            print("Unable to resolve ipv4 address for test")
-//            XCTFail()
-//            return
-//        }
-//        
-//        let connected = expectation(description: "Connected to the server.")
-//        let wrote = expectation(description: "Wrote data to the server.")
-//        let read = expectation(description: "Read data from the server.")
-//        let host = NWEndpoint.Host.ipv4(ipv4Address)
-//        let connectionFactory = NetworkConnectionFactory(host: host, port: port)
-//        let maybeConnection = connectionFactory.connect(using: .udp)
-//        
-//        XCTAssertNotNil(maybeConnection)
-//        
-//        guard var connection = maybeConnection
-//            else
-//        {
-//            return
-//        }
-//        
-//        connection.stateUpdateHandler =
-//        {
-//            (newState) in
-//            
-//            print("CURRENT STATE = \(newState))")
-//            
-//            switch newState
-//            {
-//            case .ready:
-//                print("\n🚀 open() called on tunnel connection  🚀\n")
-//                connected.fulfill()
-//                
-////                let initiation = HandshakeInitiation(spubr: self.spubr!, sprivi: self.sprivi!, maybeStaticKey: nil)
-////                let initData = initiation.encode()
-////                connection.send(content: initData,
-////                                contentContext: .defaultMessage,
-////                                isComplete: true,
-////                                completion: NWConnection.SendCompletion.contentProcessed(
-////                {
-////                    (error) in
-////                    
-////                    if error == nil
-////                    {
-////                        wrote.fulfill()
-////                        print("\nNo ERROR\n")
-////                    }
-////                        
-////                    else
-////                    {
-////                        print("\n⛑  RECEIVED A SEND ERROR: \(String(describing: error))\n")
-////                        XCTFail()
-////                    }
-////                }))
-//                    
-//                connection.receive(completion:
-//                {
-//                    (maybeData, maybeContext, connectionComplete, maybeError) in
-//                    
-//                    print("\nTo receive is also nice.")
-//                    print("Data? \(String(describing: maybeData))")
-//                    if let data = maybeData
+//                    (error) in
+//
+//                    if error == nil
 //                    {
-//                        let responseString = String(data: data, encoding: .ascii)
-//                        print("Data to String? \(responseString!)")
+//                        wrote.fulfill()
+//                        print("\nNo ERROR\n")
 //                    }
-//                    print("Context? \(String(describing: maybeContext))")
-//                    print("Connection Complete? \(String(describing: connectionComplete))")
-//                    print("\n⛑  Error? \(maybeError.debugDescription)\n")
-//                    
-//                    if maybeError != nil
+//
+//                    else
 //                    {
-//                        switch maybeError!
-//                        {
-//                        case .posix(let posixError):
-//                            print("\n⛑  Received a posix error: \(posixError)")
-//                        case .tls(let tlsError):
-//                            print("\n⛑  Received a tls error: \(tlsError)")
-//                        case .dns(let dnsError):
-//                            print("\n⛑  Received a dns error: \(dnsError)")
-//                        }
-//                        
+//                        print("\n⛑  RECEIVED A SEND ERROR: \(String(describing: error))\n")
 //                        XCTFail()
 //                    }
-//                    
-//                    if let data = maybeData
-//                    {
-//                        print("Received some datas: \(data)\n")
-//                        read.fulfill()
-//                        
-//                        connection.stateUpdateHandler = nil
-//                    }
-//                })
-//                    
-//            case .cancelled:
-//                print("\n🙅‍♀️  Connection Canceled  🙅‍♀️\n")
-//                
-//            case .failed(let error):
-//                print("\n🐒💨  Connection Failed  🐒💨\n")
-//                print("⛑  Failure Error: \(error.localizedDescription)")
-//                XCTFail()
-//                
-//            default:
-//                print("\n🤷‍♀️  Unexpected State: \(newState))  🤷‍♀️\n")
-//            }
-//        }
-//        
-//        maybeConnection?.start(queue: DispatchQueue(label: "TestQueue"))
-//        
-//        waitForExpectations(timeout: 20)
-//        { (maybeError) in
-//            if let error = maybeError
-//            {
-//                print("Expectation completed with error: \(error.localizedDescription)")
-//            }
-//        }
-//    }
-//}
+//                }))
+                
+                connection.receive(completion:
+                {
+                    (maybeData, maybeContext, connectionComplete, maybeError) in
+                    
+                    print("\nTo receive is also nice.")
+                    print("Data? \(String(describing: maybeData))")
+                    if let data = maybeData
+                    {
+                        let responseString = String(data: data, encoding: .ascii)
+                        print("Data to String? \(responseString!)")
+                    }
+                    print("Context? \(String(describing: maybeContext))")
+                    print("Connection Complete? \(String(describing: connectionComplete))")
+                    print("\n⛑  Error? \(maybeError.debugDescription)\n")
+                    
+                    if maybeError != nil
+                    {
+                        switch maybeError!
+                        {
+                        case .posix(let posixError):
+                            print("\n⛑  Received a posix error: \(posixError)")
+                        case .tls(let tlsError):
+                            print("\n⛑  Received a tls error: \(tlsError)")
+                        case .dns(let dnsError):
+                            print("\n⛑  Received a dns error: \(dnsError)")
+                        }
+                        
+                        XCTFail()
+                    }
+                    
+                    if let data = maybeData
+                    {
+                        print("Received some datas: \(data)\n")
+                        read.fulfill()
+                        
+                        connection.stateUpdateHandler = nil
+                    }
+                })
+                
+            case .cancelled:
+                print("\n🙅‍♀️  Connection Canceled  🙅‍♀️\n")
+                
+            case .failed(let error):
+                print("\n🐒💨  Connection Failed  🐒💨\n")
+                print("⛑  Failure Error: \(error.localizedDescription)")
+                XCTFail()
+                
+            default:
+                print("\n🤷‍♀️  Unexpected State: \(newState))  🤷‍♀️\n")
+            }
+        }
+        
+        maybeConnection?.start(queue: DispatchQueue(label: "TestQueue"))
+        
+        waitForExpectations(timeout: 20)
+        { (maybeError) in
+            if let error = maybeError
+            {
+                print("Expectation completed with error: \(error.localizedDescription)")
+            }
+        }
+    }
+}

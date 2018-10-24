@@ -10,6 +10,7 @@ import Foundation
 import Sodium
 import Blake2
 import HKDFKit
+import Datable
 
 let CONSTRUCTION: Data = "Noise_IKpsk2_25519_ChaChaPoly_BLAKE2s".data(using: .ascii)!
 let IDENTIFIER: Data = "WireGuard v1 zx2c4 Jason@zx2c4.com".data(using: .ascii)!
@@ -31,8 +32,8 @@ func TAI64N() -> Data {
     let now = Date().timeIntervalSince1970
     var seconds: Int64 = Int64(now)
     var ns: Int32 = Int32((now - Double(seconds)) * 1000)
-    let sdata = Data(buffer: UnsafeBufferPointer(start: &seconds, count: 8))
-    let nsdata = Data(buffer: UnsafeBufferPointer(start: &ns, count: 4))
+    let sdata = seconds.data
+    let nsdata = ns.data
     
     var result = Data()
     result.append(sdata)

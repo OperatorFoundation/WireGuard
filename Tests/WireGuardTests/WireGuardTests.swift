@@ -32,14 +32,14 @@ class WireGuardTests: XCTestCase
             
             print(config.sections)
             
-            guard let privKey = config["Interface"]?["PrivateKey"]
+            guard let privKeyString = config["Interface"]?["PrivateKey"]
             else
             {
                 print("Unable to get private key from config file.")
                 return
             }
             
-            guard let pubKey = config["Peer"]?["PublicKey"]
+            guard let pubKeyString = config["Peer"]?["PublicKey"]
             else
             {
                 print("Unable to get public key from config file.")
@@ -60,8 +60,8 @@ class WireGuardTests: XCTestCase
             ephemeralPrivate = ephemeralKeys.privateKey
             portUInt = UInt16(string: endpointArray[1])
             testIPString = endpointArray[0]
-            privateKey = privKey.data
-            publicKey = pubKey.data
+            privateKey = Data(base64Encoded: privKeyString)!
+            publicKey = Data(base64Encoded: pubKeyString)!
         }
         catch (let error)
         {
@@ -82,15 +82,11 @@ class WireGuardTests: XCTestCase
                               ip_address: testIPString.data,
                               last_received_cookie: nil,
                               cookie_timestamp: nil)
-        let initiation = HandshakeInitiation(initiator: &initiator, responder_static_public: publicKey, maybeStaticKey: nil)
+        let initiation = HandshakeInitiation(initiator: &initiator, responder_static_public: publicKey, maybeStaticKey: Data(repeating: 0, count: 32))
+        
+        let initData = initiation?.encode()
         
         XCTAssertNotNil(initiation)
-        
-        //let initiation = HandshakeInitiation(hInitiator: <#T##State#>, responder: <#T##State#>, maybeStaticKey: <#T##Data?#>)
-            //HandshakeInitiation(spubr: spubr!, sprivi: sprivi!, maybeStaticKey: nil)
-       
-        
-        //let initData=initiation.encode()
     }
     
 //    func testListener()
@@ -235,27 +231,39 @@ class WireGuardTests: XCTestCase
                 print("\n🚀 open() called on tunnel connection  🚀\n")
                 connected.fulfill()
                 
-//                let initiation = HandshakeInitiation(spubr: self.spubr!, sprivi: self.sprivi!, maybeStaticKey: nil)
-//                let initData = initiation.encode()
-//                connection.send(content: initData,
-//                                contentContext: .defaultMessage,
-//                                isComplete: true,
-//                                completion: NWConnection.SendCompletion.contentProcessed(
-//                {
-//                    (error) in
-//
-//                    if error == nil
-//                    {
-//                        wrote.fulfill()
-//                        print("\nNo ERROR\n")
-//                    }
-//
-//                    else
-//                    {
-//                        print("\n⛑  RECEIVED A SEND ERROR: \(String(describing: error))\n")
-//                        XCTFail()
-//                    }
-//                }))
+                var initiator = State(ephemeral_private: self.ephemeralPrivate,
+                                      ephemeral_public: self.ephemeralPublic,
+                                      static_private: self.privateKey,
+                                      static_public: self.publicKey,
+                                      ip_address: self.testIPString.data,
+                                      last_received_cookie: nil,
+                                      cookie_timestamp: nil)
+                
+                let initiation = HandshakeInitiation(initiator: &initiator,
+                                                     responder_static_public: self.publicKey,
+                                                     maybeStaticKey: Data(repeating: 0, count: 32))
+                
+                let initData = initiation?.encode()
+                
+                connection.send(content: initData,
+                                contentContext: .defaultMessage,
+                                isComplete: true,
+                                completion: NWConnection.SendCompletion.contentProcessed(
+                {
+                    (error) in
+
+                    if error == nil
+                    {
+                        wrote.fulfill()
+                        print("\nNo ERROR\n")
+                    }
+
+                    else
+                    {
+                        print("\n⛑  RECEIVED A SEND ERROR: \(String(describing: error))\n")
+                        XCTFail()
+                    }
+                }))
                 
                 connection.receive(completion:
                 {
@@ -289,7 +297,7 @@ class WireGuardTests: XCTestCase
                     
                     if let data = maybeData
                     {
-                        print("Received some datas: \(data)\n")
+                        print("\nReceived some datas: \(data)\n")
                         read.fulfill()
                         
                         connection.stateUpdateHandler = nil
@@ -318,5 +326,13 @@ class WireGuardTests: XCTestCase
                 print("Expectation completed with error: \(error.localizedDescription)")
             }
         }
+    }
+    
+    //MARK: Crypto Tests
+    
+    func testTAI64N()
+    {
+        let encryptedTimestamp = TAI64N()
+        XCTAssert(encryptedTimestamp.count == 12)
     }
 }

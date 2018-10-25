@@ -31,7 +31,7 @@ enum MessageType: UInt8
  - property sender_index: UInt32
  - property unencrypted_ephemeral: Data, 32 bytes
  - property encrypted_static: Data, 32 bytes
- - property encrypted_timestamp: Data, 12 bytes
+ - property encrypted_timestamp: Data, 28 bytes
  - property mac1: Data, 16 bytes
  - property mac2: Data, 16 bytes
  */
@@ -108,10 +108,10 @@ public struct HandshakeInitiation
         // msg.encrypted_timestamp = AEAD(key, 0, TAI64N(), initiator.hash)
         encrypted_timestamp = AEAD(key, 0.data, TAI64N(), initiator.hash!)
         
-        guard encrypted_timestamp.count == 12
+        guard encrypted_timestamp.count == 28
         else
         {
-            print("Unable to initialize HandshakeInitiation: encrypted_timestamp is \(encrypted_timestamp.count) bytes, but must be 12 bytes")
+            print("\nUnable to initialize HandshakeInitiation: encrypted_timestamp is \(encrypted_timestamp.count) bytes, but must be 28 bytes\n")
             return nil
         }
 
@@ -126,7 +126,7 @@ public struct HandshakeInitiation
         guard mac1.count == 16
             else
         {
-            print("Unable to initialize HandshakeInitiation: mac1 was not 16 bytes.")
+            print("\nUnable to initialize HandshakeInitiation: mac1 was not 16 bytes.\n")
             return nil
         }
         
@@ -143,7 +143,7 @@ public struct HandshakeInitiation
             guard mac2.count == 16
                 else
             {
-                print("Unable to initialize HandshakeInitiation: mac2 was not 16 bytes.")
+                print("\nUnable to initialize HandshakeInitiation: mac2 was not 16 bytes.\n")
                 return nil
             }
         }

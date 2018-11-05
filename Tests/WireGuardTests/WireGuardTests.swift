@@ -263,47 +263,47 @@ class WireGuardTests: XCTestCase
                         print("\n⛑  RECEIVED A SEND ERROR: \(String(describing: error))\n")
                         XCTFail()
                     }
-                }))
-                
-                connection.receive(completion:
-                {
-                    (maybeData, maybeContext, connectionComplete, maybeError) in
                     
-                    print("\nTo receive is also nice.")
-                    print("Data? \(String(describing: maybeData))")
-                    if let data = maybeData
+                    connection.receive(completion:
                     {
-                        let responseString = String(data: data, encoding: .ascii)
-                        print("Data to String? \(responseString!)")
-                    }
-                    print("Context? \(String(describing: maybeContext))")
-                    print("Connection Complete? \(String(describing: connectionComplete))")
-                    print("\n⛑  Error? \(maybeError.debugDescription)\n")
-                    
-                    if maybeError != nil
-                    {
-                        switch maybeError!
+                        (maybeData, maybeContext, connectionComplete, maybeError) in
+                        
+                        print("\nTo receive is also nice.")
+                        print("Data? \(String(describing: maybeData))")
+                        if let data = maybeData
                         {
-                        case .posix(let posixError):
-                            print("\n⛑  Received a posix error: \(posixError)")
-                        case .tls(let tlsError):
-                            print("\n⛑  Received a tls error: \(tlsError)")
-                        case .dns(let dnsError):
-                            print("\n⛑  Received a dns error: \(dnsError)")
+                            let responseString = String(data: data, encoding: .ascii)
+                            print("Data to String? \(responseString!)")
+                        }
+                        print("Context? \(String(describing: maybeContext))")
+                        print("Connection Complete? \(String(describing: connectionComplete))")
+                        print("\n⛑  Error? \(maybeError.debugDescription)\n")
+                        
+                        if maybeError != nil
+                        {
+                            switch maybeError!
+                            {
+                            case .posix(let posixError):
+                                print("\n⛑  Received a posix error: \(posixError)")
+                            case .tls(let tlsError):
+                                print("\n⛑  Received a tls error: \(tlsError)")
+                            case .dns(let dnsError):
+                                print("\n⛑  Received a dns error: \(dnsError)")
+                            }
+                            
+                            XCTFail()
                         }
                         
-                        XCTFail()
-                    }
-                    
-                    if let data = maybeData
-                    {
-                        print("\nReceived some datas: \(data)\n")
-                        read.fulfill()
-                        
-                        connection.stateUpdateHandler = nil
-                    }
-                })
-                
+                        if let data = maybeData
+                        {
+                            print("\nReceived some datas: \(data)\n")
+                            read.fulfill()
+                            
+                            connection.stateUpdateHandler = nil
+                        }
+                    })
+                }))
+ 
             case .cancelled:
                 print("\n🙅‍♀️  Connection Canceled  🙅‍♀️\n")
                 
